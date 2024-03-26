@@ -1,0 +1,30 @@
+{
+    "name": "EIGFA Homepage",
+    "manifest_version": 3,
+    "version": "1.0.0",
+    "description": "A minimalist browser home or newtab for Professionals. It allows to choose your favorite search Engine.",    
+    "permissions":[
+        "activeTab",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "Translator/popup.html",
+        "default_icon": "/image/logo.png"
+    },
+    "icons":{
+        "64": "/image/logo.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "chromehome.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="newtab.css">
+    <title>New Tab</title>
+    <!-- <link id="link"> -->
+</head>
+
+<body>
+    <nav>
+        <div class="branding">
+            <span class="brandName">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+                    <path d="M299.8 577.9h-126c-13 0-25.5-2.6-37-9-24.2-13.4-37.9-33.8-40.8-61.4-.3-3.3-.4-6.7-.4-10V392.3c0-3.7 0-3.7-3.7-3.7-37.6-.4-71.7-29.7-77.4-66.8-4.3-27.8 3.2-51.9 23.2-72C105.4 182 173.2 114.3 240.9 46.5c13.9-13.9 30.3-22.2 49.8-24 26.3-2.4 49.1 5.1 68 24.1 46.6 46.8 93.4 93.5 140.2 140.2 20.5 20.4 41 40.8 61.4 61.2 6.9 6.9 12.9 14.4 17.3 23.1 14.9 29.5 10.6 64.8-11.2 89.7-15.6 17.9-35.5 27.2-59.3 27.7-2.7.1-3.1 1-3.1 3.4.1 37 .2 74 0 111-.2 35.6-27.9 67.8-63 73.7-5.4.9-10.9 1.3-16.4 1.3H299.8zm47.4-119.6c0-8.6-.1-17.2 0-25.7.1-10.9-3.9-20.2-11.5-27.6-14.9-14.5-32.8-17.9-52.2-11.9-19.1 5.9-30.9 21.7-31.1 40.5-.1 16.4-.1 32.8 0 49.2.1 11 3.8 20.6 11.5 28.5 16 16.5 42.8 19.8 62.6 7.6 13.6-8.4 21.1-20.4 20.8-36.8-.2-8-.1-15.9-.1-23.8z"/>
+                </svg>
+            </span>
+        </div>
+        <div class="threeDot"></div>
+    </nav>
+
+    <!-- settings -------- -->
+    <div id="setting" class="settingWraper">
+        <button class="settingicon" id="settingbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                    <path d="M 88.568 54.357 L 88.568 54.357 c -8.337 -3.453 -8.337 -15.262 0 -18.715 h 0 c 1.183 -0.49 1.745 -1.847 1.255 -3.03 l -4.369 -10.547 c -0.49 -1.183 -1.847 -1.745 -3.03 -1.255 h 0 c -8.337 3.453 -16.687 -4.897 -13.233 -13.233 v 0 c 0.49 -1.183 -0.072 -2.54 -1.255 -3.03 L 57.388 0.177 c -1.183 -0.49 -2.54 0.072 -3.03 1.255 c -3.453 8.337 -15.262 8.337 -18.715 0 c -0.49 -1.183 -1.847 -1.745 -3.03 -1.255 L 22.065 4.546 c -1.183 0.49 -1.745 1.847 -1.255 3.03 c 3.453 8.337 -4.897 16.687 -13.234 13.234 c -1.183 -0.49 -2.54 0.072 -3.03 1.255 L 0.177 32.612 c -0.49 1.183 0.072 2.54 1.255 3.03 l 0 0 c 8.337 3.453 8.337 15.262 0 18.715 l 0 0 c -1.183 0.49 -1.745 1.847 -1.255 3.03 l 4.369 10.547 c 0.49 1.183 1.847 1.745 3.03 1.255 l 0 0 c 8.337 -3.453 16.687 4.897 13.233 13.234 v 0 c -0.49 1.183 0.072 2.54 1.255 3.03 l 10.547 4.369 c 1.183 0.49 2.54 -0.072 3.03 -1.255 v 0 c 3.453 -8.337 15.262 -8.337 18.715 0 v 0 c 0.49 1.183 1.847 1.745 3.03 1.255 l 10.547 -4.369 c 1.183 -0.49 1.745 -1.847 1.255 -3.03 v 0 c -3.453 -8.337 4.897 -16.687 13.234 -13.233 c 1.183 0.49 2.54 -0.072 3.03 -1.255 l 4.369 -10.547 C 90.313 56.204 89.751 54.848 88.568 54.357 z M 45 64.052 c -10.522 0 -19.052 -8.53 -19.052 -19.052 c 0 -10.522 8.53 -19.052 19.052 -19.052 S 64.052 34.478 64.052 45 C 64.052 55.522 55.522 64.052 45 64.052 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+                </svg>
+        </button>
+        <div class="settingPage popup" id="settingBody">
+            <h4>Settings</h4>
+            <div class="settingBody">
+                <div class="themepalate">
+                    <h5>Theme:</h5>
+                    <div class="colors">
+                        <input type="radio" class="themes" name="theme" value="skyblue">
+                        <input type="radio" class="themes" name="theme" value="red">
+                        <input type="radio" class="themes" name="theme" value="green">
+                        <input type="radio" class="themes" name="theme" value="yellow">
+                        <input type="radio" class="themes" name="theme" value="purple">
+                        <!-- <input type="radio" class="themes" name="theme" value="dark"> -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Time section ----------/------// -->
+    <section class="timeSection">
+        <div class="dayBox">
+            <h3 id="day">LOADING...</h3>
+        </div>
+        <div class="timeBox">
+            <h3 id="time">Loading...</h3>
+        </div>
+    </section>
+
+    <!-- Search Bar ----------//--------//----- -->
+    <form action="https://www.google.com/search" method="get" id="searchForm">
+        <input type="search" id="search" name="q" placeholder="Search somethig or type an URL" autofocus="true">
+        <button type="submit" id="submitBtn" class="searchIcon">
+            <svg width="30" height="30" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="ic ic-search" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.00087 20.0137C5.00087 18.0425 5.38915 16.0906 6.14353 14.2695C6.89791 12.4484 8.00363 10.7936 9.39755 9.39981C10.7915 8.00598 12.4463 6.90034 14.2675 6.146C16.0888 5.39167 18.0408 5.00342 20.0121 5.00342C21.9834 5.00342 23.9354 5.39167 25.7566 6.146C27.5779 6.90034 29.2327 8.00598 30.6266 9.39981C32.0205 10.7936 33.1262 12.4484 33.8806 14.2695C34.635 16.0906 35.0233 18.0425 35.0233 20.0137C35.0233 23.9946 33.4417 27.8125 30.6266 30.6275C27.8114 33.4425 23.9933 35.0239 20.0121 35.0239C16.0309 35.0239 12.2127 33.4425 9.39755 30.6275C6.5824 27.8125 5.00087 23.9946 5.00087 20.0137ZM20.0121 1.23625e-07C16.8268 0.000456127 13.6877 0.761065 10.8556 2.21861C8.02347 3.67616 5.58012 5.78855 3.72863 8.38023C1.87714 10.9719 0.670974 13.968 0.210373 17.1196C-0.250229 20.2711 0.0480379 23.4871 1.08039 26.5002C2.11273 29.5133 3.84934 32.2365 6.14589 34.4435C8.44244 36.6505 11.2326 38.2776 14.2845 39.1895C17.3364 40.1014 20.5618 40.2718 23.6928 39.6865C26.8238 39.1013 29.7699 37.7772 32.2862 35.8245L40.7601 44.2977C41.2319 44.7534 41.8639 45.0056 42.5199 44.9999C43.1758 44.9942 43.8033 44.7311 44.2672 44.2673C44.7311 43.8034 44.9942 43.176 44.9999 42.52C45.0056 41.8641 44.7534 41.2322 44.2977 40.7603L35.8239 32.287C38.1208 29.3287 39.5415 25.7852 39.9244 22.0595C40.3073 18.3338 39.637 14.5754 37.9897 11.2118C36.3424 7.84812 33.7843 5.01415 30.6062 3.03213C27.4281 1.05011 23.7576 -0.000416085 20.0121 1.23625e-07ZM20.0121 30.0205C22.6662 30.0205 25.2117 28.9662 27.0884 27.0896C28.9652 25.2129 30.0195 22.6676 30.0195 20.0137C30.0195 17.3597 28.9652 14.8144 27.0884 12.9378C25.2117 11.0611 22.6662 10.0068 20.0121 10.0068C17.3579 10.0068 14.8125 11.0611 12.9357 12.9378C11.059 14.8144 10.0046 17.3597 10.0046 20.0137C10.0046 22.6676 11.059 25.2129 12.9357 27.0896C14.8125 28.9662 17.3579 30.0205 20.0121 30.0205Z"
+                    fill="#0000ff" />
+            </svg>
+        </button>
+        <!-- search engine -->
+        <select id="searchEngine" name="">
+            <option value="yahoo">Yahoo</option>
+            <option value="google" selected>Google</option>
+            <option value="bing" class="ei eiBing">Bing</option>
+        </select>
+    </form>
+
+    <div class="popupBG" id="popupbg"></div>
+
+    <section class="bottom" id="bottom" role="button">
+        <div class="bottomR">
+            <div id="allAppPopup" class="popup">
+                <!-- Applications ----- -->
+                <h3>Social</h3>
+                <ul class="ab ab-social">
+                    <li>
+                        <a href="https://web.facebook.com" title="Facebook">
+                            <img src="appicon/S-Facebook.svg" loading="lazy">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com" title="Twitter">
+                            <img src="appicon/S-Twitter.svg" loading="lazy">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/" title="LinkedIn">
+                            <img src="appicon/S-LinkedIn.svg" loading="lazy">
+                        </a>
+                    </li>
+                    <li><a href="https://www.discord.com" title="Discord">
+                            <img src="appicon/S-discord-icon.svg" loading="lazy">
+                        </a>
+                    </li>
+                    <li><a href="https://www.instagram.com" title="Instagram">
+                            <img src="appicon/S-Instagram.svg" loading="lazy">
+                        </a></li>
+                    <li><a href="https://www.messenger.com/" title="Messenger">
+                            <img src="appicon/S-messenger.svg" loading="lazy">
+                        </a></li>
+                    <li><a href="https://www.reddit.com" title="Reddit">
+                            <img src="appicon/S-reddit-4.svg" loading="lazy">
+                        </a></li>
+                    <li><a href="https://www.threads.net" title="Threads">
+                            <img src="appicon/S-threads.svg" loading="lazy">
+                        </a></li>
+                    <li><a href="https://web.skype.com" title="Skype">
+                            <img src="appicon/S-skype.png" loading="lazy">
+                        </a></li>
+                    <li><a href="https://web.whatsapp.com" title="Whatsapp">
+                            <img src="appicon/S-WhatsApp.svg.png" loading="lazy">
+                        </a></li>
+
+                </ul>
+                <h3>Google</h3>
+                <ul class="ab ab-google">
+                    <li><a href="https://drive.google.com" title="Drive">
+                            <div><img src="appicon/G-drive.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://business.google.com" title="Bussiness profile">
+                            <div><img src="appicon/G-mybusiness.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://maps.google.com" title="Maps">
+                            <div><img src="appicon/G-map.png" loading="lazy"></div>
+                        </a></li>
+                    <!-- <li><a href="https://mail.google.com" title="Gmail">
+                            <div><img src="appicon/Gmail.png" loading="lazy"></div>
+                        </a></li> -->
+                    <li><a href="https://meet.google.com" title="Meet">
+                            <div><img src="appicon/G-meet.svg.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://www.youtube.com" title="YouTube">
+                            <div><img src="appicon/youtube.svg" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://studio.youtube.com" title="Studio">
+                            <div><img src="appicon/G-ytstudio.svg" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://photos.google.com" title="Photos">
+                            <div><img src="appicon/G-photo.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://docs.google.com/document" title="Docs">
+                            <div><img src="appicon/Google_Docs_logo_(2014-2020).svg.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://docs.google.com/spreadsheets" title="Sheets">
+                            <div><img src="appicon/sheets.google.svg.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://docs.google.com/presentation" title="Slids">
+                            <div><img src="appicon/G-slids.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://translate.google.com" title="Translate">
+                            <div><img src="appicon/G-translate.png" loading="lazy"></div>
+                        </a></li>
+                </ul>
+
+                <h3>Microsoft</h3>
+                <ul class="ab ab-ms">
+                    <li><a href="https://microsoft365.com/?utm_source=sihab" title="Microsoft-365">
+                            <div><img src="appicon/ms-360.png" loading="lazy"></div>
+                        </a></li>
+                    <!-- <li><a href="https://outlook.live.com/?utm_source=sihab" title="Outlook">
+                            <div><img src="appicon/ms-outlook.png" loading="lazy"></div>
+                        </a></li> -->
+                    <li><a href="https://apps.microsoft.com/?utm_source=sihab" title="MS Store">
+                            <div><img src="appicon/Microsoft_Store.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://office.live.com/start/Word.aspx?utm_source=sihab" title="Word">
+                            <div><img src="appicon/Ms-word.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://office.live.com/start/Excel.aspx?utm_source=sihab" title="Excel">
+                            <div><img src="appicon/Ms-exel.png" loading="lazy"></div>
+                        </a></li>
+                    <li><a href="https://office.live.com/start/PowerPoint.aspx?utm_source=sihab" title="PowerPoint">
+                            <div><img src="appicon/Ms-powerpoint.png" loading="lazy"></div><span></span>
+                        </a></li>
+                    <li><a href="https://onedrive.live.com/?utm_source=sihab" title="One Drive">
+                            <div><img src="appicon/ms-onedrive.png" loading="lazy"></div>
+                        </a></li>
+                    <li>
+                        <a href="https://forms.office.com/?utm_source=sihab" title="MS Forms">
+                            <div><img src="appicon/Microsoft_Forms.png" loading="lazy"></div>
+                        </a>
+                    </li>
+                    <li><a href="https://teams.live.com/?utm_source=sihab" title="Teams">
+                            <div><img src="appicon/Ms-teams.png" loading="lazy"></div>
+                        </a>
+                    </li>
+                    <li><a href="https://www.onenote.com/notebooks?utm_source=sihab" title="OneNote">
+                            <div><img src="appicon/Ms-onenote.png" loading="lazy"></div>
+                        </a>
+                    </li>
+                    <li><a href="https://sway.cloud.microsoft/?utm_source=sihab" title="Sway">
+                            <div><img src="appicon/Ms-sway.png" loading="lazy"></div>
+                        </a>
+                    </li>
+                    <li><a href="https://clipchamp.com/?utm_source=sihab" title="Clipchamp">
+                            <div><img src="appicon/Microsoft_Clipchamp.png" loading="lazy"></div>
+                        </a>
+                    </li>
+                    <li><a href="https://www.xbox.com?utm_source=sihab" title="Xbox">
+                            <div><img src="appicon/xbox.png" loading="lazy"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <span id="toggleApp" title="All Apps">
+                <svg id="icr" hight="30" width="30" xmlns="http://www.w3.org/2000/svg"
+                    shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                    image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512">
+                    <path class="ic" fill-rule="nonzero"
+                        d="M256 512c70.684 0 134.695-28.658 181.019-74.981C483.342 390.695 512 326.691 512 256s-28.658-134.695-74.981-181.019C390.695 28.658 326.691 0 256 0S121.305 28.658 74.981 74.981C28.658 121.305 0 185.309 0 256s28.658 134.695 74.981 181.019C121.305 483.342 185.309 512 256 512zm-79.003-200.641c-30.983 17.861-46.316-6.963-29.012-25.063l88.741-101.046c16.129-16.136 22.426-16.136 38.563 0l88.741 101.046c17.18 18.187 2.203 42.867-29.02 25.063l-79.003-46.932-79.01 46.932z" />
+                </svg>
+            </span>
+        </div>
+    </section>
+
+
+    <!-- mail box-- -->
+    <div id="mailToggle" class="mailToggle">
+        <div class="mailService">
+            <!-- google mail  -->
+            <div class="emails popup gmail" title="Gmail">
+                <a href="https://mail.google.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="52 42 88 66">
+                        <path fill="var(--liteThemecolor)" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                        <path fill="var(--liteThemecolor)" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                        <path fill="var(--bg)" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                        <path fill="var(--bg2)" d="M72 74V48l24 18 24-18v26L96 92"/>
+                        <path fill="var(--bg)" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                    </svg>
+                </a>
+            </div>
+            <!-- microsoft outlook  -->
+            <div class="emails popup outlook" title="Outlook">
+                <a href="https://outlook.live.com/?utm_source=sihab">
+                    <svg version="1.1" id="Livello_1" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1831.085 1703.335" enable-background="new 0 0 1831.085 1703.335" xml:space="preserve">
+                        <path fill="" d="M1831.083,894.25c0.1-14.318-7.298-27.644-19.503-35.131h-0.213l-0.767-0.426l-634.492-375.585  c-2.74-1.851-5.583-3.543-8.517-5.067c-24.498-12.639-53.599-12.639-78.098,0c-2.934,1.525-5.777,3.216-8.517,5.067L446.486,858.693  l-0.766,0.426c-19.392,12.059-25.337,37.556-13.278,56.948c3.553,5.714,8.447,10.474,14.257,13.868l634.492,375.585  c2.749,1.835,5.592,3.527,8.517,5.068c24.498,12.639,53.599,12.639,78.098,0c2.925-1.541,5.767-3.232,8.517-5.068l634.492-375.585  C1823.49,922.545,1831.228,908.923,1831.083,894.25z"/>
+                        <path fill="var(--liteThemecolor)" d="M520.453,643.477h416.38v381.674h-416.38V643.477z M1745.917,255.5V80.908  c1-43.652-33.552-79.862-77.203-80.908H588.204C544.552,1.046,510,37.256,511,80.908V255.5l638.75,170.333L1745.917,255.5z"/>
+                        <path fill="var(--bg)" d="M511,255.5h425.833v383.25H511V255.5z"/>
+                        <path fill="var(--bg2)" d="M1362.667,255.5H936.833v383.25L1362.667,1022h383.25V638.75L1362.667,255.5z"/>
+                        <path fill="var(--liteThemecolor)" d="M936.833,638.75h425.833V1022H936.833V638.75z"/>
+                        <path fill="var(--bg)" d="M936.833,1022h425.833v383.25H936.833V1022z"/>
+                        <path fill="var(--bg2)" d="M520.453,1025.151h416.38v346.969h-416.38V1025.151z"/>
+                        <path fill="var(--bg)" d="M1362.667,1022h383.25v383.25h-383.25V1022z"/>
+                        <path fill="var(--bg2)" d="M1811.58,927.593l-0.809,0.426l-634.492,356.848c-2.768,1.703-5.578,3.321-8.517,4.769  c-10.777,5.132-22.481,8.029-34.407,8.517l-34.663-20.27c-2.929-1.47-5.773-3.105-8.517-4.897L447.167,906.003h-0.298  l-21.036-11.753v722.384c0.328,48.196,39.653,87.006,87.849,86.7h1230.914c0.724,0,1.363-0.341,2.129-0.341  c10.18-0.651,20.216-2.745,29.808-6.217c4.145-1.756,8.146-3.835,11.966-6.217c2.853-1.618,7.75-5.152,7.75-5.152  c21.814-16.142,34.726-41.635,34.833-68.772V894.25C1831.068,908.067,1823.616,920.807,1811.58,927.593z"/>
+                        <path opacity="0.5" fill="var(--liteThemecolor)" enable-background="new    " d="M1797.017,891.397v44.287l-663.448,456.791L446.699,906.301  c0-0.235-0.191-0.426-0.426-0.426l0,0l-63.023-37.899v-31.938l25.976-0.426l54.932,31.512l1.277,0.426l4.684,2.981  c0,0,645.563,368.346,647.267,369.197l24.698,14.478c2.129-0.852,4.258-1.703,6.813-2.555  c1.278-0.852,640.879-360.681,640.879-360.681L1797.017,891.397z"/>
+                        <path fill="var(--bg2)" d="M1811.58,927.593l-0.809,0.468l-634.492,356.848c-2.768,1.703-5.578,3.321-8.517,4.769  c-24.641,12.038-53.457,12.038-78.098,0c-2.918-1.445-5.76-3.037-8.517-4.769L446.657,928.061l-0.766-0.468  c-12.25-6.642-19.93-19.409-20.057-33.343v722.384c0.305,48.188,39.616,87.004,87.803,86.7c0.001,0,0.002,0,0.004,0h1229.636  c48.188,0.307,87.5-38.509,87.807-86.696c0-0.001,0-0.002,0-0.004V894.25C1831.068,908.067,1823.616,920.807,1811.58,927.593z"/>
+                        <path opacity="0.1" enable-background="new    " d="M1185.52,1279.629l-9.496,5.323c-2.752,1.752-5.595,3.359-8.517,4.812  c-10.462,5.135-21.838,8.146-33.47,8.857l241.405,285.479l421.107,101.476c11.539-8.716,20.717-20.178,26.7-33.343L1185.52,1279.629  z"/>
+                        <path opacity="0.05" enable-background="new    " d="M1228.529,1255.442l-52.505,29.51c-2.752,1.752-5.595,3.359-8.517,4.812  c-10.462,5.135-21.838,8.146-33.47,8.857l113.101,311.838l549.538,74.989c21.649-16.254,34.394-41.743,34.407-68.815v-9.326  L1228.529,1255.442z"/>
+                        <path fill="var(--bg2)" d="M514.833,1703.333h1228.316c18.901,0.096,37.335-5.874,52.59-17.033l-697.089-408.331  c-2.929-1.47-5.773-3.105-8.517-4.897L447.125,906.088h-0.298l-20.993-11.838v719.914  C425.786,1663.364,465.632,1703.286,514.833,1703.333C514.832,1703.333,514.832,1703.333,514.833,1703.333z"/>
+                        <path opacity="0.1" enable-background="new    " d="M1022,418.722v908.303c-0.076,31.846-19.44,60.471-48.971,72.392  c-9.148,3.931-19,5.96-28.957,5.962H425.833V383.25H511v-42.583h433.073C987.092,340.83,1021.907,375.702,1022,418.722z"/>
+                        <path opacity="0.2" enable-background="new    " d="M979.417,461.305v908.302c0.107,10.287-2.074,20.469-6.388,29.808  c-11.826,29.149-40.083,48.273-71.54,48.417H425.833V383.25h475.656c12.356-0.124,24.533,2.958,35.344,8.943  C962.937,405.344,979.407,432.076,979.417,461.305z"/>
+                        <path opacity="0.2" enable-background="new    " d="M979.417,461.305v823.136c-0.208,43-34.928,77.853-77.927,78.225H425.833V383.25  h475.656c12.356-0.124,24.533,2.958,35.344,8.943C962.937,405.344,979.407,432.076,979.417,461.305z"/>
+                        <path opacity="0.2" enable-background="new    " d="M936.833,461.305v823.136c-0.046,43.067-34.861,78.015-77.927,78.225H425.833  V383.25h433.072c43.062,0.023,77.951,34.951,77.927,78.013C936.833,461.277,936.833,461.291,936.833,461.305z"/>
+                        <path fill="var(--liteThemecolor2)" d="M78.055,383.25h780.723c43.109,0,78.055,34.947,78.055,78.055v780.723  c0,43.109-34.946,78.055-78.055,78.055H78.055c-43.109,0-78.055-34.947-78.055-78.055V461.305  C0,418.197,34.947,383.25,78.055,383.25z"/>
+                        <path fill="var(--themecolor)" d="M243.96,710.631c19.238-40.988,50.29-75.289,89.17-98.495c43.057-24.651,92.081-36.94,141.675-35.515  c45.965-0.997,91.321,10.655,131.114,33.683c37.414,22.312,67.547,55.004,86.742,94.109c20.904,43.09,31.322,90.512,30.405,138.396  c1.013,50.043-9.706,99.628-31.299,144.783c-19.652,40.503-50.741,74.36-89.425,97.388c-41.327,23.734-88.367,35.692-136.011,34.578  c-46.947,1.133-93.303-10.651-134.01-34.067c-37.738-22.341-68.249-55.07-87.892-94.28c-21.028-42.467-31.57-89.355-30.745-136.735  C212.808,804.859,223.158,755.686,243.96,710.631z M339.006,941.858c10.257,25.912,27.651,48.385,50.163,64.812  c22.93,16.026,50.387,24.294,78.353,23.591c29.783,1.178,59.14-7.372,83.634-24.358c22.227-16.375,39.164-38.909,48.715-64.812  c10.677-28.928,15.946-59.572,15.543-90.404c0.33-31.127-4.623-62.084-14.649-91.554c-8.855-26.607-25.246-50.069-47.182-67.537  c-23.88-17.79-53.158-26.813-82.91-25.55c-28.572-0.74-56.644,7.593-80.184,23.804c-22.893,16.496-40.617,39.168-51.1,65.365  c-23.255,60.049-23.376,126.595-0.341,186.728L339.006,941.858z"/>
+                        <path fill="var(--bg)" d="M1362.667,255.5h383.25v383.25h-383.25V255.5z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- yahoo mail  -->
+            <div class="emails popup yahoo" title="Yahoo">
+                <a href="https://mail.yahoo.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-label="Yahoo!" role="img" viewBox="0 0 512 512"
+                        fill="#0000">
+
+                        <rect width="512" height="512" rx="15%" fill="var(--themecolor)" />
+
+                        <g fill="var(--bg2)">
+
+                            <path d="M203 404h-62l25-59-69-165h63l37 95 37-95h62m58 76h-69l62-148h69" />
+
+                            <circle cx="303" cy="308" r="38" />
+
+                        </g>
+
+                    </svg>
+                </a>
+            </div>
+
+            <!-- email toggle btn -- -->
+            <div id="ToggleMailBtn" class="ToggleMailButton" title="Mail" role="button">
+                <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 75.294 75.294" xml:space="preserve">
+                    <g>
+                        <path
+                            d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9
+                            c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089
+                            H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065
+                            c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016
+                            c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102
+                            c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069
+                            c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

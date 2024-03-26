@@ -1,0 +1,18 @@
+body{
+    background: #f1f1f9;
+}
+.wraper{
+    width: 250px;
+    align-items: center;
+    text-align: center;
+}
+.pickbtn {
+    background-color: #9aa5;
+    border: 0;
+    outline: 0;
+    padding: 10px 25px;
+    border-radius: 3px;
+}
+.pickbtn:hover{
+    background-color: #9aa7;
+}
