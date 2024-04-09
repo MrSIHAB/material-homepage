@@ -21,27 +21,51 @@ We are also planning to add Ai features in future. But for that, we may need a s
 
 There are two way to install this extension in your browser. One is browser's addon website. And the seccond option is manual installation. We will recommend you to install manually.
 
-#### Manual Installation:
+#### Manual Installation(ZIP):
 
-- Step 1: Install Git on your desktop.
+- Download the (zip file)[https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip] of this repository.
 
-- Step 2: Copy the GitHub repository link.
-
-- Step 3: Open your Terminal or CMD and locate the directory you want to save this extension. For example : 
-```
-    cd c://Dsktop
-```
-
-- Step 4: Now run this following Command
-```bash
-    git clone theURLyouCopied
-```
-make sure you replaced theURLyouCopied with repository link.
+> **you can also download the zip file from the top Code section**. 
 
 - Open your browser and go to manage extension section.
 
 - Find Developer option and turn it on.
 
-- Now click on the load unpacked option and locate the directory of extension.
+- Now click on the load unpacked option and locate the directory/ZIP file of extension.
+
+Congratulations. Your extension has been installed succesfully.
+
+#### Browser Add-on
+
+This extension is only available in Microsoft Edge browser.
+Edge users can easily install from (Here)[https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb]
+
+
+#### Manual Installation (Git):
+
+- Open your Terminal/CMD and locate a directory For example Desktop:
+
+
+```bash
+  cd c:\\desktop
+```
+
+- Run this command to clone this github repository:
+
+```bash
+    git clone https://github.com/MrSIHAB/ababil-professional.git
+```
+
+##### Or run this if you have github installed.
+
+```bash
+  gh repo clone MrSIHAB/ababil-professional
+```
+
+- Open your browser and go to manage extension section.
+
+- Find Developer option and turn it on.
+
+- Now click on the load unpacked option and locate the directory/ZIP file of extension.
 
 Congratulations. Your extension has been installed succesfully.
