@@ -21,6 +21,13 @@ We are also planning to add Ai features in future. But for that, we may need a s
 
 There are two way to install this extension in your browser. One is browser's addon website. And the seccond option is manual installation. We will recommend you to install manually.
 
+
+#### Browser Add-on
+
+This extension is only available in Microsoft Edge browser.
+Edge users can easily install from [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb)
+
+
 #### Manual Installation(ZIP):
 
 - Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip) of this repository.
@@ -34,11 +41,6 @@ There are two way to install this extension in your browser. One is browser's ad
 - Now click on the load unpacked option and locate the directory/ZIP file of extension.
 
 Congratulations. Your extension has been installed succesfully.
-
-#### Browser Add-on
-
-This extension is only available in Microsoft Edge browser.
-Edge users can easily install from [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb)
 
 
 #### Manual Installation (Git):
