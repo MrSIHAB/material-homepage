@@ -24,7 +24,7 @@ There are two way to install this extension in your browser. One is browser's ad
 
 #### Browser Add-on
 
-This extension is only available in Microsoft Edge browser.
+This extension is now available in Microsoft Edge browser add-on.
 Edge users can easily install from [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb)
 
 
