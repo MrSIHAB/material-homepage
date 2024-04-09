@@ -23,7 +23,7 @@ There are two way to install this extension in your browser. One is browser's ad
 
 #### Manual Installation(ZIP):
 
-- Download the (zip file)[https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip] of this repository.
+- Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip) of this repository.
 
 > **you can also download the zip file from the top Code section**. 
 
@@ -38,7 +38,7 @@ Congratulations. Your extension has been installed succesfully.
 #### Browser Add-on
 
 This extension is only available in Microsoft Edge browser.
-Edge users can easily install from (Here)[https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb]
+Edge users can easily install from [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb)
 
 
 #### Manual Installation (Git):
