@@ -49,19 +49,19 @@ Congratulations. Your extension has been installed succesfully.
 
 
 ```bash
-  cd c:\\desktop
+ cd c:\\desktop
 ```
 
 - Run this command to clone this github repository:
 
 ```bash
-    git clone https://github.com/MrSIHAB/ababil-professional.git
+ git clone https://github.com/MrSIHAB/ababil-professional.git
 ```
 
 ##### Or run this if you have github installed.
 
 ```bash
-  gh repo clone MrSIHAB/ababil-professional
+ gh repo clone MrSIHAB/ababil-professional
 ```
 
 - Open your browser and go to manage extension section.
