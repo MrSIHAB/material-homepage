@@ -32,7 +32,7 @@ Edge users can easily install from [Here](https://microsoftedge.microsoft.com/ad
 
 - Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip) of this repository.
 
-> **you can also download the zip file from the top Code section**. 
+> *you can also download the zip file from the top Code section*. 
 
 - Open your browser and go to manage extension section.
 
