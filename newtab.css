@@ -1,4 +1,7 @@
-@import url(fonts/Anurati.otf);
+@font-face {
+    font-family: "Anurati";
+    src: url('fonts/Anurati.otf');
+}
 
 *{
     margin: 0;
