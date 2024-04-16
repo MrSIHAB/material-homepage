@@ -114,7 +114,7 @@ nav{
 
 /* setting section == */
 #setting{
-    z-index: 2;
+    /* z-index: 2; */
     position: absolute;
     right: 0;
     top: 0;

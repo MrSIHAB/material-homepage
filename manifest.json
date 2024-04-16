@@ -1,21 +1,20 @@
 {
-    "name": "EIGFA Homepage",
+    "name": "Ababil Homepage",
     "manifest_version": 3,
-    "version": "1.0.0",
+    "version": "1.1.1",
+    "title": "Browser Homepage",
     "description": "A minimalist browser home or newtab for Professionals. It allows to choose your favorite search Engine.",    
     "permissions":[
-        "activeTab",
         "storage"
     ],
     "action": {
-        "default_popup": "Translator/popup.html",
         "default_icon": "/image/logo.png"
     },
     "icons":{
         "64": "/image/logo.png"
     },
     "chrome_url_overrides": {
-        "newtab": "chromehome.html"
+        "newtab": "index.html"
     },
     "content_scripts": [
         {
