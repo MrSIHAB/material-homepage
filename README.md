@@ -1,13 +1,31 @@
 
 # Ababil Professional
 
-Ababil Professional is a browser **_Home page_** or **_NewTab_** extention for **_Professionals_**.
+Ababil Professional is a browser **Home page** / **NewTab** extention for Professionals.
 
-This extention will provide you minimalist and distraction less home page. And you'll get Professional vibes which will make you more confident and productive.
+This extention will provide you minimalist and distraction less home page. And you'll get Professional vibes which will make you more confident and productive.  
+
+***[Preview The Extension...](https://sbkingdom.netlify.app/ababil)***   
+![Screenshots](./screenshots/main.png)  
+![Screenshots](./screenshots/1st.png)  
+![Screenshots](./screenshots/4th.png)  
+![Screenshots](./screenshots/6th.png)  
+
+_You may see minor bugs while in preview page on Chromium Browser sich as Chrome, Edge, Safari, Brave._  
+__But This bugs won't be seen after installing the actual Extension.__
+
+## Menus
+[**Features**](#some-main-features-of-this-extention)  
+[**Mobile or Non-Extension Browser**](#mobile-users)  
+[**Microsoft Edge User**](#browser-add-on)  
+[**Manual Install (.ZIP)**](#manual-installationzip)  
+[**Manual Install (Git/Github)**](#manual-installation-git)  
+
+---
 
 ### Some main Features of this extention
 
-- This extension comes with different themes such as SkyBlue, Red, Green, Yellow, Purple. You can also switch between **Dark** and **Light mode**.
+- This extension comes with different themes such as SkyBlue, Red, Green, Yellow, Purple. You can also switch between Dark and Light mode.
 
 - There is a shortcut feature to visit popular and most visiting websites. We catagorized them based on quality and athor. Such as _*Social-media, Developer, Gamer, Google Web apps, Microsoft web apps etc.*_
 
@@ -19,31 +37,60 @@ We are also planning to add Ai features in future. But for that, we may need a s
 
 ## How to add extension in browser?
 
-There are two way to install this extension in your browser. One is browser's addon website. And the seccond option is manual installation. We will recommend you to install manually.
+>  _There are two way to install this extension in your browser. One is browser's addon website. And the seccond option is manual installation. We will recommend you to install manually_.
 
 
-#### Browser Add-on
+## Mobile users:
 
-This extension is now available in Microsoft Edge browser add-on.
-Edge users can easily install from [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb)
+If your browser dosen't support extension or you're a mobile user, then use this steps to use this home page in your browser.
+
+- Copy this link (https://sbkingdom.netlify.app/ababil)
+
+```copy
+https://sbkingdom.netlify.app/ababil
+```
+- Open you Browser > Settings > HomePage
+![Screenshots](./screenshots/m1.jpg)  
+![Screenshots](./screenshots/m2.jpg)  
+
+- Turn **Homepage On** if it's off.  
+- Paste the copied link to it.
+![Screenshots](./screenshots/m3.jpg)  
+- Back to home page and Click on the top HOME button
+
+Now you can use this extension from you Mobile Devices.
+
+## Browser Add-on
+
+This extension is now available in Microsoft Edge browser add-on site.
+Edge users can easily install by clicking [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb).
 
 
-#### Manual Installation(ZIP):
+
+
+
+## Manual Installation(ZIP):
 
 - Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip) of this repository.
 
 > *you can also download the zip file from the top Code section*. 
 
-- Open your browser and go to manage extension section.
+- Open your browser and go to manage extension section or visit this [link](chrome://extension).
+```
+yourBrowserName://extension
+```
 
 - Find Developer option and turn it on.
 
 - Now click on the load unpacked option and locate the directory/ZIP file of extension.
 
+*Here is a chrome example for you...*
+![chrome](/screenshots/chrome.png)
+
 Congratulations. Your extension has been installed succesfully.
 
 
-#### Manual Installation (Git):
+## Manual Installation (Git):
 
 - Open your Terminal/CMD and locate a directory For example Desktop:
 
@@ -55,19 +102,29 @@ Congratulations. Your extension has been installed succesfully.
 - Run this command to clone this github repository:
 
 ```bash
- git clone https://github.com/MrSIHAB/ababil-professional.git
+#if you have git installed
+ git clone https://github.com/MrSIHAB/ababil-professional.git 
 ```
 
 ##### Or run this if you have github installed.
 
 ```bash
+#if you have github desktop/CLI installed
  gh repo clone MrSIHAB/ababil-professional
 ```
-
-- Open your browser and go to manage extension section.
+- Open your browser and go to manage extension section or visit this [link](chrome://extension).
+```link
+yourBrowserName://extension
+```
 
 - Find Developer option and turn it on.
 
 - Now click on the load unpacked option and locate the directory/ZIP file of extension.
 
+*Here is a chrome example for you...*
+![chrome](/screenshots/chrome.png)
+
 Congratulations. Your extension has been installed succesfully.
+
+
+

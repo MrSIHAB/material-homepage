@@ -2,8 +2,7 @@
     "name": "Ababil Homepage",
     "manifest_version": 3,
     "version": "1.1.1",
-    "title": "Browser Homepage",
-    "description": "A minimalist browser home or newtab for Professionals. It allows to choose your favorite search Engine.",    
+    "description": "A Professionals looking browser home or newtab with multi Search Engine Support.",    
     "permissions":[
         "storage"
     ],
