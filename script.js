@@ -14,8 +14,6 @@ function setTheme() {
   body.classList = localStorage.getItem("theme");
 }
 
-
-
 // searchEngine Animation and designing --------//
 
 searchEngine.addEventListener("focusin", () => {
@@ -44,14 +42,8 @@ searchEngine.addEventListener("change", async () => {
   }
 });
 
-
-
 //  search box radias fixing ------------------
 window.addEventListener("DOMContentLoaded", async () => {
-
-
-
-
   // date function
   const time = new Date();
   const day = time.getDay();
@@ -89,29 +81,23 @@ window.addEventListener("DOMContentLoaded", async () => {
   timeLoader.innerText = `${date}, ${months[month]}, ${year}`;
 });
 
-
-
-
-
-
-
 // url and prompt checker -----
 function isLink(str) {
   var urlPattern =
-    /^(?:(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/[\w-]*)*\/?)$/;   // Regular expression to match URLs with optional protocol
+    /^(?:(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/[\w-]*)*\/?)$/; // Regular expression to match URLs with optional protocol
 
   return urlPattern.test(str);
 }
 
-const search = ()=>{
-    let qurey = searchInput.value;
-    if (isLink(qurey)) {
-      var link = qurey.replace("http://", "") && qurey.replace("https://", "")
-      window.location.href =`https://${link}`;
+const search = () => {
+  let qurey = searchInput.value;
+  if (isLink(qurey)) {
+    var link = qurey.replace("http://", "") && qurey.replace("https://", "");
+    window.location.href = `https://${link}`;
   } else {
-      engineLink.submit();
+    engineLink.submit();
   }
-}
+};
 
 const submitBtn = document.getElementById("submitBtn");
 
@@ -120,13 +106,16 @@ engineLink.addEventListener("submit", search);
 
 // --------------------------------
 
+//  ? ---- All aplication section and popup blured bacground section
+var popupValue = 0;
+let popup = document.querySelectorAll(".popup");
+let popupbg = document.getElementById("popupbg");
+let allAppBox = document.getElementById("allAppPopup");
+let appbtn = document.getElementById("toggleApp");
+let togglesvg = document.getElementById("icr");
+let bottom = document.getElementById("bottom");
 
-
-
-
-const popup = document.querySelectorAll(".popup");
-const popupbg = document.getElementById("popupbg");
-closePopup = () => {
+const closePopup = () => {
   popup.forEach((e) => {
     e.classList.remove("show");
   });
@@ -136,34 +125,35 @@ closePopup = () => {
   mailToggle.style.zIndex = "";
   bottom.style.zIndex = "";
   mainSdiv.style.zIndex = "";
+
+  return;
 };
 popupbg.addEventListener("click", closePopup);
 
-// const lazyloading = document.querySelectorAll('.ab')
-const allAppBox = document.getElementById("allAppPopup");
-const appbtn = document.getElementById("toggleApp");
-const togglesvg = document.getElementById("icr");
-const bottom = document.getElementById("bottom");
-appbtn.addEventListener("click", async () => {
-  if (allAppBox.classList != "show") {
-    allAppBox.classList = "show";
-    togglesvg.classList = "rotate";
+function allAppShowHide() {
+  if (popupValue == 0) {
+    allAppBox.classList.add("show");
+    togglesvg.classList.add("rotate");
     popupbg.style.display = "block";
     bottom.style.zIndex = 3;
+    popupValue = 1;
   } else {
-    allAppBox.classList.remove("show");
-    // allAppBox.classList.add('hide');
-    togglesvg.classList.remove("rotate");
-    popupbg.style.display = "none";
-    bottom.style.zIndex = "";
+    closePopup();
   }
-});
+}
+appbtn.addEventListener("click", allAppShowHide);
 
 // mail popup section ----------
 const toggleMail = document.getElementById("ToggleMailBtn");
 const mailToggle = document.getElementById("mailToggle");
 const emails = document.querySelectorAll(".emails");
-var popupValue = 0;
+/** this value will should be 1 o higher to show blured background and should call
+ * ``` javascript
+ * closePopup();
+ * ```
+ * function to remove the blured background and that reset `popupValue` to `0`
+ */
+
 toggleMail.addEventListener("click", () => {
   if (popupValue != 1) {
     emails.forEach((e) => {
@@ -217,3 +207,5 @@ themeInput.forEach((inp) => {
     setTheme();
   });
 });
+
+console.log(popupValue);
