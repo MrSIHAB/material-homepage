@@ -1,28 +1,22 @@
 {
-    "name": "MyTab Pro",
-    "manifest_version": 3,
-    "version": "1.1.1",
-    "description": "A Professionals looking browser home or newtab with multi Search Engine Support.",    
-    "permissions":[
-        "storage"
-    ],
-    "action": {
-        "default_icon": "/image/logo.png"
-    },
-    "icons":{
-        "64": "/image/logo.png"
-    },
-    "chrome_url_overrides": {
-        "newtab": "index.html"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "script.js"
-            ]
-        }
-    ]
+  "name": "Material Hompage",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "description": "A professional NewTab/Homepage",
+  "permissions": ["storage"],
+  "action": {
+    "default_icon": "/image/icon.png"
+  },
+  "icons": {
+    "64": "/image/icon.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
+    }
+  ]
 }
