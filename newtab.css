@@ -419,7 +419,7 @@ input[name="theme"]:checked::after {
   backdrop-filter: blur(15px);
   height: 100%;
   width: 100%;
-  background: #aaa3;
+  background: #5553;
 }
 
 /* mail section /----- */
@@ -465,4 +465,57 @@ input[name="theme"]:checked::after {
 }
 .ToggleMailButton {
   z-index: 1;
+}
+
+
+/* credit section ---------------------------------------------- */
+.authorInfoButton{
+  aspect-ratio: 1/1;
+  width: 30px;
+  border-radius: 50px;
+  background-color: var(--themebg);
+  outline: 1px solid var(--themecolor);
+  border: 0;
+  box-shadow: inset 2px 2px 5px var(--liteThemecolor2);
+  font-weight: 900;
+  font-size: large;
+  color: #123a;
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+}
+.creditbox{
+  display: none;/* ! remove while re developing*/
+  z-index: 1;
+  height: 400px;
+  width: 600px;
+  position: absolute;
+  background: #dfd9;
+  backdrop-filter: blur(100px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: 20px 0 100px 50px #4565 ;
+}
+.creditbox .clossBtn{
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  outline: 0;
+  border: 0;
+  background: var(--themecolor);
+  color: white;
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+}
+.creditbox h3{
+  text-align: center;
+}
+/* todo remove this popupbg after completation  */
+#popupbg{
+  /* display: block; */
 }
