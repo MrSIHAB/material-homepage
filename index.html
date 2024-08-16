@@ -85,7 +85,6 @@
             </div>
           </div>
         </div>
-       
       </div>
     </div>
 
@@ -108,11 +107,7 @@
         placeholder="Search somethig or type an URL"
         autofocus="true"
       />
-      <input
-	type="hidden"
-	name="source"
-	value="eigfa.material_homepage"
-      />
+      <input type="hidden" name="source" value="eigfa.material_homepage" />
       <button type="button" id="submitBtn" class="searchIcon">
         <svg
           width="30"
@@ -595,12 +590,41 @@
       </div>
     </div>
 
-     <!-- * author credit button  -->
-     <button class="authorInfoButton" onclick="showAuthorInfo()" title="credit">&quest;</button>
-     <div class="creditbox">
-      <h3>Credit</h3>
-      <button class="clossBtn">&cross;</button>
-     </div>
+    <!-- * author credit button  -->
+    <button class="authorInfoButton" id="authorInfoButton" title="About">
+      &excl;
+    </button>
+    <div class="creditbox" id="aboutbox">
+      <h3>About</h3>
+      <button class="clossBtn" id="aboutCloseBtn">&cross;</button>
+      <div class="description">
+        <p>
+          Material_homepage is a newtab extension to ensure the flexibility of
+          choosing search engine. This is a open source project of Mine. There
+          is no risk at all in this extension. The source code is available in
+          github. Here's some minimal overview of this extension. Thsi extension
+          is minimal designed with no distruction. Freshly designed for focus
+          mode. I've added all apps section where maximum populer apps is
+          available. More populer apps and devmode will be available soon.
+          Custom shortcut is not available right now. But I've planned to bring
+          that while we get strong user support. I've Added quick mail section
+          to easily check your gmail, yahoo mail, outlook and hotmail.
+        </p>
+      </div>
+      <hr style="width: 90%; margin: auto; border: 1px solid var(--themebg)" />
+      <div class="credit">
+        <span class="key">Developed by</span>:
+        <a href="https://github.com/Mrsihab">Shoaib Hossain</a>
+        <span class="key">From</span>:
+        <p>Bangladesh</p>
+        <span class="key">Portfolio</span>:
+        <a href="https://sbstudio.netlify.app">SBStudio</a>
+        <span class="key">Source Code</span>:
+        <a href="https://github.com/Mrsihab/material-homepage">Github</a>
+        <span class="key">Contact</span>:
+        <a href="mailto:MrSIHAB@hotmail.com">MrSIHAB@hotmail.com</a>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

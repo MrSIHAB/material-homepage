@@ -1,5 +1,5 @@
 const searchEngine = document.getElementById("searchEngine");
-searchEngine.style.borderBottomRightRadius = "25px";
+// searchEngine.style.borderBottomRightRadius = "25px";
 var engineLink = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
 const body = document.querySelector("body");
@@ -125,6 +125,7 @@ const closePopup = () => {
   mailToggle.style.zIndex = "";
   bottom.style.zIndex = "";
   mainSdiv.style.zIndex = "";
+  aboutBox.style.display = "none";
 
   return;
 };
@@ -209,3 +210,14 @@ themeInput.forEach((inp) => {
 });
 
 console.log(popupValue);
+
+//  -----------------------------------------------------------------  About me / credit section
+const authorInfoButton = document.getElementById("authorInfoButton");
+const aboutBox = document.getElementById("aboutbox");
+const aboutCloseBtn = document.getElementById("aboutCloseBtn");
+
+authorInfoButton.addEventListener("click", () => {
+  aboutBox.style.display = "block";
+  popupbg.style.display = "block";
+});
+aboutCloseBtn.addEventListener("click", closePopup);

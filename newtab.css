@@ -467,9 +467,8 @@ input[name="theme"]:checked::after {
   z-index: 1;
 }
 
-
 /* credit section ---------------------------------------------- */
-.authorInfoButton{
+.authorInfoButton {
   aspect-ratio: 1/1;
   width: 30px;
   border-radius: 50px;
@@ -484,9 +483,8 @@ input[name="theme"]:checked::after {
   bottom: 25px;
   left: 25px;
 }
-.creditbox{
-  display: none;/* ! remove while re developing*/
-  z-index: 1;
+.creditbox {
+  display: none;
   height: 400px;
   width: 600px;
   position: absolute;
@@ -498,9 +496,10 @@ input[name="theme"]:checked::after {
   transform: translate(-50%, -50%);
   padding: 1rem;
   border-radius: 30px;
-  box-shadow: 20px 0 100px 50px #4565 ;
+  box-shadow: 20px 0 100px 50px #4565;
+  z-index: 2;
 }
-.creditbox .clossBtn{
+.creditbox .clossBtn {
   width: 30px;
   aspect-ratio: 1/1;
   border-radius: 50px;
@@ -509,13 +508,31 @@ input[name="theme"]:checked::after {
   background: var(--themecolor);
   color: white;
   position: absolute;
-  top: .5rem;
-  right: .5rem;
+  top: 0.5rem;
+  right: 0.5rem;
 }
-.creditbox h3{
+.creditbox h3 {
   text-align: center;
 }
-/* todo remove this popupbg after completation  */
-#popupbg{
-  /* display: block; */
+.creditbox .description {
+  margin: 1.5rem 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+.creditbox .credit {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 35% 30px 1fr;
+  font-size: 18px;
+  margin: 0.5rem;
+  margin-top: 2rem;
+}
+.creditbox .credit .key {
+  color: var(--themecolor);
+  font-weight: bolder;
+}
+.creditbox .credit a {
+  color: var(--themecolor);
+  font-weight: 500;
+  text-decoration: none;
 }
