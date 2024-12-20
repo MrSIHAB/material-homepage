@@ -36,6 +36,9 @@ searchEngine.addEventListener("change", async () => {
   } else if (selectLink == "yahoo") {
     engineLink.action = "https://search.yahoo.com/search";
     searchInput.name = "p";
+  } else if (selectLink == "youtube") {
+    engineLink.action = "https://www.youtube.com/results";
+    searchInput.name = "search_query";
   } else {
     engineLink.action = "https://www.google.com/search";
     searchInput.name = "q";
@@ -209,8 +212,6 @@ themeInput.forEach((inp) => {
   });
 });
 
-console.log(popupValue);
-
 //  -----------------------------------------------------------------  About me / credit section
 const authorInfoButton = document.getElementById("authorInfoButton");
 const aboutBox = document.getElementById("aboutbox");
@@ -221,3 +222,91 @@ authorInfoButton.addEventListener("click", () => {
   popupbg.style.display = "block";
 });
 aboutCloseBtn.addEventListener("click", closePopup);
+
+// ? Application Shortcut section -----------------------------
+
+/**
+ * To save a new app in shortcut list.
+ * @param { * } option new app's info
+ */
+const saveNewApp = async (title, link, icon) => {
+  let existingApps = await getAllApp();
+  if (!existingApps) {
+    existingApps = [];
+  }
+  await existingApps.push({ title, link, icon });
+  localStorage.setItem("apps", JSON.stringify(existingApps));
+};
+/**
+ * This function will return the saved apps collection as array.
+ *
+ * @returns Array[title, link, icon]
+ */
+const getAllApp = async () => {
+  const result = await JSON.parse(localStorage.getItem("apps"));
+  return result;
+};
+
+/**
+ * Parse a link and retrns baseUrl domain.
+ *
+ * @param {*} url
+ * @returns Base URL
+ */
+const baseUrl = (url) => {
+  const link = document.createElement("a");
+  link.href = url;
+  return link.origin;
+};
+
+const shortcutApp = async () => {
+  const shortcutSection = document.getElementById("shortcutApp");
+  const allApps = await getAllApp();
+
+  /**
+   * Making a embaded list of shortcut applications.
+   * It will return plus icon if there is no application added
+   */
+  let embadedApps = " ";
+
+  if (allApps != null) {
+    embadedApps += allApps
+      .map(
+        (value, index) => `
+      <div class="everyShortcut">
+        <a href="${value.link}?source=https://github.com/mrsihab">
+          <img 
+            src="${baseUrl(value.link)}/favicon.ico" 
+            alt="" 
+            class="icon" 
+            onerror="image/web.png" 
+          />
+        </a>
+        <h6 class="title">${value.title}</h6>
+      </div>
+    `
+      )
+      .join("");
+  }
+
+  if (!allApps || allApps.length < 20) {
+    embadedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
+  }
+
+  shortcutSection.innerHTML = embadedApps;
+
+  // Listening plus buutton click
+  const addAppBtton = document.getElementById("addShortcut");
+
+  addAppBtton.addEventListener("click", () => {
+    // todo: Popup a form to save shortcuts.
+    // const container = document.createElement("div")
+    // container
+  });
+};
+
+shortcutApp();
+
+// saveNewApp("shoaib", "https://google.com", "11nono");
+
+// localStorage.clear();
