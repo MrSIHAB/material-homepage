@@ -2,6 +2,7 @@ const searchEngine = document.getElementById("searchEngine");
 // searchEngine.style.borderBottomRightRadius = "25px";
 var engineLink = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
+const container = document.getElementById("addAppContainer");
 const body = document.querySelector("body");
 body.classList = localStorage.getItem("theme");
 
@@ -129,6 +130,8 @@ const closePopup = () => {
   bottom.style.zIndex = "";
   mainSdiv.style.zIndex = "";
   aboutBox.style.display = "none";
+  container.style.display = "none";
+  container.style.zIndex = -1;
 
   return;
 };
@@ -229,12 +232,12 @@ aboutCloseBtn.addEventListener("click", closePopup);
  * To save a new app in shortcut list.
  * @param { * } option new app's info
  */
-const saveNewApp = async (title, link, icon) => {
+const saveNewApp = async (title, link) => {
   let existingApps = await getAllApp();
   if (!existingApps) {
     existingApps = [];
   }
-  await existingApps.push({ title, link, icon });
+  await existingApps.push({ title, link });
   localStorage.setItem("apps", JSON.stringify(existingApps));
 };
 /**
@@ -258,8 +261,17 @@ const baseUrl = (url) => {
   link.href = url;
   return link.origin;
 };
+/**
+ * Check if the link include Http or not. If not included, It will include one.
+ * @param {*} url
+ * @returns Valid Url
+ */
+function correctUrl(url) {
+  if (url.includes("https://") || url.includes("http://")) return url;
+  return `https://${url}`;
+}
 
-const shortcutApp = async () => {
+const shortcutAppDisplay = async () => {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
 
@@ -274,12 +286,14 @@ const shortcutApp = async () => {
       .map(
         (value, index) => `
       <div class="everyShortcut">
-        <a href="${value.link}?source=https://github.com/mrsihab">
+        <div class="threeDot" index="${index}">
+          <img src="svg/three-dots.svg" />
+        </div>
+        <a href="${correctUrl(value.link)}?source=https://github.com/mrsihab">
           <img 
-            src="${baseUrl(value.link)}/favicon.ico" 
+            src="https://favicon.im/${value.link}?larger=true" 
             alt="" 
             class="icon" 
-            onerror="image/web.png" 
           />
         </a>
         <h6 class="title">${value.title}</h6>
@@ -289,24 +303,52 @@ const shortcutApp = async () => {
       .join("");
   }
 
-  if (!allApps || allApps.length < 20) {
+  if (!allApps || allApps.length < 16) {
     embadedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
   }
 
   shortcutSection.innerHTML = embadedApps;
 
+  // resolving images
+  // const icons = document.querySelectorAll(".icon")
+  // icons.forEach((value)=>{
+  //   value.
+  // })
+
   // Listening plus buutton click
   const addAppBtton = document.getElementById("addShortcut");
 
-  addAppBtton.addEventListener("click", () => {
-    // todo: Popup a form to save shortcuts.
-    // const container = document.createElement("div")
-    // container
+  return addAppBtton.addEventListener("click", () => {
+    container.style.display = "block";
+    container.style.zIndex = 2;
+    popupbg.style.zIndex = 1;
+    popupbg.style.display = "block";
+
+    const newShortcutForm = document.getElementById("newShortcutForm");
+    return newShortcutForm.addEventListener("submit", () => {
+      const title = document.getElementById("shortcutTitle").value;
+      const url = document.getElementById("shortcutLink").value;
+      saveNewApp(title, url);
+      title.value = "";
+      url.value = "";
+      closePopup();
+      return shortcutAppDisplay();
+    });
   });
 };
 
-shortcutApp();
+shortcutAppDisplay();
+
+function onErrorAndLoading(param) {
+  param.src = "image/web.png";
+}
 
 // saveNewApp("shoaib", "https://google.com", "11nono");
+
+// localStorage.clear();
+// container.style.display = "block";
+// container.style.zIndex = 2;
+// popupbg.style.zIndex = 1;
+// popupbg.style.display = "block";
 
 // localStorage.clear();
