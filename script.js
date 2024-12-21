@@ -309,12 +309,6 @@ const shortcutAppDisplay = async () => {
 
   shortcutSection.innerHTML = embadedApps;
 
-  // resolving images
-  // const icons = document.querySelectorAll(".icon")
-  // icons.forEach((value)=>{
-  //   value.
-  // })
-
   // Listening plus buutton click
   const addAppBtton = document.getElementById("addShortcut");
 
@@ -324,31 +318,20 @@ const shortcutAppDisplay = async () => {
     popupbg.style.zIndex = 1;
     popupbg.style.display = "block";
 
-    const newShortcutForm = document.getElementById("newShortcutForm");
-    return newShortcutForm.addEventListener("submit", () => {
-      const title = document.getElementById("shortcutTitle").value;
-      const url = document.getElementById("shortcutLink").value;
-      saveNewApp(title, url);
-      title.value = "";
-      url.value = "";
-      closePopup();
-      return shortcutAppDisplay();
-    });
+    return;
   });
 };
-
 shortcutAppDisplay();
 
-function onErrorAndLoading(param) {
-  param.src = "image/web.png";
-}
-
-// saveNewApp("shoaib", "https://google.com", "11nono");
-
-// localStorage.clear();
-// container.style.display = "block";
-// container.style.zIndex = 2;
-// popupbg.style.zIndex = 1;
-// popupbg.style.display = "block";
+const newShortcutForm = document.getElementById("newShortcutForm");
+newShortcutForm.addEventListener("submit", () => {
+  const title = document.getElementById("shortcutTitle").value;
+  const url = document.getElementById("shortcutLink").value;
+  saveNewApp(title, url);
+  title.value = "";
+  url.value = "";
+  closePopup();
+  return;
+});
 
 // localStorage.clear();

@@ -408,13 +408,16 @@ section#addAppContainer #shortcutSaveBtn:hover {
   top: -30%;
   right: -35%;
   aspect-ratio: 1/1;
-  /* width: 1rem;
-  height: 1rem; */
-  border-radius: 50px;
+  border-radius: 30px;
   padding: 3px;
+  opacity: 0;
+  transition: all 200ms;
 }
 .everyShortcut .threeDot:hover {
   background-color: #fff9;
+}
+.everyShortcut:hover > .threeDot {
+  opacity: 1;
 }
 
 /* bottom section --------- */
