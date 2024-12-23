@@ -240,6 +240,17 @@ const saveNewApp = async (title, link) => {
   await existingApps.push({ title, link });
   localStorage.setItem("apps", JSON.stringify(existingApps));
 };
+
+/**
+ * To remove a shortcut by it's index.
+ * @param {*} index
+ */
+const deleteApp = async (index) => {
+  const existingApps = await getAllApp();
+  existingApps.splice(index, 1);
+  localStorage.setItem("apps", JSON.stringify(existingApps));
+};
+
 /**
  * This function will return the saved apps collection as array.
  *
@@ -316,19 +327,29 @@ const shortcutAppDisplay = async () => {
   // Listening plus buutton click
   const addAppBtton = document.getElementById("addShortcut");
   const dotBtns = document.querySelectorAll(".threeDot");
-  // const edits = document.querySelectorAll("editShortcut"); // todo
-  // const deletes = document.querySelectorAll("deleteShortcut"); // todo
+  // const edits = document.querySelectorAll(".editShortcut"); // todo
+  const deletes = document.querySelectorAll(".deleteShortcut");
+
+  for (const element of deletes) {
+    element.addEventListener("click", (e) => {
+      const index = element.parentElement.getAttribute("index");
+      deleteApp(index);
+      location.reload();
+    });
+  }
 
   for (const btn of dotBtns) {
     btn.addEventListener("focus", () => {
       btn.parentElement.classList.add("showOptions");
     });
-    btn.addEventListener("blur", () => {
-      btn.parentElement.classList.remove("showOptions");
+    btn.addEventListener("focusout", (e) => {
+      setTimeout(() => {
+        btn.parentElement.classList.remove("showOptions");
+      }, 200);
     });
   }
 
-  return addAppBtton.addEventListener("click", () => {
+  addAppBtton.addEventListener("click", () => {
     container.style.display = "block";
     container.style.zIndex = 2;
     popupbg.style.zIndex = 1;
@@ -336,18 +357,18 @@ const shortcutAppDisplay = async () => {
 
     return;
   });
+  return;
 };
 shortcutAppDisplay();
 
 const newShortcutForm = document.getElementById("newShortcutForm");
-newShortcutForm.addEventListener("submit", () => {
+newShortcutForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
   const title = document.getElementById("shortcutTitle").value;
   const url = document.getElementById("shortcutLink").value;
-  saveNewApp(title, url);
-  title.value = "";
-  url.value = "";
   closePopup();
-  return;
+  await saveNewApp(title, url);
+  location.reload();
 });
 
 // localStorage.clear();
