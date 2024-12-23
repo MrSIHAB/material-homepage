@@ -295,6 +295,7 @@ section.shortcutApp#shortcutApp {
   align-items: center;
   justify-content: center;
   width: 65vw;
+  width: 720px;
   margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
@@ -403,6 +404,8 @@ section#addAppContainer #shortcutSaveBtn:hover {
   text-overflow: ellipsis;
 }
 .everyShortcut .threeDot {
+  outline: 0;
+  border: 0;
   transform: rotate(90deg);
   position: absolute;
   top: -30%;
@@ -418,6 +421,27 @@ section#addAppContainer #shortcutSaveBtn:hover {
 }
 .everyShortcut:hover > .threeDot {
   opacity: 1;
+}
+.everyShortcut .threeDotOptions {
+  position: absolute;
+  background: #9999;
+  backdrop-filter: blur(7px);
+  display: none;
+  /* padding: 0.5rem 1rem; */
+  right: 0;
+  top: 0;
+  border-radius: 10px;
+  z-index: 1;
+}
+.everyShortcut.showOptions .threeDotOptions {
+  display: block;
+}
+.everyShortcut .threeDotOptions p {
+  font-weight: bold;
+  padding: 7px 15px;
+}
+.everyShortcut .threeDotOptions p:hover {
+  background-color: #ccc9;
 }
 
 /* bottom section --------- */

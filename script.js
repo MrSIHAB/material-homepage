@@ -286,8 +286,12 @@ const shortcutAppDisplay = async () => {
       .map(
         (value, index) => `
       <div class="everyShortcut">
-        <div class="threeDot" index="${index}">
+        <button class="threeDot">
           <img src="svg/three-dots.svg" />
+        </button>
+        <div class="threeDotOptions" index="${index}">
+          <p class="editShortcut">Edit</p>
+          <p class="deleteShortcut">Delete</p>
         </div>
         <a href="${correctUrl(value.link)}?source=https://github.com/mrsihab">
           <img 
@@ -311,6 +315,18 @@ const shortcutAppDisplay = async () => {
 
   // Listening plus buutton click
   const addAppBtton = document.getElementById("addShortcut");
+  const dotBtns = document.querySelectorAll(".threeDot");
+  // const edits = document.querySelectorAll("editShortcut"); // todo
+  // const deletes = document.querySelectorAll("deleteShortcut"); // todo
+
+  for (const btn of dotBtns) {
+    btn.addEventListener("focus", () => {
+      btn.parentElement.classList.add("showOptions");
+    });
+    btn.addEventListener("blur", () => {
+      btn.parentElement.classList.remove("showOptions");
+    });
+  }
 
   return addAppBtton.addEventListener("click", () => {
     container.style.display = "block";
