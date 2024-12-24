@@ -408,7 +408,7 @@ section#addAppContainer #shortcutSaveBtn:hover {
   border: 0;
   cursor: pointer;
   background-color: transparent;
-  transform: rotate(90deg);
+
   position: absolute;
   top: -30%;
   right: -35%;
@@ -417,6 +417,9 @@ section#addAppContainer #shortcutSaveBtn:hover {
   padding: 3px;
   opacity: 0;
   transition: all 200ms;
+}
+.everyShortcut .threeDot img {
+  transform: rotate(90deg);
 }
 .everyShortcut .threeDot:hover {
   background-color: #fff9;

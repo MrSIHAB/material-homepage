@@ -272,6 +272,7 @@ const baseUrl = (url) => {
   link.href = url;
   return link.origin;
 };
+
 /**
  * Check if the link include Http or not. If not included, It will include one.
  * @param {*} url
@@ -282,28 +283,82 @@ function correctUrl(url) {
   return `https://${url}`;
 }
 
+/**
+ * To show the form to Save, Edit and Update shortcuts.
+ * It takes `index` : `num` to edit and update any shortcut.
+ * It will update the index from the shortcut [array] with new updated values.
+ *
+ * Don't pass `index` while adding new shortcut. Instead, left it empty. After submitting, the handler will check
+ * for the index in form's attribte. if, not found, it will save new one instead of updating old one by index.
+ *
+ * This function will add a new attribut called index while this function will triggered from edit button with index parameter.
+ * If no index found and the function gets triggered from plus(adding new shortcut) button, It will remove the attribute `index`
+ * @param {*} index
+ * @returns
+ */
+const showForm = async (index) => {
+  container.style.display = "block";
+  container.style.zIndex = 2;
+  popupbg.style.zIndex = 1;
+  popupbg.style.display = "block";
+
+  if (!index) {
+    document.getElementById("shortcutTitle").value = "";
+    document.getElementById("shortcutLink").value = "";
+    return;
+  } else {
+    const existingApps = await getAllApp();
+    const { title, link } = existingApps[index];
+
+    document.getElementById("shortcutTitle").value = title;
+    document.getElementById("shortcutLink").value = link;
+  }
+
+  return;
+};
+
+/**
+ * As like saving a shortcut, this function updates(edits) existing shortcuts.
+ * index defines which number of custom shortcut will be updated by title & link.
+ *
+ * It just updates the index of array, page reloading or rendering should be done manally.
+ *
+ * @param {*} index : ShortcutArray[index]
+ * @param {*} title : newly updated title
+ * @param {*} link : newly updated link
+ */
+const UpdateEntry = async (index, title, link) => {
+  const existingApps = await getAllApp();
+  existingApps[index] = { title, link };
+  localStorage.setItem("apps", JSON.stringify(existingApps));
+};
+
+/**
+ * This function runs the custom shortcut appliction section.
+ *
+ * Upper helpler function will be intrigreted in this main function.
+ * After writting this function, this function will be called() immediately.
+ * @returns void
+ */
 const shortcutAppDisplay = async () => {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
 
-  /**
-   * Making a embaded list of shortcut applications.
-   * It will return plus icon if there is no application added
-   */
+  // Making a embaded list of shortcut applications and adding plus button after it.
   let embadedApps = " ";
-
   if (allApps != null) {
+    //  making a list of embaded HTML elements with loop.
     embadedApps += allApps
       .map(
         (value, index) => `
       <div class="everyShortcut">
         <button class="threeDot">
           <img src="svg/three-dots.svg" />
+          <div class="threeDotOptions" index="${index}">
+            <p class="editShortcut">Edit</p>
+            <p class="deleteShortcut">Delete</p>
+          </div>
         </button>
-        <div class="threeDotOptions" index="${index}">
-          <p class="editShortcut">Edit</p>
-          <p class="deleteShortcut">Delete</p>
-        </div>
         <a href="${correctUrl(value.link)}?source=https://github.com/mrsihab">
           <img 
             src="https://favicon.im/${value.link}?larger=true" 
@@ -317,58 +372,74 @@ const shortcutAppDisplay = async () => {
       )
       .join("");
   }
-
   if (!allApps || allApps.length < 16) {
+    // * I'm limiting the custom shortcuts within 16 apps.
     embadedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
   }
-
-  shortcutSection.innerHTML = embadedApps;
+  shortcutSection.innerHTML = embadedApps; // Pushing to the specified containner.
 
   // Listening plus buutton click
   const addAppBtton = document.getElementById("addShortcut");
   const dotBtns = document.querySelectorAll(".threeDot");
-  // const edits = document.querySelectorAll(".editShortcut"); // todo
+  const edits = document.querySelectorAll(".editShortcut");
   const deletes = document.querySelectorAll(".deleteShortcut");
 
-  for (const element of deletes) {
-    element.addEventListener("click", (e) => {
-      const index = element.parentElement.getAttribute("index");
-      deleteApp(index);
-      location.reload();
+  // looping for edit buttons of all custom shortcuts
+  for (const edit of edits) {
+    edit.addEventListener("click", async () => {
+      const index = edit.parentElement.getAttribute("index");
+      newShortcutForm.setAttribute("index", index);
+      return await showForm(index);
     });
   }
 
+  // looping for delete buttons of all custom shortcuts
+  for (const element of deletes) {
+    element.addEventListener("click", async (e) => {
+      const index = element.parentElement.getAttribute("index");
+      await deleteApp(index);
+      return location.reload();
+    });
+  }
+
+  // looping for three dot buttons of all custom shortcuts to show `Edit` & `Delete` buttons.
   for (const btn of dotBtns) {
     btn.addEventListener("focus", () => {
       btn.parentElement.classList.add("showOptions");
     });
     btn.addEventListener("focusout", (e) => {
-      setTimeout(() => {
-        btn.parentElement.classList.remove("showOptions");
-      }, 200);
+      btn.parentElement.classList.remove("showOptions");
     });
   }
 
+  // While user click the plus button from the end shortcut section.
   addAppBtton.addEventListener("click", () => {
-    container.style.display = "block";
-    container.style.zIndex = 2;
-    popupbg.style.zIndex = 1;
-    popupbg.style.display = "block";
-
-    return;
+    newShortcutForm.removeAttribute("index");
+    showForm();
   });
   return;
 };
 shortcutAppDisplay();
 
+/**
+ * This is the eventListener for the form for **saving new Shortcuts** and **Editing existing shortcuts**.
+ * It will look for the `index` from the `form` tag. If it finds any index, it will understand that it was opend by editing and
+ * it will call the `UpdateElement()` function.
+ * If it won't find any `index` in form tag, it will call the `saveNewApp()` function.
+ */
 const newShortcutForm = document.getElementById("newShortcutForm");
 newShortcutForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const title = document.getElementById("shortcutTitle").value;
-  const url = document.getElementById("shortcutLink").value;
+  const link = document.getElementById("shortcutLink").value;
+  const index = newShortcutForm.getAttribute("index");
+
+  if (!index) {
+    await saveNewApp(title, link);
+  } else {
+    await UpdateEntry(index, title, link);
+  }
+
   closePopup();
-  await saveNewApp(title, url);
   location.reload();
 });
-
-// localStorage.clear();
