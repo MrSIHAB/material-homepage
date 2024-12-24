@@ -1,7 +1,7 @@
 {
   "name": "Material Hompage",
   "manifest_version": 3,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "id": "fenomffbdppaigofpjjbkminjoamhmbd",
   "description": "A professional NewTab/Homepage",
   "action": {
