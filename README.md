@@ -1,12 +1,10 @@
 <div align="Center">
     <h1>Material Homepage</h1>
-
 <div align="Center">
 <a href="https://addons.mozilla.org/en-US/firefox/addon/material-hompage/">
 <img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" />
 </a>
 </div>
-
     <a href="https://www.buymeacoffee.com/mrsihab"><img src="https://img.buymeacoffee.com/button-api/?text=Buy Sihab a coffee&emoji=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
     </a>
 </div>
