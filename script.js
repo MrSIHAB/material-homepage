@@ -361,7 +361,7 @@ const shortcutAppDisplay = async () => {
         </button>
         <a href="${correctUrl(value.link)}?source=https://github.com/mrsihab">
           <img 
-            src="https://favicon.im/${value.link}?larger=true" 
+            src="https://faviconfetcher.deno.dev?url=${value.link}" 
             alt="" 
             class="icon" 
           />
