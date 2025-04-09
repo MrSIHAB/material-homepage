@@ -343,6 +343,8 @@ const UpdateEntry = async (index, title, link) => {
 const shortcutAppDisplay = async () => {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
+  const faviconfetcher =
+    "https://favicon.im/" || "https://faviconfetcher.deno.dev?url=";
 
   // Making a embaded list of shortcut applications and adding plus button after it.
   let embadedApps = " ";
@@ -361,7 +363,7 @@ const shortcutAppDisplay = async () => {
         </button>
         <a href="${correctUrl(value.link)}?source=https://github.com/mrsihab">
           <img 
-            src="https://faviconfetcher.deno.dev?url=${value.link}" 
+            src="${faviconfetcher}${value.link}" 
             alt="" 
             class="icon" 
           />
