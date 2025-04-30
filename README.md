@@ -21,10 +21,22 @@ Ababil Professional is a browser **Home page** / **NewTab** extention for Profes
 
 This extention will provide you minimalist and distraction less home page. And you'll get Professional vibes which will make you more confident and productive.
 
-**_[Preview The Extension...](https://sbkingdom.netlify.app/ababil)_**  
+<!-- Preview Button -->
+<a href="https://mrsihab.github.io/material-homepage">
+<button style="width:75%;margin:auto;display:block;padding:10px;margin-bottom:10px;background:aqua;color:#121252;font-weight:bold;border-radius:15px;outline:0;border:1px solid #00ffff;position:relative;cursor:pointer;text-decoration:none;">
+  Preview Extention
+  <div style="font-size:25px;display:inline;;width:30px;float:right;font-weight:bold;padding:0;position:absolute;right:5px;top:3px">
+    &triangleright;
+  </div>
+</button>
+</a>
+
 ![Screenshots](./screenshots/main.png)  
 ![Screenshots](./screenshots/1st.png)  
+![Screenshots](./screenshots/2nd.png)  
+![Screenshots](./screenshots/3rd.png)  
 ![Screenshots](./screenshots/4th.png)  
+![Screenshots](./screenshots/5th.png)  
 ![Screenshots](./screenshots/6th.png)
 
 _You may see minor bugs while in preview page on Chromium Browser sich as Chrome, Edge, Safari, Brave._  
@@ -59,10 +71,10 @@ _You may see minor bugs while in preview page on Chromium Browser sich as Chrome
 
 If your browser dosen't support extension or you're a mobile user, then use this steps to use this home page in your browser.
 
-- Copy this link (https://sbkingdom.netlify.app/ababil)
+- Copy this link (https://mrsihab.github.io/material-homepage)
 
 ```copy
-https://sbkingdom.netlify.app/ababil
+https://mrsihab.github.io/material-homepage
 ```
 
 - Open you Browser > Settings > HomePage
@@ -78,24 +90,27 @@ Now you can use this extension from you Mobile Devices.
 
 ## Browser Add-on
 
-This extension is now available in Microsoft Edge browser add-on site.
-Edge users can easily install by clicking [Here](https://microsoftedge.microsoft.com/addons/detail/abbl-professional/gppedgcpmlnfphgohlcdmeejokcgipjb).
+This extension is available on Microsoft Edge webstore and Firefox webstore. Go and install theme from official webstore.
+For chrome, try [Manual Installation](#manual-installationzip)
 
 ## Manual Installation(ZIP):
 
-- Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip) of this repository.
+- Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip).
 
-> _you can also download the zip file from the top Code section_.
+  > _you can also download the zip file     from the top Code section_.
 
-- Open your browser and go to manage extension section or visit this [link](chrome://extension).
+- Now extract the file in a secure permanent folder.
 
-```
-yourBrowserName://extension
-```
+- Open your browser and go to `manage extension` section or visit this [link](chrome://extension) (1).
 
-- Find Developer option and turn it on.
+  ```
+  YourBrowserName://extension
+  ```
+- Trun on developer mode (2)
+- Click Load uppack and locat the folder (3).
+- Turn on the extention. (4)
 
-- Now click on the load unpacked option and locate the directory/ZIP file of extension.
+
 
 _Here is a chrome example for you..._
 ![chrome](/screenshots/chrome.png)
@@ -104,35 +119,33 @@ Congratulations. Your extension has been installed succesfully.
 
 ## Manual Installation (Git):
 
-- Open your Terminal/CMD and locate a directory For example Desktop:
+- Open your Terminal and locate a directory to keep the repo safely. For example Desktop:
 
-```bash
- cd c:\\desktop
-```
+  ```bash
+  # If windows:
+  cd ~\Documents\
 
-- Run this command to clone this github repository:
+  #if Linux/Mac:
+  cd ~/Documents/
+  ```
 
-```bash
-#if you have git installed
- git clone https://github.com/MrSIHAB/ababil-professional.git
-```
+- Clone the repository:
 
-##### Or run this if you have github installed.
+  ```bash
+  #if you have git installed
+  git clone https://github.com/MrSIHAB/material-homepage.git
+  ```
 
-```bash
-#if you have github desktop/CLI installed
- gh repo clone MrSIHAB/ababil-professional
-```
+  
 
-- Open your browser and go to manage extension section or visit this [link](chrome://extension).
+- Open your browser and go to `manage extension` section or visit this [link](chrome://extension) (1).
 
-```link
-yourBrowserName://extension
-```
-
-- Find Developer option and turn it on.
-
-- Now click on the load unpacked option and locate the directory/ZIP file of extension.
+  ```
+  YourBrowserName://extension
+  ```
+- Trun on developer mode (2)
+- Click Load uppack and locat the folder (3).
+- Turn on the extention. (4)
 
 _Here is a chrome example for you..._
 ![chrome](/screenshots/chrome.png)
