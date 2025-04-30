@@ -1,4 +1,5 @@
 const searchEngine = document.getElementById("searchEngine");
+const SEARCH_ENGINE_KEY = "engine"
 // searchEngine.style.borderBottomRightRadius = "25px";
 var engineLink = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
@@ -17,6 +18,30 @@ function setTheme() {
 
 // searchEngine Animation and designing --------//
 
+// initState
+function setSearchEngine(){
+  const currentEngine = localStorage.getItem(SEARCH_ENGINE_KEY)
+
+  searchEngine.value = currentEngine?? "google";
+
+  if (currentEngine == "google") {
+    engineLink.action = "https://www.google.com/search";
+    searchInput.name = "q";
+  } else if (currentEngine == "bing") {
+    engineLink.action = "https://www.bing.com/search";
+    searchInput.name = "q";
+  } else if (currentEngine == "yahoo") {
+    engineLink.action = "https://search.yahoo.com/search";
+    searchInput.name = "p";
+  } else if (currentEngine == "youtube") {
+    engineLink.action = "https://www.youtube.com/results";
+    searchInput.name = "search_query";
+  } else {
+    engineLink.action = "https://www.google.com/search";
+    searchInput.name = "q";
+  }
+}
+
 searchEngine.addEventListener("focusin", () => {
   searchEngine.style.borderBottomRightRadius = 0;
 });
@@ -28,22 +53,25 @@ searchEngine.addEventListener("change", async () => {
 
   // changing search engine link
   let selectLink = await searchEngine.value;
-  if (selectLink == "google") {
-    engineLink.action = "https://www.google.com/search";
-    searchInput.name = "q";
-  } else if (selectLink == "bing") {
-    engineLink.action = "https://www.bing.com/search";
-    searchInput.name = "q";
-  } else if (selectLink == "yahoo") {
-    engineLink.action = "https://search.yahoo.com/search";
-    searchInput.name = "p";
-  } else if (selectLink == "youtube") {
-    engineLink.action = "https://www.youtube.com/results";
-    searchInput.name = "search_query";
-  } else {
-    engineLink.action = "https://www.google.com/search";
-    searchInput.name = "q";
-  }
+  localStorage.setItem(SEARCH_ENGINE_KEY, selectLink)
+  setSearchEngine();
+
+  // if (selectLink == "google") {
+  //   engineLink.action = "https://www.google.com/search";
+  //   searchInput.name = "q";
+  // } else if (selectLink == "bing") {
+  //   engineLink.action = "https://www.bing.com/search";
+  //   searchInput.name = "q";
+  // } else if (selectLink == "yahoo") {
+  //   engineLink.action = "https://search.yahoo.com/search";
+  //   searchInput.name = "p";
+  // } else if (selectLink == "youtube") {
+  //   engineLink.action = "https://www.youtube.com/results";
+  //   searchInput.name = "search_query";
+  // } else {
+  //   engineLink.action = "https://www.google.com/search";
+  //   searchInput.name = "q";
+  // }
 });
 
 //  search box radias fixing ------------------
@@ -83,6 +111,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   dayLoader.innerText = days[day].toUpperCase();
 
   timeLoader.innerText = `${date}, ${months[month]}, ${year}`;
+
+  setSearchEngine();
 });
 
 // url and prompt checker -----
