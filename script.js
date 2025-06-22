@@ -1,5 +1,5 @@
 const searchEngine = document.getElementById("searchEngine");
-const SEARCH_ENGINE_KEY = "engine"
+const SEARCH_ENGINE_KEY = "engine";
 // searchEngine.style.borderBottomRightRadius = "25px";
 var engineLink = document.getElementById("searchForm");
 const searchInput = document.getElementById("search");
@@ -19,10 +19,10 @@ function setTheme() {
 // searchEngine Animation and designing --------//
 
 // initState
-function setSearchEngine(){
-  const currentEngine = localStorage.getItem(SEARCH_ENGINE_KEY)
+function setSearchEngine() {
+  const currentEngine = localStorage.getItem(SEARCH_ENGINE_KEY);
 
-  searchEngine.value = currentEngine?? "google";
+  searchEngine.value = currentEngine ?? "google";
 
   if (currentEngine == "google") {
     engineLink.action = "https://www.google.com/search";
@@ -53,7 +53,7 @@ searchEngine.addEventListener("change", async () => {
 
   // changing search engine link
   let selectLink = await searchEngine.value;
-  localStorage.setItem(SEARCH_ENGINE_KEY, selectLink)
+  localStorage.setItem(SEARCH_ENGINE_KEY, selectLink);
   setSearchEngine();
 
   // if (selectLink == "google") {
@@ -236,7 +236,7 @@ themeInput.forEach((inp) => {
       let colorValue = this.value;
       if (colorValue == "dark") {
         alert(
-          "Dark Mode is in under development. Please Use other theme to avoid color issues"
+          "Dark Mode is in under development. Please Use other theme to avoid color issues",
         );
       }
       localStorage.setItem("theme", colorValue);
@@ -373,8 +373,8 @@ const UpdateEntry = async (index, title, link) => {
 const shortcutAppDisplay = async () => {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
-  const faviconfetcher =
-    "https://favicon.im/" || "https://faviconfetcher.deno.dev?url=";
+  const faviconfetcher = "https://faviconfetcher.deno.dev?url=" ||
+    "https://favicon.im/";
 
   // Making a embaded list of shortcut applications and adding plus button after it.
   let embadedApps = " ";
@@ -400,13 +400,14 @@ const shortcutAppDisplay = async () => {
         </a>
         <h6 class="title">${value.title}</h6>
       </div>
-    `
+    `,
       )
       .join("");
   }
   if (!allApps || allApps.length < 16) {
     // * I'm limiting the custom shortcuts within 16 apps.
-    embadedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
+    embadedApps +=
+      `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
   }
   shortcutSection.innerHTML = embadedApps; // Pushing to the specified containner.
 
