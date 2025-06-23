@@ -391,7 +391,7 @@ const shortcutAppDisplay = async () => {
             <p class="deleteShortcut">Delete</p>
           </div>
         </button>
-        <a href="${correctUrl(value.link)}?source=https://github.com/mrsihab">
+        <a href="${correctUrl(value.link)}?source=github-MrSIHAB">
           <img 
             src="${faviconfetcher}${value.link}" 
             alt="" 
