@@ -17,5 +17,13 @@
     "gecko": {
       "id": "materialhome@mrsihab.github.io"
     }
-  }
+  },
+  "permissions": ["favicon"],
+  "web_accessible_resources": [
+    {
+      "resources": ["_favicon/*"],
+      "matches": ["<all_urls>"],
+      "extension_ids": ["*"]
+    }
+  ]
 }

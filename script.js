@@ -312,6 +312,12 @@ function correctUrl(url) {
   if (url.includes("https://") || url.includes("http://")) return url;
   return `https://${url}`;
 }
+function getFaviconUrl(pageUrl, size = 32) {
+  const url = new URL(chrome.runtime.getURL("/_favicon/"));
+  url.searchParams.set("pageUrl", pageUrl);
+  url.searchParams.set("size", size.toString());
+  return url.toString();
+}
 
 /**
  * To show the form to Save, Edit and Update shortcuts.
@@ -373,8 +379,9 @@ const UpdateEntry = async (index, title, link) => {
 const shortcutAppDisplay = async () => {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
-  const faviconfetcher = "https://faviconfetcher.deno.dev?url=" ||
-    "https://favicon.im/";
+  const faviconfetcher = "chrome://favicon2/?pageUrl=";
+  // "https://faviconfetcher.deno.dev?url=" ||
+  //   "https://favicon.im/";
 
   // Making a embaded list of shortcut applications and adding plus button after it.
   let embadedApps = " ";
@@ -382,7 +389,9 @@ const shortcutAppDisplay = async () => {
     //  making a list of embaded HTML elements with loop.
     embadedApps += allApps
       .map(
-        (value, index) => `
+        (value, index) => {
+          const httpUrl = correctUrl(value.link);
+          return `
       <div class="everyShortcut">
         <button class="threeDot">
           <img src="svg/three-dots.svg" />
@@ -391,16 +400,17 @@ const shortcutAppDisplay = async () => {
             <p class="deleteShortcut">Delete</p>
           </div>
         </button>
-        <a href="${correctUrl(value.link)}?source=github-MrSIHAB">
+        <a href="${httpUrl}?source=github-MrSIHAB">
           <img 
-            src="${faviconfetcher}${value.link}" 
+            src="${getFaviconUrl(httpUrl)}" 
             alt="" 
             class="icon" 
           />
         </a>
         <h6 class="title">${value.title}</h6>
       </div>
-    `,
+    `;
+        },
       )
       .join("");
   }
