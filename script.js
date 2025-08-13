@@ -400,7 +400,7 @@ const shortcutAppDisplay = async () => {
             <p class="deleteShortcut">Delete</p>
           </div>
         </button>
-        <a href="${httpUrl}?source=github-MrSIHAB">
+        <a href="${httpUrl}">
           <img 
             src="${getFaviconUrl(httpUrl)}" 
             alt="" 
