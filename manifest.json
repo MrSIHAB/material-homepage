@@ -1,21 +1,21 @@
 {
-  "name": "Material Hompage",
-  "manifest_version": 3,
-  "version": "1.2.1",
-  "id": "fenomffbdppaigofpjjbkminjoamhmbd",
-  "description": "A professional NewTab/Homepage",
-  "action": {
-    "default_icon": "/image/icon.png"
-  },
-  "icons": {
-    "64": "/image/icon.png"
-  },
-  "chrome_url_overrides": {
-    "newtab": "index.html"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "materialhome@mrsihab.github.io"
+    "name": "Material Homepage",
+    "manifest_version": 3,
+    "version": "1.2.1",
+    "id": "fenomffbdppaigofpjjbkminjoamhmbd",
+    "description": "A professional NewTab/Homepage",
+    "action": {
+        "default_icon": "/image/icon.png"
+    },
+    "icons": {
+        "64": "/image/icon.png"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "materialhome@mrsihab.github.io"
+        }
     }
-  }
 }
