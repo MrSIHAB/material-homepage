@@ -1,10 +1,9 @@
-import { Div, Nav, Span } from "./vanilla-ui/main.js";
-import { logo } from "./components/logo.js";
-import { Settings } from "./components/settings.js";
+import { Div } from "./vanilla-ui/main.js";
+import { SettingsButton, settingsPage } from "./settings/settings.js";
 
 export const App = () => {
-    return Div({
-        id: "root",
-        childs: [logo(), Settings()],
-    });
+  return Div({
+    id: "root",
+    childs: [SettingsButton, settingsPage],
+  });
 };
