@@ -86,14 +86,14 @@ window.addEventListener("DOMContentLoaded", async () => {
     "Monday",
     "Tuesday",
     "Wednesday",
-    "Thusday",
+    "Thursday",
     "Friday",
-    "Satureday",
+    "Saturday",
     "Sunday",
   ];
   const months = [
     "January",
-    "Frebruary",
+    "February",
     "March",
     "April",
     "May",
@@ -236,7 +236,7 @@ themeInput.forEach((inp) => {
       let colorValue = this.value;
       if (colorValue == "dark") {
         alert(
-          "Dark Mode is in under development. Please Use other theme to avoid color issues",
+          "Dark Mode is in under development. Please Use other theme to avoid color issues"
         );
       }
       localStorage.setItem("theme", colorValue);
@@ -373,8 +373,8 @@ const UpdateEntry = async (index, title, link) => {
 const shortcutAppDisplay = async () => {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
-  const faviconfetcher = "https://faviconfetcher.deno.dev?url=" ||
-    "https://favicon.im/";
+  const faviconfetcher =
+    "https://faviconfetcher.deno.dev?url=" || "https://favicon.im/";
 
   // Making a embaded list of shortcut applications and adding plus button after it.
   let embadedApps = " ";
@@ -400,14 +400,13 @@ const shortcutAppDisplay = async () => {
         </a>
         <h6 class="title">${value.title}</h6>
       </div>
-    `,
+    `
       )
       .join("");
   }
   if (!allApps || allApps.length < 16) {
     // * I'm limiting the custom shortcuts within 16 apps.
-    embadedApps +=
-      `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
+    embadedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
   }
   shortcutSection.innerHTML = embadedApps; // Pushing to the specified containner.
 
