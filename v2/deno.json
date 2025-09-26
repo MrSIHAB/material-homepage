@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "build": "deno bundle typescript/main.ts -o javascript/index.js",
+    "js": "deno task build",
+    "bundle": "deno task build"
+  },
+  "imports": {
+    "vanilla-ui": "../../vanilla-ui/main.ts"
+  }
+}
