@@ -1,14 +1,13 @@
 {
-  "name": "Material Hompage",
+  "name": "Material Homepage",
   "manifest_version": 3,
   "version": "1.2.2",
-  "id": "fenomffbdppaigofpjjbkminjoamhmbd",
   "description": "A professional NewTab/Homepage",
   "action": {
-    "default_icon": "/image/icon.png"
+    "default_icon": "/images/logo/logo.png"
   },
   "icons": {
-    "64": "/image/icon.png"
+    "64": "/images/logo/favicon.png"
   },
   "chrome_url_overrides": {
     "newtab": "index.html"
