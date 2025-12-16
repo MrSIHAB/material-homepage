@@ -1,4 +1,4 @@
-import "./svg.js";
+import "./svgLoader.js";
 import "./timeLoader.js";
 import * as Search from "./search.js";
 import * as Shortcuts from "./shortcuts.js";
