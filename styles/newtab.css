@@ -365,7 +365,7 @@ nav {
   transform: translate(-150%, -70%);
 }
 .mailService .outlook.show {
-  transform: translatey(-150%);
+  transform: translateY(-150%);
 }
 .mailService .yahoo.show {
   transform: translate(150%, -70%);
