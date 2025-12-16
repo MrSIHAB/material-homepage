@@ -15,10 +15,10 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 :root {
-  --themecolor: #00b3b3;
-  --liteThemecolor: #dbe9e2de;
-  --liteThemecolor2: #98fcf4;
-  --themebg: #00b4b44b;
+  --themeColor: #00b3b3;
+  --liteThemeColor: #dbe9e2de;
+  --liteThemeColor2: #98fcf4;
+  --themeBg: #00b4b44b;
   --bg: #def;
   --bg2: #bdf;
   --color: #474747;
@@ -31,55 +31,55 @@ body {
   color: var(--color);
 }
 body.skyblue {
-  --themecolor: #00b3b3;
-  --liteThemecolor: #dbe9e2de;
-  --liteThemecolor2: #98fcf4;
-  --themebg: #00b4b44b;
+  --themeColor: #00b3b3;
+  --liteThemeColor: #dbe9e2de;
+  --liteThemeColor2: #98fcf4;
+  --themeBg: #00b4b44b;
   --bg: #def;
   --bg2: #bdf;
   --color: #474747;
 }
 body.red {
-  --themecolor: #d40909;
-  --liteThemecolor: #e9dbdbde;
-  --liteThemecolor2: #fcbb98;
-  --themebg: #b400004b;
+  --themeColor: #d40909;
+  --liteThemeColor: #e9dbdbde;
+  --liteThemeColor2: #fcbb98;
+  --themeBg: #b400004b;
   --bg: rgb(255, 232, 221);
   --bg2: rgb(255, 187, 187);
   --color: #474747;
 }
 body.green {
-  --themecolor: #08cf61;
-  --liteThemecolor: #dce9dbde;
-  --liteThemecolor2: #98fca5;
-  --themebg: #00b43c4b;
+  --themeColor: #08cf61;
+  --liteThemeColor: #dce9dbde;
+  --liteThemeColor2: #98fca5;
+  --themeBg: #00b43c4b;
   --bg: rgb(221, 255, 230);
   --bg2: rgb(187, 255, 207);
   --color: #474747;
 }
 body.yellow {
-  --themecolor: #ece807;
-  --liteThemecolor: #e7e9dbde;
-  --liteThemecolor2: #f4fc98;
-  --themebg: #a2b4004b;
+  --themeColor: #ece807;
+  --liteThemeColor: #e7e9dbde;
+  --liteThemeColor2: #f4fc98;
+  --themeBg: #a2b4004b;
   --bg: rgb(255, 255, 221);
   --bg2: rgb(247, 255, 187);
   --color: #474747;
 }
 body.purple {
-  --themecolor: #800080;
-  --liteThemecolor: #e7dbe9de;
-  --liteThemecolor2: #d998fc;
-  --themebg: #ab00b44b;
+  --themeColor: #800080;
+  --liteThemeColor: #e7dbe9de;
+  --liteThemeColor2: #d998fc;
+  --themeBg: #ab00b44b;
   --bg: rgb(245, 221, 255);
   --bg2: rgb(249, 187, 255);
   --color: #474747;
 }
 body.dark {
-  --themecolor: #050005;
-  --liteThemecolor: #100028de;
-  --liteThemecolor2: #191a19;
-  --themebg: #2d2f2f4b;
+  --themeColor: #050005;
+  --liteThemeColor: #100028de;
+  --liteThemeColor2: #191a19;
+  --themeBg: #2d2f2f4b;
   --bg: rgb(1, 8, 15);
   --bg2: rgb(17, 18, 18);
   --color: #cecdcd;
@@ -91,7 +91,7 @@ svg {
   width: 100%;
 }
 .ic {
-  fill: var(--themecolor);
+  fill: var(--themeColor);
 }
 .ic-search {
   fill: var(--bg);
@@ -103,16 +103,16 @@ nav {
   margin-bottom: 1rem;
 }
 .brandName {
-  color: var(--themecolor);
+  color: var(--themeColor);
   font-size: 30px;
 }
 .brandName svg {
-  fill: var(--themecolor);
+  fill: var(--themeColor);
   max-height: 70px;
   max-width: 70px;
   padding: 0.7rem;
-  background-color: var(--liteThemecolor);
-  outline: 1px solid var(--themecolor);
+  background-color: var(--liteThemeColor);
+  outline: 1px solid var(--themeColor);
   border-radius: 35px;
 }
 
@@ -122,7 +122,7 @@ nav {
   /* outline: 2px solid; */
   margin-bottom: 1rem;
   padding: 5px;
-  color: var(--themecolor);
+  color: var(--themeColor);
 }
 .timeSection .dayBox {
   margin: auto;
@@ -154,9 +154,9 @@ nav {
   /* border: unset; */
 }
 #search {
-  border: 2px solid var(--themecolor);
+  border: 2px solid var(--themeColor);
   border-radius: 50px 0 0 50px;
-  background-color: var(--liteThemecolor);
+  background-color: var(--liteThemeColor);
   padding: 6px 15px;
   font-size: 1.3rem;
   width: 40vw;
@@ -167,14 +167,14 @@ nav {
   /* cursor: pointer; */
   padding: 6px;
   height: 100%;
-  background-color: var(--themecolor);
-  border: 2px solid var(--themecolor);
+  background-color: var(--themeColor);
+  border: 2px solid var(--themeColor);
 }
 
 #searchEngine {
-  border: 2px solid var(--themecolor);
+  border: 2px solid var(--themeColor);
   outline: 0;
-  background-color: var(--themecolor);
+  background-color: var(--themeColor);
   border-radius: 0 25px 25px 0;
   padding: 6px 15px;
   font-size: 1.3rem;
@@ -183,7 +183,7 @@ nav {
 
 #searchEngine option {
   color: #eeea;
-  background: var(--themecolor);
+  background: var(--themeColor);
 }
 
 /* bottom section --------- */
@@ -198,7 +198,7 @@ nav {
 #allAppPopup {
   /* display: none; */
   display: block;
-  background: linear-gradient(90deg, var(--themebg), var(--themebg));
+  background: linear-gradient(90deg, var(--themeBg), var(--themeBg));
   /* color: wheat; */
   overflow-y: scroll;
   padding: 0 1.5rem 1.5rem 1.5rem;
@@ -302,12 +302,12 @@ nav {
   height: 80vh;
   bottom: -0.8rem;
 }
-#allAppPopup.hide {
-  animation: popdown 0.5s ease-in-out forwards;
-}
+/* #allAppPopup.hide {
+  animation: popDown 0.5s ease-in-out forwards;
+} */
 
 #allAppPopup li:hover {
-  background-color: var(--liteThemecolor);
+  background-color: var(--liteThemeColor);
 }
 #allAppPopup li:hover img {
   filter: brightness(100%);
@@ -315,7 +315,7 @@ nav {
 
 /* popup bg --- */
 
-#popupbg {
+#popupBg {
   display: none;
   position: absolute;
   z-index: 1;
@@ -345,7 +345,7 @@ nav {
 .mailService div {
   height: 100%;
   width: 100%;
-  background: var(--themecolor);
+  background: var(--themeColor);
   position: absolute;
   border-radius: 50%;
   display: flex;

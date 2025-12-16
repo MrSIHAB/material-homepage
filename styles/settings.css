@@ -6,7 +6,7 @@
   top: 0;
   color: inherit;
 }
-#setting .settingicon {
+#setting .settingIcon {
   position: absolute;
   top: 0.3rem;
   right: 0.5rem;
@@ -16,19 +16,19 @@
   justify-content: center;
   border: 0;
   outline: 0;
-  background-color: var(--themecolor);
+  background-color: var(--themeColor);
   border-radius: 50%;
   padding: 7px;
   z-index: 1;
   box-shadow: 1px 1px 3px -1px #aaa5, inset 1px 1px 3px -1px var(--bg);
 }
-#setting .settingicon svg path {
+#setting .settingIcon svg path {
   fill: var(--bg);
 }
 #setting .settingPage {
   height: 100vh;
   overflow: scroll;
-  border-left: 1px solid var(--liteThemecolor2);
+  border-left: 1px solid var(--liteThemeColor2);
   background: var(--bg2);
   backdrop-filter: blur(10px);
   position: absolute;
@@ -59,7 +59,7 @@
   height: 40px;
   width: 40px;
   flex-wrap: wrap;
-  background-color: var(--themecolor);
+  background-color: var(--themeColor);
   border-radius: 50%;
   cursor: pointer;
   appearance: none;

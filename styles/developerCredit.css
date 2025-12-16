@@ -3,10 +3,10 @@
   aspect-ratio: 1/1;
   width: 30px;
   border-radius: 50px;
-  background-color: var(--themebg);
-  outline: 1px solid var(--themecolor);
+  background-color: var(--themeBg);
+  outline: 1px solid var(--themeColor);
   border: 0;
-  box-shadow: inset 2px 2px 5px var(--liteThemecolor2);
+  box-shadow: inset 2px 2px 5px var(--liteThemeColor2);
   font-weight: 900;
   font-size: large;
   color: #123a;
@@ -14,7 +14,7 @@
   bottom: 25px;
   left: 25px;
 }
-.creditbox {
+.creditBox {
   display: none;
   height: 400px;
   width: 600px;
@@ -30,27 +30,27 @@
   box-shadow: 20px 0 100px 50px #4565;
   z-index: 2;
 }
-.creditbox .clossBtn {
+.creditBox .closeButton {
   width: 30px;
   aspect-ratio: 1/1;
   border-radius: 50px;
   outline: 0;
   border: 0;
-  background: var(--themecolor);
+  background: var(--themeColor);
   color: white;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
 }
-.creditbox h3 {
+.creditBox h3 {
   text-align: center;
 }
-.creditbox .description {
+.creditBox .description {
   margin: 1.5rem 0.5rem;
   font-size: 14px;
   font-weight: 500;
 }
-.creditbox .credit {
+.creditBox .credit {
   margin: auto;
   display: grid;
   grid-template-columns: 35% 30px 1fr;
@@ -58,12 +58,12 @@
   margin: 0.5rem;
   margin-top: 2rem;
 }
-.creditbox .credit .key {
-  color: var(--themecolor);
+.creditBox .credit .key {
+  color: var(--themeColor);
   font-weight: bolder;
 }
-.creditbox .credit a {
-  color: var(--themecolor);
+.creditBox .credit a {
+  color: var(--themeColor);
   font-weight: 500;
   text-decoration: none;
 }

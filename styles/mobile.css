@@ -21,7 +21,7 @@
   }
 
   /* settings ----------- */
-  #setting .settingicon {
+  #setting .settingIcon {
     top: 0;
     right: 0;
     width: 30px;
@@ -33,7 +33,7 @@
     border-left: 0;
     width: 100vw;
   }
-  .settingWraper {
+  .settingWrapper {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -62,7 +62,7 @@
     height: 2rem;
   }
   #search {
-    border: 2px solid var(--themecolor);
+    border: 2px solid var(--themeColor);
     padding: 3px 9px;
     font-size: 12px;
     width: 60%;
@@ -73,10 +73,10 @@
   }
 
   /* app popup --------- */
-  #toggleApp{
+  #toggleApp {
     right: 30vw;
   }
-  #allAppPopup{
+  #allAppPopup {
     display: block;
   }
 

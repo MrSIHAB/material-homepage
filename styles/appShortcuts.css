@@ -58,17 +58,17 @@ section#addAppContainer .shortcutInput input {
   width: 100%;
   padding: 7px 1rem;
   border-radius: 10px;
-  border: 2px solid var(--themebg);
-  background-color: var(--liteThemecolor);
+  border: 2px solid var(--themeBg);
+  background-color: var(--liteThemeColor);
   font-weight: 500;
   font-size: medium;
 }
 section#addAppContainer .shortcutInput input:focus {
-  outline: 1px solid var(--themecolor);
+  outline: 1px solid var(--themeColor);
 }
 section#addAppContainer #shortcutSaveBtn {
   align-items: center;
-  background-color: var(--liteThemecolor);
+  background-color: var(--liteThemeColor);
   border-radius: 17px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
@@ -99,7 +99,7 @@ section#addAppContainer #shortcutSaveBtn {
 }
 
 section#addAppContainer #shortcutSaveBtn:hover {
-  background: var(--themecolor);
+  background: var(--themeColor);
   color: #f6f9fe;
 }
 
