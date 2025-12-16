@@ -513,16 +513,8 @@ export const tick = `<svg width="50" height="50" viewBox="0 0 50 50" fill="none"
 </svg>`;
 
 export const yahoo = `
-<svg xmlns="http://www.w3.org/2000/svg"
-aria-label="Yahoo!" role="img"
-viewBox="0 0 512 512"
-fill="#000000">
-<rect
-width="512" height="512"
-rx="15%"
-fill="#000000"/>
-<g fill="#000000">
-<path d="M203 404h-62l25-59-69-165h63l37 95 37-95h62m58 76h-69l62-148h69"/>
-<circle cx="303" cy="308" r="38"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Yahoo!" role="img" viewBox="0 0 512 512" fill="none">
+<rect width="512" height="512" rx="15%" fill="none"/>
+<path d="M203 404h-62l25-59-69-165h63l37 95 37-95h62m58 76h-69l62-148h69" />
+<circle cx="303" cy="308" r="38" />
 </svg>`;
