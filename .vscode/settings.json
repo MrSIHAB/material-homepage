@@ -2,12 +2,14 @@
   "cSpell.words": [
     "Anurati",
     "clipchamp",
-    "githab",
+    "cmax",
+    "cmin",
     "Hossain",
     "mrsihab",
     "Shoaib",
     "sihab",
     "stackoverflow",
     "Svgs"
-  ]
+  ],
+  "prettier.printWidth": 110
 }
