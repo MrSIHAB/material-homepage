@@ -7,22 +7,19 @@
 }
 #setting .settingIcon {
   position: absolute;
-  top: 0.3rem;
-  right: 0.5rem;
+  top: 0.5rem;
+  right: 0rem;
   width: 35px;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   border: 0;
   outline: 0;
-  background-color: var(--themeColor);
-  border-radius: 50%;
-  padding: 7px;
+  padding: 0;
   z-index: 1;
-  box-shadow: 1px 1px 3px -1px #aaa5, inset 1px 1px 3px -1px var(--bg);
+  background: var(--themeColor) transparent;
 }
-#setting .settingIcon svg path {
-  fill: var(--bg);
+#setting .settingIcon svg {
+  fill: transparent;
+  stroke: var(--themeColor);
 }
 #setting .settingPage {
   height: 100vh;

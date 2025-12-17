@@ -77,12 +77,12 @@ export function initUI() {
       const popupShown =
         mainSettingsDiv.style.zIndex && mainSettingsDiv.style.zIndex > 0;
       if (!popupShown) {
-        if (settingBody) settingBody.classList.add("show");
-        mainSettingsDiv.style.zIndex = 3;
+        settingBody.classList.add("show");
+        settingBody.style.zIndex = 3;
         popupBg.style.display = "block";
       } else {
         settingBody && settingBody.classList.remove("show");
-        mainSettingsDiv.style.zIndex = 0;
+        settingBody.style.zIndex = 0;
         popupBg.style.display = "none";
       }
     });
