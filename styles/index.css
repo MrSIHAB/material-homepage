@@ -46,7 +46,7 @@ nav {
   /* outline: 2px solid; */
   margin-bottom: 1rem;
   padding: 5px;
-  color: var(--themeColor);
+  color: var(--accent);
 }
 .timeSection .dayBox {
   margin: auto;
