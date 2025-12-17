@@ -20,11 +20,17 @@ nav {
   padding: 1rem;
   margin-bottom: 1rem;
 }
-.brandName {
+.brandLogo {
   color: var(--themeColor);
   font-size: 30px;
+  margin-left: 1rem;
+  display: inline-block;
 }
-.brandName svg {
+.brandLogo img {
+  max-height: 75px;
+  filter: drop-shadow(2px 2px 2px #0003);
+}
+.brandLogo svg {
   fill: var(--themeColor);
   max-height: 70px;
   max-width: 70px;
