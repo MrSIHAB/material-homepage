@@ -1,5 +1,6 @@
 import "./svgLoader.js";
 import "./timeLoader.js";
+import "./theme.js";
 import * as Search from "./search.js";
 import * as Shortcuts from "./shortcuts.js";
 import { closePopup, initUI } from "./ui.js";
