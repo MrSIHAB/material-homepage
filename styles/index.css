@@ -120,10 +120,8 @@ nav {
 }
 
 #allAppPopup {
-  /* display: none; */
   display: block;
   background: linear-gradient(90deg, var(--themeBg), var(--themeBg));
-  /* color: wheat; */
   overflow-y: scroll;
   padding: 0 1.5rem 1.5rem 1.5rem;
   border-radius: 15px;
@@ -147,7 +145,6 @@ nav {
   border: 0;
   outline: 0;
   height: 47px;
-  /* cursor: pointer; */
   border-radius: 50%;
   overflow: visible;
   z-index: 1;
@@ -206,29 +203,10 @@ nav {
   max-width: 34px;
 }
 
-/* replaced span with title to increasing view quality----- */
-/* #allAppPopup span{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: lighter;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-    color: initial;
-    max-height: 12px;
-    max-width: 100%;
-    padding: 0 3px;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-} */
-
 #allAppPopup.show {
   height: 80vh;
   bottom: -0.8rem;
 }
-/* #allAppPopup.hide {
-  animation: popDown 0.5s ease-in-out forwards;
-} */
 
 #allAppPopup li:hover {
   background-color: var(--liteThemeColor);

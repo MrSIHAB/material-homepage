@@ -10,7 +10,6 @@
   top: -5px;
 }
 section.shortcutApp#shortcutApp {
-  /* border: 2px solid gray; */
   align-items: center;
   justify-content: center;
   width: 65vw;
@@ -151,7 +150,6 @@ section#addAppContainer #shortcutSaveBtn:hover {
   background: #9999;
   backdrop-filter: blur(7px);
   display: none;
-  /* padding: 0.5rem 1rem; */
   right: 0;
   top: 0;
   border-radius: 10px;

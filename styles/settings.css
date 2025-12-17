@@ -1,6 +1,5 @@
 /* setting section == */
 #setting {
-  /* z-index: 2; */
   position: absolute;
   right: 0;
   top: 0;
@@ -64,7 +63,6 @@
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
-  /* overflow: hidden; */
 }
 .settingPage .settingBody .colors .themes[value="skyblue"] {
   background: #2acdf5;
