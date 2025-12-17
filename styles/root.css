@@ -11,72 +11,127 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 :root {
-  --themeColor: #00b3b3;
+  --accent: #00b3b3;
+  --background: #fff;
+  --liteAccent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
+  --liteBackground: color-mix(
+    in srgb,
+    var(--liteAccent) 20%,
+    var(--background) 80%
+  );
+  --textColor: #222;
+  /* --themeColor: #00b3b3;
   --liteThemeColor: #dbe9e2de;
   --liteThemeColor2: #98fcf4;
   --themeBg: #00b4b44b;
   --bg: #def;
   --bg2: #bdf;
-  --color: #474747;
+  --color: #474747; */
 }
 body {
-  background: linear-gradient(-90deg, var(--bg), var(--bg2));
+  background: linear-gradient(
+    90deg,
+    var(--background),
+    var(--liteBackground),
+    var(--liteBackground)
+  );
+  /* background: var(--liteBackground); */
   width: 100%;
   aspect-ratio: 20/9;
   overflow: hidden;
-  color: var(--color);
+  color: var(--textColor);
+  fill: var(--accent);
 }
 body.skyblue {
-  --themeColor: #00b3b3;
-  --liteThemeColor: #dbe9e2de;
-  --liteThemeColor2: #98fcf4;
-  --themeBg: #00b4b44b;
-  --bg: #def;
-  --bg2: #bdf;
-  --color: #474747;
+  --accent: #00b3b3;
 }
 body.red {
-  --themeColor: #d40909;
+  --accent: #d40909;
+  --background: #fff;
+  --liteAccent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
+  --liteBackground: color-mix(
+    in srgb,
+    var(--liteAccent) 20%,
+    var(--background) 80%
+  );
+  --textColor: #222;
+  /* --themeColor: #d40909;
   --liteThemeColor: #e9dbdbde;
   --liteThemeColor2: #fcbb98;
   --themeBg: #b400004b;
   --bg: rgb(255, 232, 221);
   --bg2: rgb(255, 187, 187);
-  --color: #474747;
+  --color: #474747; */
 }
 body.green {
-  --themeColor: #08cf61;
+  --accent: #08cf61;
+  --background: #fff;
+  --liteAccent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
+  --liteBackground: color-mix(
+    in srgb,
+    var(--liteAccent) 20%,
+    var(--background) 80%
+  );
+  --textColor: #222;
+  /* --themeColor: #08cf61;
   --liteThemeColor: #dce9dbde;
   --liteThemeColor2: #98fca5;
   --themeBg: #00b43c4b;
   --bg: rgb(221, 255, 230);
   --bg2: rgb(187, 255, 207);
-  --color: #474747;
+  --color: #474747; */
 }
 body.yellow {
-  --themeColor: #ece807;
+  --accent: #fa0;
+  --background: #fff;
+  --liteAccent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
+  --liteBackground: color-mix(
+    in srgb,
+    var(--liteAccent) 20%,
+    var(--background) 80%
+  );
+  --textColor: #222;
+  /* --themeColor: #ece807;
   --liteThemeColor: #e7e9dbde;
   --liteThemeColor2: #f4fc98;
   --themeBg: #a2b4004b;
   --bg: rgb(255, 255, 221);
   --bg2: rgb(247, 255, 187);
-  --color: #474747;
+  --color: #474747; */
 }
 body.purple {
-  --themeColor: #800080;
+  --accent: #800080;
+  --background: #fff;
+  --liteAccent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
+  --liteBackground: color-mix(
+    in srgb,
+    var(--liteAccent) 20%,
+    var(--background) 80%
+  );
+  --textColor: #222;
+  /* --themeColor: #800080;
   --liteThemeColor: #e7dbe9de;
   --liteThemeColor2: #d998fc;
   --themeBg: #ab00b44b;
   --bg: rgb(245, 221, 255);
   --bg2: rgb(249, 187, 255);
-  --color: #474747;
+  --color: #474747; */
 }
 body.dark {
-  --themeColor: #050005;
+  --accent: #050005;
+  --background: #fff;
+  --liteAccent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
+  --liteBackground: color-mix(
+    in srgb,
+    var(--liteAccent) 20%,
+    var(--background) 80%
+  );
+  --textColor: #222;
+  /* --themeColor: #050005;
   --liteThemeColor: #100028de;
   --liteThemeColor2: #191a19;
   --themeBg: #2d2f2f4b;
   --bg: rgb(1, 8, 15);
   --bg2: rgb(17, 18, 18);
-  --color: #cecdcd;
+  --color: #cecdcd; */
 }
