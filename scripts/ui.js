@@ -4,8 +4,8 @@ export function closePopup() {
   popup.forEach((e) => e.classList.remove("show"));
   const popupBg = document.getElementById("popupBg");
   if (popupBg) popupBg.style.display = "none";
-  const toggleSvg = document.getElementById("icr");
-  if (toggleSvg) toggleSvg.classList.remove("rotate");
+  const toggleAppButton = document.getElementById("toggleApp");
+  toggleAppButton.classList.remove("rotate");
   const mailToggle = document.getElementById("mailToggle");
   if (mailToggle) mailToggle.style.zIndex = "";
   const bottom = document.getElementById("bottom");
@@ -23,13 +23,13 @@ export function closePopup() {
 
 export function allAppShowHide() {
   const allAppBox = document.getElementById("allAppPopup");
-  const toggleSvg = document.getElementById("icr");
   const popupBg = document.getElementById("popupBg");
   const bottom = document.getElementById("bottom");
+  const toggleAppButton = document.getElementById("toggleApp");
   if (!allAppBox) return;
   if (!allAppBox.classList.contains("show")) {
     allAppBox.classList.add("show");
-    if (toggleSvg) toggleSvg.classList.add("rotate");
+    toggleAppButton.classList.add("rotate");
     if (popupBg) popupBg.style.display = "block";
     if (bottom) bottom.style.zIndex = 3;
   } else {
@@ -38,7 +38,7 @@ export function allAppShowHide() {
 }
 
 export function initUI() {
-  const appButton = document.getElementById("toggleApp");
+  const toggleAppButton = document.getElementById("toggleApp");
   const popupBg = document.getElementById("popupBg");
   const toggleMail = document.getElementById("ToggleMailBtn");
   const mailToggle = document.getElementById("mailToggle");
@@ -51,7 +51,8 @@ export function initUI() {
   const aboutBox = document.getElementById("aboutBox");
   const aboutCloseBtn = document.getElementById("aboutCloseBtn");
 
-  if (appButton) appButton.addEventListener("click", allAppShowHide);
+  if (toggleAppButton)
+    toggleAppButton.addEventListener("click", allAppShowHide);
   if (popupBg) popupBg.addEventListener("click", closePopup);
 
   if (toggleMail) {

@@ -121,48 +121,55 @@ nav {
 
 #allAppPopup {
   display: block;
-  background: linear-gradient(90deg, var(--themeBg), var(--themeBg));
-  overflow-y: scroll;
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  /* background: linear-gradient(90deg, var(--themeBg), var(--themeBg)); */
   border-radius: 15px;
+  height: 0;
+  width: 400px;
+  max-width: 90vw;
+  position: relative;
+  /* bottom: -8rem; */
+  transition: all 0.5s ease-in-out;
+  bottom: 1.7rem;
+  overflow: hidden;
+}
+#allAppPopup.show {
+  overflow-y: scroll;
+  height: 80vh;
   box-shadow: -0.5rem 0.5rem 2rem -0.5rem #0129,
     inset 2rem -2rem 5rem -1rem #ffd7;
-  height: 1vh;
-  width: 54vh;
-  position: relative;
-  bottom: -8rem;
-  transition: all 0.5s ease-in-out;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
+
 ::-webkit-scrollbar {
   width: 0;
 }
 
 #toggleApp {
-  position: relative;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
   background: transparent;
-  padding: 0 1rem 0 0;
-  float: right;
+  overflow: hidden;
   border: 0;
   outline: 0;
-  height: 47px;
+  height: 50px;
   border-radius: 50%;
-  overflow: visible;
   z-index: 1;
   transition: all 1s ease-out;
-}
-#toggleApp #icr {
   rotate: 0deg;
-  transition: all 0.5s;
-}
-#toggleApp #icr.rotate {
-  rotate: 180deg;
-}
-#toggleApp .ic {
+  transition: all 0.5s step-end;
   filter: brightness(100%);
   transition: all 1s;
 }
-#toggleApp:hover .ic {
+#toggleApp.rotate {
+  rotate: 180deg;
+}
+#toggleApp:hover {
   filter: brightness(80%);
+}
+#toggleApp svg {
+  fill: var(--themeColor);
+  background-color: var(--bg);
 }
 
 /* apps --------- */
@@ -195,17 +202,14 @@ nav {
   text-decoration: none;
 }
 
-#allAppPopup img {
+#allAppPopup svg {
   filter: brightness(90%), drop-shadow(2px 2px 3px #0007);
-  transition: all 500ms;
+  transition: all 100ms;
   width: 100%;
-  max-height: 34px;
-  max-width: 34px;
-}
-
-#allAppPopup.show {
-  height: 80vh;
-  bottom: -0.8rem;
+  max-height: 100%;
+  fill: var(--themeColor);
+  stroke-dashoffset: var(--themeColor);
+  /* max-width: 34px; */
 }
 
 #allAppPopup li:hover {
@@ -225,10 +229,10 @@ nav {
   left: 0;
   bottom: 0;
   left: 0;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(0px);
   height: 100%;
   width: 100%;
-  background: #5553;
+  background: #aaa5;
 }
 
 /* mail section /----- */
