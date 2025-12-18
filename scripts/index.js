@@ -5,6 +5,7 @@ import * as Search from "./search.js";
 import * as Shortcuts from "./shortcuts.js";
 import { closePopup, initUI } from "./ui.js";
 import { setTheme } from "./theme.js";
+import { applyTheme } from "./themeGenerator.js";
 
 // Minimal bootstrap wiring for the page behavior.
 // All behavior is delegated to the modules: `search.js`, `shortcuts.js`, `ui.js`.
@@ -50,4 +51,20 @@ if (newShortcutForm) {
 }
 
 // Initially setting theme variables for css
-setTheme();
+// setTheme();
+(async function () {
+  const colors = [
+    "#ff0000",
+    "#00ffff",
+    "#00ffaa",
+    "#800080",
+    "#ffff00",
+    "#40ff40",
+    "#ff00ff",
+    "#ffaa00",
+    "#ffffff",
+    "#000000",
+  ];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  applyTheme(color);
+})();
