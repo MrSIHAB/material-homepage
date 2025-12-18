@@ -44,17 +44,18 @@
 
   <!--  Search Bar with form as wrapper ----------//--------//----- -->
   <form action="https://www.google.com/search" method="get" id="searchForm">
+    <!-- search engine selection -->
+    <select id="searchEngine" name="">
+      <option value="google" selected>Google</option>
+      <option value="youtube">YouTube</option>
+      <option value="yahoo">Yahoo</option>
+      <option value="bing" class="ei eiBing">Bing</option>
+      <option value="duckduckgo" >DDGo</option>
+    </select>
     <!-- input field  -->
     <input type="search" id="search" name="q" placeholder="Search something or type an URL" autofocus="true" />
     <!-- submit button -->
     <button type="submit" form="searchForm" id="submitBtn" class="searchIcon"><span svg="searchIcon"></span></button>
-    <!-- search engine selection -->
-    <select id="searchEngine" name="">
-      <option value="youtube">YouTube</option>
-      <option value="yahoo">Yahoo</option>
-      <option value="google" selected>Google</option>
-      <option value="bing" class="ei eiBing">Bing</option>
-    </select>
   </form>
 
   <!-- * this container will contain new shortcut form  -->
