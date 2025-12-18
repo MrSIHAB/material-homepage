@@ -2,6 +2,7 @@
 @import url(appShortcuts.css);
 @import url(developerCredit.css);
 @import url(settings.css);
+@import url(bottom.css);
 
 /* icons ------- */
 svg {
@@ -126,118 +127,6 @@ nav {
   background: var(--accent);
 }
 
-/* bottom section --------- */
-.bottom {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  justify-content: space-between;
-  padding: 0 0 1rem 0;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-}
-
-#toggleApp {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  background: transparent;
-  overflow: hidden;
-  border: 0;
-  outline: 0;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 1;
-  transition: all 1s ease-out;
-  rotate: 0deg;
-  transition: all 0.5s step-end;
-  filter: brightness(100%);
-  transition: all 1s;
-}
-#toggleApp.rotate {
-  rotate: 180deg;
-}
-#toggleApp:hover {
-  filter: brightness(80%);
-}
-#toggleApp svg {
-  fill: var(--themeColor);
-  background-color: var(--bg);
-}
-
-/* apps --------- */
-#allAppPopup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: start;
-  border-radius: 15px;
-  height: 0;
-  width: 550px;
-  max-width: 90vw;
-  position: relative;
-  transition: all 0.5s ease-in-out;
-  bottom: 1.7rem;
-  right: 2rem;
-  overflow: hidden;
-  backdrop-filter: blur(15px);
-  filter: brightness(1.2);
-  padding-left: 35px;
-  padding-right: 35px;
-}
-#allAppPopup.show {
-  overflow-y: scroll;
-  height: 80vh;
-  box-shadow: 2px 2px 5px 4px #0002;
-  padding-top: 20px;
-  border: 10px solid rgba(from var(--themeColor), red, green, blue, alpha);
-}
-#allAppPopup h3 {
-  font-weight: bold;
-  padding: 1rem 0 0.5rem 0;
-  font-size: 1.2rem;
-}
-
-#allAppPopup .ab {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: fit-content;
-  /* grid-template-columns: repeat(4, 1fr); */
-}
-#allAppPopup li {
-  background-color: var(--bg2);
-  list-style: none;
-  aspect-ratio: 1/1;
-  border-radius: 20px;
-  box-shadow: 2px 2px 7px -6px #00000090, inset 2px 2px 10px -6px #ffffffce;
-  transition: all 300ms;
-}
-#allAppPopup a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-}
-
-#allAppPopup .appContainer svg {
-  filter: brightness(0.8);
-  transition: all 100ms;
-  fill: var(--themeColor);
-  object-fit: contain;
-  /* stroke-dashoffset: var(--themeColor); */
-  width: 50px;
-}
-
-#allAppPopup li:hover {
-  background-color: var(--liteThemeColor);
-}
-#allAppPopup li:hover img {
-  filter: brightness(100%);
-}
-
 /* popup bg --- */
 
 #popupBg {
@@ -251,51 +140,5 @@ nav {
   height: 100%;
   width: 100%;
   backdrop-filter: blur(3px);
-  background: color-mix(in srgb, #0005, var(--accent) 1%);
-}
-
-/* mail section /----- */
-#mailToggle {
-  height: 50px;
-  width: 50px;
-  position: fixed;
-  bottom: 1.5rem;
-  right: 10vw;
-}
-.mailService {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  position: relative;
-}
-.mailService div {
-  height: 100%;
-  width: 100%;
-  background: var(--soft-accent);
-  position: absolute;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mailService svg,
-.mailService img {
-  padding: 10px;
-  fill: var(--background);
-  width: 100%;
-}
-.mailService .emails {
-  transition: all 500ms;
-}
-.mailService .gmail.show {
-  transform: translate(-150%, -70%);
-}
-.mailService .outlook.show {
-  transform: translateY(-150%);
-}
-.mailService .yahoo.show {
-  transform: translate(150%, -70%);
-}
-.ToggleMailButton {
-  z-index: 1;
+  background: color-mix(in srgb, #0003, var(--accent) 1%);
 }
