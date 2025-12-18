@@ -15,11 +15,11 @@
   outline: 0;
   padding: 0;
   z-index: 1;
-  background: var(--themeColor) transparent;
+  background: transparent;
 }
 #setting .settingIcon svg {
   fill: transparent;
-  stroke: var(--themeColor);
+  stroke: var(--accent);
 }
 #setting .settingPage {
   height: 100vh;

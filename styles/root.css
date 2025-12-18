@@ -16,25 +16,19 @@
   --background: #fff;
   --light-background: color-mix(in srgb, var(--light-accent) 20%, var(--background) 80%);
   --text-color: #222;
-  /* --themeColor: #00b3b3;
-  --liteThemeColor: #dbe9e2de;
-  --liteThemeColor2: #98fcf4;
-  --themeBg: #00b4b44b;
-  --bg: #def; 
-  --bg2: #bdf;
-  --color: #474747; */
 }
 body {
-  background: linear-gradient(90deg, var(--background), var(--light-background));
-  /* background: var(--liteBackground); */
+  /* background: linear-gradient(-90deg, var(--background), var(--light-background)); */
+  background: color-mix(in srgb, var(--accent) 5%, var(--light-background) 95%);
   width: 100%;
   aspect-ratio: 20/9;
   overflow: hidden;
-  color: var(--text-color);
-  fill: var(--accent);
+  color: var(--text-color), hsl(hue, saturation, lightness);
+  fill: color-mix(in srgb-linear, var(--accent) 80%, var(--light-accent) 20%);
 }
 body.skyblue {
   /* --accent: #00b3b3; */
+  /* --accent: black; */
 }
 body.red {
   /* --themeColor: #d40909;

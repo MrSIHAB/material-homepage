@@ -9,10 +9,10 @@ svg {
   width: 100%;
 }
 .ic {
-  fill: var(--themeColor);
+  fill: var(--accent);
 }
 .ic-search {
-  fill: var(--bg);
+  fill: var(--light-background);
 }
 
 /* nav ---------- */
@@ -21,7 +21,7 @@ nav {
   margin-bottom: 1rem;
 }
 .brandLogo {
-  color: var(--themeColor);
+  color: var(--accent);
   font-size: 30px;
   margin-left: 1rem;
   display: inline-block;
@@ -31,12 +31,12 @@ nav {
   filter: drop-shadow(2px 2px 2px #0003);
 }
 .brandLogo svg {
-  fill: var(--themeColor);
+  fill: var(--accent);
   max-height: 70px;
   max-width: 70px;
   padding: 0.7rem;
-  background-color: var(--liteThemeColor);
-  outline: 1px solid var(--themeColor);
+  background-color: var(--light-accent);
+  outline: 1px solid var(--accent);
   border-radius: 35px;
 }
 
@@ -46,7 +46,7 @@ nav {
   /* outline: 2px solid; */
   margin-bottom: 1rem;
   padding: 5px;
-  color: var(--accent);
+  color: color-mix(in srgb-linear, var(--accent) 80%, var(--light-accent) 20%);
 }
 .timeSection .dayBox {
   margin: auto;
@@ -62,6 +62,7 @@ nav {
   letter-spacing: 3px;
   width: fit-content;
   margin: auto;
+  filter: brightness(70%);
 }
 
 /* search section --- */
