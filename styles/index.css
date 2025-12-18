@@ -12,7 +12,7 @@ svg {
   fill: var(--accent);
 }
 .ic-search {
-  fill: var(--light-background);
+  fill: var(--soft-accent);
 }
 
 /* nav ---------- */
@@ -46,7 +46,6 @@ nav {
   /* outline: 2px solid; */
   margin-bottom: 1rem;
   padding: 5px;
-  color: color-mix(in srgb-linear, var(--accent) 80%, var(--light-accent) 20%);
 }
 .timeSection .dayBox {
   margin: auto;
@@ -56,59 +55,74 @@ nav {
   font-size: 70px;
   font-family: Anurati;
   letter-spacing: 20px;
+  color: color-mix(in srgb-linear, var(--accent), var(--light-accent) 10%);
 }
 .timeSection .timeBox {
   font-size: 14px;
   letter-spacing: 3px;
   width: fit-content;
   margin: auto;
-  filter: brightness(70%);
+  color: color-mix(in srgb, var(--accent), white 40%);
 }
 
 /* search section --- */
 #searchForm {
-  padding: 0 5% 0 0;
   display: flex;
-  height: 3rem;
+  min-height: 50px;
   position: relative;
-  justify-content: center;
+  align-items: center;
+  min-width: 50vw;
+  width: 850px;
+  max-width: 95vw;
+  border-radius: 50px;
+  margin: auto;
+  border: 2px solid var(--soft-accent);
+  background-color: color-mix(in srgb, var(--accent), #fff1 97%);
 }
 #searchForm input:focus,
 #searchForm select:focus {
-  outline: unset;
-  /* border: unset; */
+  outline: 0;
+  border: 0;
 }
 #search {
-  border: 2px solid var(--themeColor);
-  border-radius: 50px 0 0 50px;
-  background-color: var(--liteThemeColor);
-  padding: 6px 15px;
-  font-size: 1.3rem;
-  width: 40vw;
+  color: color-mix(in srgb, var(--text-color), var(--light-accent) 28%);
+  background: transparent;
   margin: 0;
+  padding: 6px 15px;
+  font-size: 1.1rem;
+  border: 0;
+  width: 100%;
+  width: -moz-fill-available;
+  width: -webkit-fill-available;
 }
 
-.searchIcon {
-  /* cursor: pointer; */
-  padding: 6px;
+#searchForm .searchIcon {
+  border: 0;
+  outline: 0;
+  padding-right: 12px;
   height: 100%;
-  background-color: var(--themeColor);
-  border: 2px solid var(--themeColor);
+  background: transparent;
 }
 
 #searchEngine {
-  border: 2px solid var(--themeColor);
+  border: 0;
   outline: 0;
-  background-color: var(--themeColor);
-  border-radius: 0 25px 25px 0;
-  padding: 6px 15px;
-  font-size: 1.3rem;
-  color: #eee;
+  background-color: var(--accent);
+  border-radius: 30px;
+  padding: 6px 10px;
+  margin-left: 7px;
+  font-size: 1.1rem;
+  text-align: justify;
+  color: var(--background);
+  fill: var(--background);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 #searchEngine option {
-  color: #eeea;
-  background: var(--themeColor);
+  color: var(--background);
+  background: var(--accent);
 }
 
 /* bottom section --------- */
@@ -235,27 +249,28 @@ nav {
   left: 0;
   height: 100%;
   width: 100%;
-  background: #aaa5;
-  filter: brightness(0.7);
+  backdrop-filter: blur(3px);
+  background: color-mix(in srgb, #0005, var(--accent) 1%);
 }
 
 /* mail section /----- */
 #mailToggle {
-  height: 47px;
+  height: 50px;
+  width: 50px;
   position: fixed;
-  bottom: 1rem;
+  bottom: 1.5rem;
   right: 10vw;
 }
 .mailService {
   height: 100%;
-  width: 47px;
+  width: 100%;
   margin: auto;
   position: relative;
 }
 .mailService div {
   height: 100%;
   width: 100%;
-  background: var(--themeColor);
+  background: var(--soft-accent);
   position: absolute;
   border-radius: 50%;
   display: flex;
@@ -265,7 +280,7 @@ nav {
 .mailService svg,
 .mailService img {
   padding: 10px;
-  fill: var(--bg2);
+  fill: var(--background);
   width: 100%;
 }
 .mailService .emails {
