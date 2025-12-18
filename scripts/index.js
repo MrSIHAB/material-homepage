@@ -4,6 +4,7 @@ import "./theme.js";
 import * as Search from "./search.js";
 import * as Shortcuts from "./shortcuts.js";
 import { closePopup, initUI } from "./ui.js";
+import { setTheme } from "./theme.js";
 
 // Minimal bootstrap wiring for the page behavior.
 // All behavior is delegated to the modules: `search.js`, `shortcuts.js`, `ui.js`.
@@ -47,3 +48,6 @@ if (newShortcutForm) {
     location.reload();
   });
 }
+
+// Initially setting theme variables for css
+setTheme();
