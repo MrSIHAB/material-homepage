@@ -1,4 +1,5 @@
 // shortcuts.js - handles storage and rendering of custom shortcuts
+import { threeDots } from "./svg.js";
 import { correctUrl, getFaviconUrl } from "./utils.js";
 
 export async function getAllApp() {
@@ -68,7 +69,7 @@ export async function shortcutAppDisplay(shortcutSectionId = "shortcutApp") {
         return `
       <div class="everyShortcut">
         <button class="threeDot">
-          <img src="svg/three-dots.svg" />
+          ${threeDots} <!-- three dots svg codes -->
           <div class="threeDotOptions" index="${index}">
             <p class="editShortcut">Edit</p>
             <p class="deleteShortcut">Delete</p>
@@ -77,7 +78,7 @@ export async function shortcutAppDisplay(shortcutSectionId = "shortcutApp") {
         <a href="${httpUrl}">
           <img src="${getFaviconUrl(httpUrl)}" alt="" class="icon" />
         </a>
-        <h6 class="title">${value.title}</h6>
+        <h5 class="title">${value.title}</h5>
       </div>`;
       })
       .join("");
@@ -111,12 +112,8 @@ export async function shortcutAppDisplay(shortcutSectionId = "shortcutApp") {
   }
 
   for (const btn of dotBtns) {
-    btn.addEventListener("focus", () =>
-      btn.parentElement.classList.add("showOptions")
-    );
-    btn.addEventListener("focusout", () =>
-      btn.parentElement.classList.remove("showOptions")
-    );
+    btn.addEventListener("focus", () => btn.parentElement.classList.add("showOptions"));
+    btn.addEventListener("focusout", () => btn.parentElement.classList.remove("showOptions"));
   }
 
   if (addAppButton) {
