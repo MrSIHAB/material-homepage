@@ -15,17 +15,19 @@
   --light-accent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
   --background: #fff;
   --light-background: color-mix(in srgb, var(--light-accent) 20%, var(--background) 80%);
-  --text-color: #222;
+  --text-color: #ff8800;
 }
 body {
-  --_bg-accent-mix: color-mix(in srgb, var(--accent) 5%, var(--light-background));
   --soft-accent: color-mix(in srgb-linear, var(--accent) 80%, var(--light-accent) 20%);
-  background: linear-gradient(-45deg, var(--light-background), var(--_bg-accent-mix)) fixed;
+
+  --_bg-accent-mix: color-mix(in srgb, var(--accent) 4%, var(--background));
+  --_bg-accent-mix2: color-mix(in srgb, var(--light-accent) 2%, var(--light-background));
+  background: linear-gradient(100deg, var(--_bg-accent-mix), var(--_bg-accent-mix2)) fixed;
   width: 100%;
   aspect-ratio: 20/9;
   overflow: hidden;
   color: var(--text-color), hsl(hue, saturation, lightness);
-  fill: var(--soft-accent);
+  fill: var(--accent);
 }
 /* body.skyblue {
   --accent: #00b3b3;

@@ -55,14 +55,15 @@ nav {
   font-size: 70px;
   font-family: Anurati;
   letter-spacing: 20px;
-  color: color-mix(in srgb-linear, var(--accent), var(--light-accent) 10%);
+  /* color: color-mix(in srgb-linear, var(--accent), var(--light-accent) 10%); */
+  color: var(--accent);
 }
 .timeSection .timeBox {
   font-size: 14px;
   letter-spacing: 3px;
   width: fit-content;
   margin: auto;
-  color: color-mix(in srgb, var(--accent), white 40%);
+  color: hsl(from var(--soft-accent) h s calc(l * 0.7));
 }
 
 /* search section --- */
@@ -76,7 +77,7 @@ nav {
   max-width: 95vw;
   border-radius: 50px;
   margin: auto;
-  border: 2px solid var(--soft-accent);
+  border: 2px solid color-mix(in srgb, var(--soft-accent), transparent 50%);
   background-color: color-mix(in srgb, var(--accent), #fff1 97%);
 }
 #searchForm input:focus,
