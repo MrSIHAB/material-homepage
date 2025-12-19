@@ -12,7 +12,11 @@
 
 <body>
   <!-- Brand logo  ---------------------------  -->
-  <nav><div class="branding"><div class="brandLogo"><img src="images/logo/logo.png" alt="logo"></div></div></nav>
+  <nav>
+    <div class="branding">
+      <div class="brandLogo"><img src="images/logo/logo.png" alt="logo"></div>
+    </div>
+  </nav>
 
   <!-- settings section  -------- -->
   <div id="setting" class="settingWrapper">
@@ -38,8 +42,12 @@
 
   <!-- Time section ----------/------// -->
   <section class="timeSection">
-    <div class="dayBox"><h3 id="day">LOADING...</h3></div>
-    <div class="timeBox"><h3 id="time">Loading...</h3></div>
+    <div class="dayBox">
+      <h3 id="day">LOADING...</h3>
+    </div>
+    <div class="timeBox">
+      <h3 id="time">Loading...</h3>
+    </div>
   </section>
 
   <!--  Search Bar with form as wrapper ----------//--------//----- -->
@@ -50,17 +58,18 @@
       <option value="youtube">YouTube</option>
       <option value="yahoo">Yahoo</option>
       <option value="bing" class="ei eiBing">Bing</option>
-      <option value="duckduckgo" >DDGo</option>
+      <option value="duckduckgo">DDGo</option>
     </select>
     <!-- input field  -->
-    <input type="search" id="search" name="q" placeholder="Search something or type an URL" autofocus="true" />
+    <input type="search" id="search" name="q" placeholder="Search something or type an URL" autofocus="true" required />
     <!-- submit button -->
     <button type="submit" form="searchForm" id="submitBtn" class="searchIcon"><span svg="searchIcon"></span></button>
   </form>
 
   <!-- * this container will contain new shortcut form  -->
   <section class="addAppContainer" id="addAppContainer">
-    <h3><center>Add New Shortcut</center></h3>
+    <h3 align="center">Add New Shortcut</h3>
+
     <form class="newShortcutForm" id="newShortcutForm" method="get">
       <div class="shortcutInput TitleBox">
         <label for="shortcutTitle"> Title: </label>
@@ -80,100 +89,93 @@
   <!-- blurry background for showing popups  -->
   <div class="popupBg" id="popupBg"></div>
 
-  <!-- Bottom section -> credit, email, toggle application shortcut  -->
-  <section class="bottom" id="bottom" role="button">
+  <!-- quickApplication section ->  toggle application shortcut  -->
+  <section class="quickApplication" id="quickApplication">
     <!-- Applications shortcuts : extension specific ----- -->
-    <div class="bottomR">
-      <div id="allAppPopup" class="popup">
+    <div id="allAppPopup" class="popup">
 
-        <!-- ? Developer Sites -----------------------------------------------  -->
-          <div class="appContainer">
-            <h3>Developer</h3>
-            <ul class="ab ab-social">
-              <li><a href="https://github.com" title="Github"><span svg="github"></span></a></li>
-              <li><a href="https://gitlab.com" title="Gitlab"><span svg="gitlab"></span></a></li>
-              <li><a href="https://jsr.io" title="JSR"><span svg="jsr"></span></a></li>
-              <li><a href="https://leetcode.com" title="LeetCode"><span svg="leetCode"></span></a></li>
-              <li><a href="https://developer.mozilla.org" title="MDN"><span svg="mdn"></span></a></li>
-              <li><a href="https://npmjs.com" title="NPM"><span svg="npm"></span></a></li>
-              <li><a href="https://pub.dev" title="pub.dev"><span svg="pub"></span></a></li>
-              <li><a href="https://stackoverflow.com" title="stackoverflow"><span svg="stackoverflow"></span></a></li>
-              <li><a href="https://yarnpkg.com" title="Yarn"><span svg="yarn"></span></a></li>
-            </ul>
-          </div>
-
-        <!-- ? Social Media Sites -----------------------------------------------  -->
-        <div class="appContainer">
-          <h3>Social</h3>
-          <ul class="ab ab-social">
-            <li><a href="https://x.com" title="Twitter"><span svg="twitter"></span></a></li>
-            <li><a href="https://youtube.com" title="YouTube"><span svg="youtube"></span></a></li>
-            <li><a href="https://discord.com" title="Discord"><span svg="discord"></span></a></li>
-            <li><a href="https://facebook.com" title="Facebook"><span svg="facebook"></span></a></li>
-            <li><a href="https://linkedin.com" title="LinkedIn"><span svg="linkedin"></span></a></li>
-            <li><a href="https://instagram.com" title="Instagram"><span svg="instagram"></span></a> </li>
-            <li><a href="https://messenger.com" title="Messenger"><span svg="messenger"></span></a></li>
-            <li><a href="https://www.reddit.com" title="Reddit"><span svg="reddit"></span></a></li>
-            <li><a href="https://web.skype.com" title="Skype"><span svg="skype"></span></a></li>
-            <li><a href="https://web.whatsapp.com" title="Whatsapp"><span svg="whatsapp"></span></a></li>
-            <li><a href="https://www.xbox.com" title="Xbox"><span svg="xbox"></span></a></li>
-          </ul>
-        </div>
-
-        <!-- ? Google Sites -----------------------------------------------  -->
-        <div class="appContainer">
-          <h3>Google</h3>
-          <ul class="ab ab-google">
-            <li><a href="https://drive.google.com" title="Drive"><span svg="drive"></span></a></li>
-            <li><a href="https://maps.google.com" title="Maps"><span svg="maps"></span></a></li>
-            <li><a href="https://meet.google.com" title="Meet"><span svg="meet"></span></a></li>
-            <li><a href="https://photos.google.com" title="Photos"><span svg="photos"></span></a></li>
-            <li><a href="https://docs.google.com/document" title="Docs"><span svg="docs"></span></a></li>
-            <li><a href="https://docs.google.com/spreadsheets" title="Sheets"><span svg="sheets"></span></a></li>
-            <li><a href="https://docs.google.com/presentation" title="Slides"><span svg="slides"></span></a></li>
-            <li><a href="https://translate.google.com" title="Translate"><span svg="translate"></span></a></li>
-          </ul>
-        </div>
-
-        <!-- ? Microsoft Sites -----------------------------------------------  -->
-        <div class="appContainer">
-          <h3>Microsoft</h3>
-          <ul class="ab ab-ms">
-            <li><a href="https://microsoft365.com/" title="Microsoft-365"><span svg="office"></span></a></li>
-            <li><a href="https://apps.microsoft.com/" title="MS Store"><span svg="store"></span></a></li>
-            <li><a href="https://office.live.com/start/Word.aspx" title="Word"><span svg="word"></span></a></li>
-            <li><a href="https://office.live.com/start/Excel.aspx" title="Excel"><span svg="excel"></span></a></li>
-            <li><a href="https://office.live.com/start/PowerPoint.aspx" title="PowerPoint"><span svg="powerpoint"></span></a></li>
-            <li><a href="https://onedrive.live.com/" title="One Drive"><span svg="oneDrive"></span></a></li>
-            <li><a href="https://forms.office.com/" title="MS Forms"><span svg="forms"></span></a></li>
-            <li><a href="https://teams.live.com/" title="Teams"><span svg="teams"></span></a></li>
-            <li><a href="https://clipchamp.com/" title="Clipchamp"><span svg="clipchamp"></span></a></li>
-          </ul>
-        </div>
+      <!-- ? Developer Sites -----------------------------------------------  -->
+      <div class="appTypeContainer">
+        <h3>Developer</h3>
+        <ul class="ab ab-social">
+          <li><a href="https://github.com" title="Github"><span svg="github"></span></a></li>
+          <li><a href="https://gitlab.com" title="Gitlab"><span svg="gitlab"></span></a></li>
+          <li><a href="https://jsr.io" title="JSR"><span svg="jsr"></span></a></li>
+          <li><a href="https://leetcode.com" title="LeetCode"><span svg="leetCode"></span></a></li>
+          <li><a href="https://developer.mozilla.org" title="MDN"><span svg="mdn"></span></a></li>
+          <li><a href="https://npmjs.com" title="NPM"><span svg="npm"></span></a></li>
+          <li><a href="https://pub.dev" title="pub.dev"><span svg="pub"></span></a></li>
+          <li><a href="https://stackoverflow.com" title="stackoverflow"><span svg="stackoverflow"></span></a></li>
+          <li><a href="https://yarnpkg.com" title="Yarn"><span svg="yarn"></span></a></li>
+        </ul>
       </div>
 
-      <span id="toggleApp" role="button" title="All Apps" svg="popupButton">
-        <!-- <svg id="icr" hight="30" width="30" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
-          text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
-          viewBox="0 0 512 512">
-          <path class="ic" fill-rule="nonzero"
-            d="M256 512c70.684 0 134.695-28.658 181.019-74.981C483.342 390.695 512 326.691 512 256s-28.658-134.695-74.981-181.019C390.695 28.658 326.691 0 256 0S121.305 28.658 74.981 74.981C28.658 121.305 0 185.309 0 256s28.658 134.695 74.981 181.019C121.305 483.342 185.309 512 256 512zm-79.003-200.641c-30.983 17.861-46.316-6.963-29.012-25.063l88.741-101.046c16.129-16.136 22.426-16.136 38.563 0l88.741 101.046c17.18 18.187 2.203 42.867-29.02 25.063l-79.003-46.932-79.01 46.932z" />
-        </svg>
-      </span> -->
+      <!-- ? Social Media Sites -----------------------------------------------  -->
+      <div class="appTypeContainer">
+        <h3>Social</h3>
+        <ul class="ab ab-social">
+          <li><a href="https://x.com" title="Twitter"><span svg="twitter"></span></a></li>
+          <li><a href="https://youtube.com" title="YouTube"><span svg="youtube"></span></a></li>
+          <li><a href="https://discord.com" title="Discord"><span svg="discord"></span></a></li>
+          <li><a href="https://facebook.com" title="Facebook"><span svg="facebook"></span></a></li>
+          <li><a href="https://linkedin.com" title="LinkedIn"><span svg="linkedin"></span></a></li>
+          <li><a href="https://instagram.com" title="Instagram"><span svg="instagram"></span></a> </li>
+          <li><a href="https://messenger.com" title="Messenger"><span svg="messenger"></span></a></li>
+          <li><a href="https://www.reddit.com" title="Reddit"><span svg="reddit"></span></a></li>
+          <li><a href="https://web.skype.com" title="Skype"><span svg="skype"></span></a></li>
+          <li><a href="https://web.whatsapp.com" title="Whatsapp"><span svg="whatsapp"></span></a></li>
+          <li><a href="https://www.xbox.com" title="Xbox"><span svg="xbox"></span></a></li>
+        </ul>
+      </div>
+
+      <!-- ? Google Sites -----------------------------------------------  -->
+      <div class="appTypeContainer">
+        <h3>Google</h3>
+        <ul class="ab ab-google">
+          <li><a href="https://drive.google.com" title="Drive"><span svg="drive"></span></a></li>
+          <li><a href="https://maps.google.com" title="Maps"><span svg="maps"></span></a></li>
+          <li><a href="https://meet.google.com" title="Meet"><span svg="meet"></span></a></li>
+          <li><a href="https://photos.google.com" title="Photos"><span svg="photos"></span></a></li>
+          <li><a href="https://docs.google.com/document" title="Docs"><span svg="docs"></span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets" title="Sheets"><span svg="sheets"></span></a></li>
+          <li><a href="https://docs.google.com/presentation" title="Slides"><span svg="slides"></span></a></li>
+          <li><a href="https://translate.google.com" title="Translate"><span svg="translate"></span></a></li>
+        </ul>
+      </div>
+
+      <!-- ? Microsoft Sites -----------------------------------------------  -->
+      <div class="appTypeContainer">
+        <h3>Microsoft</h3>
+        <ul class="ab ab-ms">
+          <li><a href="https://microsoft365.com/" title="Microsoft-365"><span svg="office"></span></a></li>
+          <li><a href="https://apps.microsoft.com/" title="MS Store"><span svg="store"></span></a></li>
+          <li><a href="https://office.live.com/start/Word.aspx" title="Word"><span svg="word"></span></a></li>
+          <li><a href="https://office.live.com/start/Excel.aspx" title="Excel"><span svg="excel"></span></a></li>
+          <li><a href="https://office.live.com/start/PowerPoint.aspx" title="PowerPoint"><span
+                svg="powerpoint"></span></a></li>
+          <li><a href="https://onedrive.live.com/" title="One Drive"><span svg="oneDrive"></span></a></li>
+          <li><a href="https://forms.office.com/" title="MS Forms"><span svg="forms"></span></a></li>
+          <li><a href="https://teams.live.com/" title="Teams"><span svg="teams"></span></a></li>
+          <li><a href="https://clipchamp.com/" title="Clipchamp"><span svg="clipchamp"></span></a></li>
+        </ul>
+      </div>
     </div>
+
+    <span id="toggleApp" role="button" title="All Apps" svg="popupButton"></span>
   </section>
 
   <!-- mail box-- -->
-  <div id="mailToggle" class="mailToggle">
-    <div class="mailService">
-      <!-- google mail, microsoft outlook and yahoo mail  -->
-      <div class="emails popup gmail" title="Gmail"><a href="https://mail.google.com"><span svg="gmail"></span></a></div>
-      <div class="emails popup outlook" title="Outlook"><a href="https://outlook.live.com/"><span svg="outlook"></span></a></div>
-      <div class="emails popup yahoo" title="Yahoo"><a href="https://mail.yahoo.com"><span svg="yahoo"></span></a></div>
-
-      <!-- email toggle button -- -->
-      <div id="ToggleMailBtn" class="ToggleMailButton" title="Mail" role="button"><span svg="mail"></span></div>
+  <div id="mailContainer" class="mailContainer popup">
+    <!-- <div class="mailService"> -->
+    <!-- google mail, microsoft outlook and yahoo mail  -->
+    <div class="emails gmail" title="Gmail"><a href="https://mail.google.com"><span svg="gmail"></span></a></div>
+    <div class="emails outlook" title="Outlook"><a href="https://outlook.live.com/"><span svg="outlook"></span></a>
     </div>
+    <div class="emails yahoo" title="Yahoo"><a href="https://mail.yahoo.com"><span svg="yahoo"></span></a></div>
+
+    <!-- email toggle button -- -->
+    <div id="ToggleMailBtn" class="ToggleMailButton" title="Mail" role="button"><span svg="mail"></span></div>
+    <!-- </div> -->
   </div>
 
   <!-- * author credit button  -->
