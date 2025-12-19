@@ -38,22 +38,10 @@ function replaceColors(svgText) {
   svgText = svgText.replace(/stroke\s*=\s*"([^\"]*)"/gi, "");
   svgText = svgText.replace(/stroke\s*=\s*'([^\']*)'/gi, "");
   // Replace style occurrences of fill:... and stroke:...
-  svgText = svgText.replace(
-    /(style\s*=\s*"[^"]*)fill\s*:\s*[^;\"]*/gi,
-    (m, p1) => p1 + ""
-  );
-  svgText = svgText.replace(
-    /(style\s*=\s*'[^']*)fill\s*:\s*[^;\']*/gi,
-    (m, p1) => p1 + ""
-  );
-  svgText = svgText.replace(
-    /(style\s*=\s*"[^"]*)stroke\s*:\s*[^;\"]*/gi,
-    (m, p1) => p1 + ""
-  );
-  svgText = svgText.replace(
-    /(style\s*=\s*'[^']*)stroke\s*:\s*[^;\']*/gi,
-    (m, p1) => p1 + ""
-  );
+  svgText = svgText.replace(/(style\s*=\s*"[^"]*)fill\s*:\s*[^;\"]*/gi, (m, p1) => p1 + "");
+  svgText = svgText.replace(/(style\s*=\s*'[^']*)fill\s*:\s*[^;\']*/gi, (m, p1) => p1 + "");
+  svgText = svgText.replace(/(style\s*=\s*"[^"]*)stroke\s*:\s*[^;\"]*/gi, (m, p1) => p1 + "");
+  svgText = svgText.replace(/(style\s*=\s*'[^']*)stroke\s*:\s*[^;\']*/gi, (m, p1) => p1 + "");
   // Also replace fill:#xxxx inside inline styles without style attr (rare)
   svgText = svgText.replace(/fill\s*:\s*#([0-9a-fA-F]{3,6})/gi, "");
   svgText = svgText.replace(/stroke\s*:\s*#([0-9a-fA-F]{3,6})/gi, "");
@@ -99,8 +87,7 @@ function main() {
   });
 
   // Optionally export all
-  out +=
-    `export default {` + entries.map((e) => ` ${e.name}`).join(",") + ` };\n`;
+  out += `export default {` + entries.map((e) => ` ${e.name}`).join(",") + ` };\n`;
 
   fs.writeFileSync(OUT_FILE, out, "utf8");
   console.log("Wrote", OUT_FILE, "with", entries.length, "entries");
