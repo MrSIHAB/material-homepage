@@ -27,8 +27,8 @@ Search.initSearch({
 
 initUI();
 
-// render shortcuts area
-Shortcuts.shortcutAppDisplay();
+// render shortcuts
+Shortcuts.loadShortCutSites();
 
 // handle new shortcut form submit (delegates to shortcuts module)
 const newShortcutForm = document.getElementById("newShortcutForm");

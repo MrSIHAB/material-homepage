@@ -1,7 +1,12 @@
 // shortcuts.js - handles storage and rendering of custom shortcuts
 import { threeDots } from "./svg.js";
+import { showPopup } from "./ui.js";
 import { correctUrl, getFaviconUrl } from "./utils.js";
 
+/**
+ * This Function fetches shortcut sites that are saved by user.
+ * @returns {SavedShortCutSite[]}
+ */
 export async function getAllApp() {
   const raw = localStorage.getItem("apps");
   try {
@@ -12,13 +17,23 @@ export async function getAllApp() {
   }
 }
 
+/**
+ * Save a shortcut site to the localStorage database.
+ *
+ * @param {string} title
+ * @param {URL} link
+ */
 export async function saveNewApp(title, link) {
-  let existingApps = await getAllApp();
-  if (!existingApps) existingApps = [];
+  let existingApps = (await getAllApp()) ?? [];
+  if (existingApps.length > 22) return;
   existingApps.push({ title, link });
   localStorage.setItem("apps", JSON.stringify(existingApps));
 }
 
+/**
+ * Deletes a shortcut site from localStorage database
+ * @param {number} index
+ */
 export async function deleteApp(index) {
   const existingApps = await getAllApp();
   if (!existingApps) return;
@@ -26,6 +41,14 @@ export async function deleteApp(index) {
   localStorage.setItem("apps", JSON.stringify(existingApps));
 }
 
+/**
+ * Updates a nth shortcut site in the localStorage database
+ *
+ * @param {number} index nth number of shortcut site
+ * @param {string} title New Title
+ * @param {string} link New URL or link
+ * @returns
+ */
 export async function UpdateEntry(index, title, link) {
   const existingApps = await getAllApp();
   if (!existingApps) return;
@@ -33,46 +56,60 @@ export async function UpdateEntry(index, title, link) {
   localStorage.setItem("apps", JSON.stringify(existingApps));
 }
 
-// reuse helpers from `utils.js` (imported above)
+/**  ===================  Toggle add and edit shortcut application Form ====================
+ *
+ * All the settings of the extension.
+ */
+export async function showShortcutEditOrAddForm(index) {
+  const containerElement = document.getElementById("addAppContainer");
+  const titleElement = document.getElementById("shortcutTitle");
+  const linkElement = document.getElementById("shortcutLink");
 
-export async function showForm(containerEl, index) {
-  const titleEl = document.getElementById("shortcutTitle");
-  const linkEl = document.getElementById("shortcutLink");
-  containerEl.style.display = "block";
-  containerEl.style.zIndex = 2;
-  const popupBg = document.getElementById("popupBg");
-  popupBg.style.zIndex = 1;
-  popupBg.style.display = "block";
+  showPopup(containerElement);
 
-  if (index == null) {
-    titleEl.value = "";
-    linkEl.value = "";
+  if (!index) {
+    titleElement.value = "";
+    linkElement.value = "";
+    return;
+  }
+  const apps = await getAllApp();
+  if (!apps) {
+    titleElement.value = "";
+    linkElement.value = "";
+    return;
+  }
+  const { title, link } = apps[index];
+  if (!title || !link) {
+    titleElement.value = "";
+    linkElement.value = "";
     return;
   }
 
-  const apps = await getAllApp();
-  if (!apps) return;
-  const { title, link } = apps[index];
-  titleEl.value = title;
-  linkEl.value = link;
+  titleElement.value = title;
+  linkElement.value = link;
+  document.getElementById("newShortcutForm").setAttribute("index", index);
 }
 
-export async function shortcutAppDisplay(shortcutSectionId = "shortcutApp") {
-  const shortcutSection = document.getElementById(shortcutSectionId);
+/**
+ * Display all the saved sites to the specified section
+ * @param {string} shortcutSectionId Element Id
+ */
+export async function loadShortCutSites() {
+  const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
 
-  let embedApps = " ";
+  let embedApps = "";
   if (allApps != null) {
-    embedApps += allApps
+    embedApps = allApps
       .map((value, index) => {
         const httpUrl = correctUrl(value.link);
         return `
       <div class="everyShortcut">
         <button class="threeDot">
           ${threeDots} <!-- three dots svg codes -->
-          <div class="threeDotOptions" index="${index}">
-            <p class="editShortcut">Edit</p>
-            <p class="deleteShortcut">Delete</p>
+          <div class="threeDotOptions">
+            <p class="editShortcut" index="${index}">Edit</p>
+            <p class="deleteShortcut" index="${index}" >Delete</p>
           </div>
         </button>
         <a href="${httpUrl}">
@@ -84,43 +121,48 @@ export async function shortcutAppDisplay(shortcutSectionId = "shortcutApp") {
       .join("");
   }
 
-  if (!allApps || allApps.length < 16) {
+  if (!allApps || allApps.length < 20) {
     embedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
   }
   shortcutSection.innerHTML = embedApps;
 
-  const addAppButton = document.getElementById("addShortcut");
-  const dotBtns = document.querySelectorAll(".threeDot");
-  const edits = document.querySelectorAll(".editShortcut");
-  const deletes = document.querySelectorAll(".deleteShortcut");
+  // add listener at last
+  _shortCutSiteEditAndDeleteListeners();
+}
 
-  for (const edit of edits) {
+/** ---------------------------   Shortcut Sites Edit and Delete button  ----------------
+ *
+ */
+function _shortCutSiteEditAndDeleteListeners() {
+  const addShortcut = document.getElementById("addShortcut");
+  const threeDots = document.querySelectorAll(".threeDot");
+  const editShortcuts = document.querySelectorAll(".editShortcut");
+  const deleteShortcuts = document.querySelectorAll(".deleteShortcut");
+
+  // create shortcut sites
+  addShortcut.addEventListener("click", () => showShortcutEditOrAddForm());
+
+  // edit shortcut sites
+  for (const edit of editShortcuts) {
     edit.addEventListener("click", async () => {
-      const index = edit.parentElement.getAttribute("index");
-      const form = document.getElementById("newShortcutForm");
-      form.setAttribute("index", index);
-      return await showForm(document.getElementById("addAppContainer"), index);
+      const index = edit.getAttribute("index");
+      showShortcutEditOrAddForm(index);
+      return;
     });
   }
 
-  for (const element of deletes) {
+  // delete shortcut sites
+  for (const element of deleteShortcuts) {
     element.addEventListener("click", async () => {
-      const index = element.parentElement.getAttribute("index");
+      const index = element.getAttribute("index");
       await deleteApp(index);
-      return location.reload();
+      return loadShortCutSites();
     });
   }
 
-  for (const btn of dotBtns) {
+  // show edit and delete options
+  for (const btn of threeDots) {
     btn.addEventListener("focus", () => btn.parentElement.classList.add("showOptions"));
     btn.addEventListener("focusout", () => btn.parentElement.classList.remove("showOptions"));
-  }
-
-  if (addAppButton) {
-    addAppButton.addEventListener("click", () => {
-      const form = document.getElementById("newShortcutForm");
-      form.removeAttribute("index");
-      showForm(document.getElementById("addAppContainer"));
-    });
   }
 }
