@@ -138,11 +138,12 @@ section#addAppContainer #shortcutSaveBtn:hover {
   right: -35%;
   aspect-ratio: 1/1;
   border-radius: 30px;
-  padding: 3px;
+  padding: 0px 3px;
   opacity: 0;
   transition: all 200ms;
   color: var(--text-color);
   fill: var(--text-color);
+  z-index: 2;
 }
 .everyShortcut .threeDot img {
   transform: rotate(90deg);
