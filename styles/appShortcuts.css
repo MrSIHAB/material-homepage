@@ -21,19 +21,25 @@ section.shortcutApp#shortcutApp {
   gap: 3rem;
 }
 section#addAppContainer {
+  color: var(--text-color);
   display: none;
-  z-index: -1;
-  width: 30vw;
+  z-index: 3;
+  max-width: 55vw;
+  width: 500px;
   min-height: 200px;
   min-width: 350px;
-  background-color: #dfd7;
+  background-color: #ffffff50;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 15px;
   padding: 1rem;
-  backdrop-filter: blur(7%);
+  backdrop-filter: blur(28px);
+  box-shadow: 5px 5px 15px #0002, inset 2px 2px 1px 1px #fff2;
+}
+section#addAppContainer.show {
+  display: block;
 }
 section#addAppContainer .newShortcutForm {
   display: flex;
@@ -58,22 +64,23 @@ section#addAppContainer .shortcutInput input {
   width: 100%;
   padding: 7px 1rem;
   border-radius: 10px;
-  border: 2px solid var(--themeBg);
-  background-color: var(--liteThemeColor);
+  border: 2px solid color-mix(in srgb, var(--text-color), transparent 95%);
+  background: #9993;
   font-weight: 500;
   font-size: medium;
+  color: var(--text-color);
 }
 section#addAppContainer .shortcutInput input:focus {
-  outline: 1px solid var(--themeColor);
+  border: 2px solid var(--light-accent);
+  outline: none;
 }
 section#addAppContainer #shortcutSaveBtn {
   align-items: center;
-  background-color: var(--liteThemeColor);
+  background-color: var(--soft-accent);
   border-radius: 17px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px, rgba(0, 0, 0, 0.14) 0 6px 10px 0,
-    rgba(0, 0, 0, 0.12) 0 1px 18px 0;
-  color: var(--color);
+  box-shadow: 3px 3px 6px #00000035;
+  color: var(--light-background);
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
