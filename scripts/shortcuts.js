@@ -1,6 +1,6 @@
 // shortcuts.js - handles storage and rendering of custom shortcuts
 import { threeDots } from "./svg.js";
-import { showPopup } from "./ui.js";
+import { closePopup, showPopup } from "./ui.js";
 import { correctUrl, getFaviconUrl } from "./utils.js";
 
 /**
@@ -183,9 +183,9 @@ export function shortcutSiteFormListener() {
     const index = newShortcutForm.getAttribute("index");
 
     if (!index) {
-      await Shortcuts.saveNewApp(title, link);
+      await saveNewApp(title, link);
     } else {
-      await Shortcuts.UpdateEntry(index, title, link);
+      await UpdateEntry(index, title, link);
     }
 
     closePopup();
