@@ -11,11 +11,11 @@
     "Open Sans", "Helvetica Neue", sans-serif;
 }
 :root {
-  --accent: #00b3b3;
-  --light-accent: color-mix(in srgb, var(--background) 40%, var(--accent) 60%);
-  --background: #fff;
-  --light-background: color-mix(in srgb, var(--light-accent) 20%, var(--background) 80%);
-  --text-color: #ff8800;
+  --accent: #000000;
+  --light-accent: hsl(0, 0%, 25%);
+  --background: hsl(0, 0%, 90%);
+  --light-background: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 10%);
 }
 body {
   --soft-accent: color-mix(in srgb-linear, var(--accent) 80%, var(--light-accent) 20%);
