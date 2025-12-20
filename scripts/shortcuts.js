@@ -64,7 +64,9 @@ export async function showShortcutEditOrAddForm(index) {
   const containerElement = document.getElementById("addAppContainer");
   const titleElement = document.getElementById("shortcutTitle");
   const linkElement = document.getElementById("shortcutLink");
+  const form = document.getElementById("newShortcutForm");
 
+  form.removeAttribute("index");
   showPopup(containerElement);
 
   if (!index) {
@@ -87,7 +89,7 @@ export async function showShortcutEditOrAddForm(index) {
 
   titleElement.value = title;
   linkElement.value = link;
-  document.getElementById("newShortcutForm").setAttribute("index", index);
+  form.setAttribute("index", index);
 }
 
 /**
@@ -165,4 +167,28 @@ function _shortCutSiteEditAndDeleteListeners() {
     btn.addEventListener("focus", () => btn.parentElement.classList.add("showOptions"));
     btn.addEventListener("focusout", () => btn.parentElement.classList.remove("showOptions"));
   }
+}
+
+/**
+ * This function listens the user's shortcut sites submission. It prevents default actions.
+ * This function will save or update and ai based on the presence of the index attribute of the form element
+ */
+export function shortcutSiteFormListener() {
+  const newShortcutForm = document.getElementById("newShortcutForm");
+
+  newShortcutForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const title = document.getElementById("shortcutTitle").value;
+    const link = document.getElementById("shortcutLink").value;
+    const index = newShortcutForm.getAttribute("index");
+
+    if (!index) {
+      await Shortcuts.saveNewApp(title, link);
+    } else {
+      await Shortcuts.UpdateEntry(index, title, link);
+    }
+
+    closePopup();
+    loadShortCutSites();
+  });
 }

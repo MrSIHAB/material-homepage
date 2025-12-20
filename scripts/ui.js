@@ -1,3 +1,5 @@
+import { shortcutSiteFormListener } from "./shortcuts.js";
+
 const popupBackground = document.getElementById("popupBg");
 
 /**  ======================  Popup Background =========================
@@ -29,11 +31,12 @@ function _popupBackgroundListener() {
 }
 
 /** =====================  Register all the UI eventListeners ====================== */
-export async function initUI() {
+export async function initUiListeners() {
   _popupBackgroundListener();
   _mailButtonListener();
   _applicationQuickAccessListener();
   _settingsToggleEventListener();
+  shortcutSiteFormListener();
 }
 
 /**  ======================  Email =========================
