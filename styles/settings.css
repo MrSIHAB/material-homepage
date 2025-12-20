@@ -8,10 +8,7 @@
 }
 .settingPage {
   height: 100vh;
-  overflow: scroll;
-  border-left: 2px solid color-mix(in srgb, var(--text-color), transparent 70%);
-  background: var(--light-background);
-  backdrop-filter: blur(10px);
+  overflow: hidden;
   position: absolute;
   right: 0;
   width: 0;
@@ -21,6 +18,17 @@
 .settingPage.show {
   max-width: 100vw;
   width: 500px;
+}
+.setting .settingsPageWrapper {
+  max-width: 100vw;
+  width: 500px;
+  height: 100vh;
+  overflow: scroll;
+  border-left: 2px solid color-mix(in srgb, var(--light-accent), transparent 70%);
+  background: #ffffff23;
+  backdrop-filter: blur(30px);
+  border-radius: 15px 0 0 15px;
+  filter: brightness(1.1);
 }
 .settingPage .settingsHeader {
   padding: 1rem;
@@ -35,8 +43,8 @@
   right: 0rem;
   width: 40px;
   display: inline-flex;
-  border: 0;
-  outline: 0;
+  border: none;
+  outline: none;
   padding: 0;
   z-index: 1;
   background: transparent;
@@ -52,6 +60,8 @@
 .settingPage .settingBody {
   padding: 1rem;
 }
+
+/* Color Themes  */
 .settingPage .settingBody .colors {
   padding-top: 0.7rem;
   display: flex;
@@ -69,7 +79,7 @@
   appearance: none;
   -webkit-appearance: none;
 }
-.settingPage .settingBody .colors .themes[value="skyblue"] {
+/* .settingPage .settingBody .colors .themes[value="skyblue"] {
   background: #2acdf5;
 }
 .settingPage .settingBody .colors .themes[value="red"] {
@@ -86,7 +96,7 @@
 }
 .settingPage .settingBody .colors .themes[value="dark"] {
   background: #050005;
-}
+} */
 input[name="theme"]:checked::after {
   position: absolute;
   top: 0;
