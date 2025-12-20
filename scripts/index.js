@@ -3,8 +3,7 @@ import "./timeLoader.js";
 import "./theme.js";
 import * as Search from "./search.js";
 import * as Shortcuts from "./shortcuts.js";
-import { closePopup, initUI } from "./ui.js";
-import { setTheme } from "./theme.js";
+import { initUiListeners } from "./ui.js";
 import { applyTheme } from "./themeGenerator.js";
 
 // Minimal bootstrap wiring for the page behavior.
@@ -25,30 +24,9 @@ Search.initSearch({
   submitBtn,
 });
 
-initUI();
-
+initUiListeners();
 // render shortcuts
 Shortcuts.loadShortCutSites();
-
-// handle new shortcut form submit (delegates to shortcuts module)
-const newShortcutForm = document.getElementById("newShortcutForm");
-if (newShortcutForm) {
-  newShortcutForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const title = document.getElementById("shortcutTitle").value;
-    const link = document.getElementById("shortcutLink").value;
-    const index = newShortcutForm.getAttribute("index");
-
-    if (!index) {
-      await Shortcuts.saveNewApp(title, link);
-    } else {
-      await Shortcuts.UpdateEntry(index, title, link);
-    }
-
-    closePopup();
-    location.reload();
-  });
-}
 
 // Initially setting theme variables for css
 // setTheme();
@@ -64,6 +42,10 @@ if (newShortcutForm) {
     "#ffaa00",
     "#ffffff",
     "#000000",
+    "#aaaaaa",
+    "#ff9999",
+    "#ffff99",
+    "#8f8f00ff",
   ];
   const color = colors[Math.floor(Math.random() * colors.length)];
   applyTheme(color);
