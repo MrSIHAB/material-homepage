@@ -132,8 +132,7 @@
 .mailContainer .emails {
   transition: all 300ms ease-out;
 }
-.mailContainer.show .emails,
-.mailContainer.show .toggleMailButton {
+.mailContainer.show {
   z-index: 3;
 }
 .mailContainer.show .gmail {
