@@ -21,10 +21,13 @@
   <!-- settings section  -------- -->
   <div id="setting" class="settingWrapper">
     <!-- setting icon  -->
-    <button class="settingIcon" id="settingButton"><span svg="sidebarLeft"></span></button>
+    <button class="showSettings" id="showSettings"><span svg="sidebarLeft"></span></button>
     <!-- settings page  -->
-    <div class="settingPage popup" id="settingBody">
-      <h4>Settings</h4>
+    <div id="settingPage" class="settingPage popup">
+      <h4 class="settingsHeader">
+        <button class="closeSettings" id="closeSettings"><span svg="sidebarRight"></span></button>
+        <span>Settings</span>
+      </h4>
       <div class="settingBody">
         <div class="themepalate">
           <h5>Theme:</h5>
@@ -90,9 +93,9 @@
   <div class="popupBg" id="popupBg"></div>
 
   <!-- quickApplication section ->  toggle application shortcut  -->
-  <section class="quickApplication" id="quickApplication">
+  <section class="quickApplication popup" id="quickApplication">
     <!-- Applications shortcuts : extension specific ----- -->
-    <div id="allAppPopup" class="popup">
+    <div id="allAppPopup" class="allAppPopup">
 
       <!-- ? Developer Sites -----------------------------------------------  -->
       <div class="appTypeContainer">

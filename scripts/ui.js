@@ -1,118 +1,72 @@
-// ui.js - popup, mail, settings, about and general UI handlers
+const popupBackground = document.getElementById("popupBg");
+
+/**  ======================  Popup Background =========================
+ *
+ * A slightly blurry, dark and semi transparent background. It covers the entire screen.
+ * It only shows when any popup is open. Clicking this background will close the popup.
+ * Note: it only removes `show` class from all the html elements which have the class `popup`.
+ * So every popup should be designed according the logic.
+ */
+export function showPopup(element) {
+  popupBackground.classList.toggle("show");
+  element.classList.toggle("show");
+}
+/**
+ * Closing the popup and hiding the popup background. It will by default called on click event
+ * of the popup background.
+ */
 export function closePopup() {
-  const popup = document.querySelectorAll(".popup");
-  popup.forEach((e) => e.classList.remove("show"));
-  const popupBg = document.getElementById("popupBg");
-  if (popupBg) popupBg.style.display = "none";
-  const toggleAppButton = document.getElementById("toggleApp");
-  toggleAppButton.classList.remove("rotate");
-  const mailToggle = document.getElementById("mailToggle");
-  if (mailToggle) mailToggle.style.zIndex = "";
-  const bottom = document.getElementById("bottom");
-  if (bottom) bottom.style.zIndex = "";
-  const mainSettingsDiv = document.getElementById("setting");
-  if (mainSettingsDiv) mainSettingsDiv.style.zIndex = "";
-  const aboutBox = document.getElementById("aboutBox");
-  if (aboutBox) aboutBox.style.display = "none";
-  const container = document.getElementById("addAppContainer");
-  if (container) {
-    container.style.display = "none";
-    container.style.zIndex = -1;
-  }
+  const canPopupElements = document.querySelectorAll(".popup");
+  canPopupElements.forEach((e) => e.classList.remove("show"));
+  popupBackground.classList.toggle("show");
+}
+/**
+ * Add click listener to close the popup and the background itself. Internally calling the
+ * `closePopup` function.
+ */
+function _popupBackgroundListener() {
+  popupBackground.addEventListener("click", closePopup);
 }
 
-export function allAppShowHide() {
-  const allAppBox = document.getElementById("allAppPopup");
-  const popupBg = document.getElementById("popupBg");
-  const bottom = document.getElementById("bottom");
-  const toggleAppButton = document.getElementById("toggleApp");
-  if (!allAppBox) return;
-  if (!allAppBox.classList.contains("show")) {
-    allAppBox.classList.add("show");
-    toggleAppButton.classList.add("rotate");
-    if (popupBg) popupBg.style.display = "block";
-    if (bottom) bottom.style.zIndex = 3;
-  } else {
-    closePopup();
-  }
+/** =====================  Register all the UI eventListeners ====================== */
+export async function initUI() {
+  _popupBackgroundListener();
+  _mailButtonListener();
+  _applicationQuickAccessListener();
+  _settingsToggleEventListener();
 }
 
-export function initUI() {
-  const toggleAppButton = document.getElementById("toggleApp");
-  const popupBg = document.getElementById("popupBg");
-  const toggleMail = document.getElementById("ToggleMailBtn");
-  const mailToggle = document.getElementById("mailToggle");
-  const emails = document.querySelectorAll(".emails");
-  const settingButton = document.getElementById("settingButton");
-  const settingBody = document.getElementById("settingBody");
-  const mainSettingsDiv = document.getElementById("setting");
-  const themeInput = document.querySelectorAll(".themes");
-  const authorInfoButton = document.getElementById("authorInfoButton");
-  const aboutBox = document.getElementById("aboutBox");
-  const aboutCloseBtn = document.getElementById("aboutCloseBtn");
+/**  ======================  Email =========================
+ *
+ * When user clicks on the button, There most popular email service provider including Gmail
+ * Outlook and Yahoo will popup. The popupBackground should be display and blur the entire screen.
+ */
+function _mailButtonListener() {
+  const mailContainer = document.getElementById("mailContainer");
+  const toggleButton = document.getElementById("ToggleMailBtn");
 
-  if (toggleAppButton)
-    toggleAppButton.addEventListener("click", allAppShowHide);
-  if (popupBg) popupBg.addEventListener("click", closePopup);
+  toggleButton.addEventListener("click", () => showPopup(mailContainer));
+}
 
-  if (toggleMail) {
-    toggleMail.addEventListener("click", () => {
-      if (!mailToggle) return;
-      if (!mailToggle.classList.contains("show")) {
-        emails.forEach((e) => e.classList.add("show"));
-        popupBg.style.display = "block";
-        mailToggle.style.zIndex = 3;
-        mailToggle.classList.add("show");
-      } else {
-        emails.forEach((e) => e.classList.remove("show"));
-        mailToggle.style.zIndex = "";
-        popupBg.style.display = "none";
-        mailToggle.classList.remove("show");
-      }
-    });
-  }
+/**  ===================  Application Quick Access ====================
+ *
+ * The application quick access that ships with the extension. The toggle button is located
+ * in the bottom right corner.
+ */
+function _applicationQuickAccessListener() {
+  const quickApplication = document.getElementById("quickApplication");
+  const toggleButton = document.getElementById("toggleApp");
+  toggleButton.addEventListener("click", () => showPopup(quickApplication));
+}
 
-  if (settingButton) {
-    settingButton.addEventListener("click", () => {
-      if (!mainSettingsDiv) return;
-      const popupShown =
-        mainSettingsDiv.style.zIndex && mainSettingsDiv.style.zIndex > 0;
-      if (!popupShown) {
-        settingBody.classList.add("show");
-        settingBody.style.zIndex = 3;
-        popupBg.style.display = "block";
-      } else {
-        settingBody && settingBody.classList.remove("show");
-        settingBody.style.zIndex = 0;
-        popupBg.style.display = "none";
-      }
-    });
-  }
-
-  if (themeInput && themeInput.forEach) {
-    themeInput.forEach((inp) =>
-      inp.addEventListener("change", function () {
-        if (this.checked) {
-          const colorValue = this.value;
-          if (colorValue === "dark") {
-            alert(
-              "Dark Mode is in under development. Please Use other theme to avoid color issues"
-            );
-          }
-          localStorage.setItem("theme", colorValue);
-        }
-        // apply theme
-        const body = document.querySelector("body");
-        body.classList = localStorage.getItem("theme");
-      })
-    );
-  }
-
-  if (authorInfoButton) {
-    authorInfoButton.addEventListener("click", () => {
-      if (aboutBox) aboutBox.style.display = "block";
-      if (popupBg) popupBg.style.display = "block";
-    });
-  }
-  if (aboutCloseBtn) aboutCloseBtn.addEventListener("click", closePopup);
+/**  ===================  Settings ====================
+ *
+ * All the settings of the extension.
+ */
+function _settingsToggleEventListener() {
+  const settingPage = document.getElementById("settingPage");
+  const showSettings = document.getElementById("showSettings");
+  const closeSettings = document.getElementById("closeSettings");
+  showSettings.addEventListener("click", () => showPopup(settingPage));
+  closeSettings.addEventListener("click", () => closePopup());
 }

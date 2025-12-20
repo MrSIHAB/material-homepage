@@ -129,7 +129,7 @@ nav {
 
 /* popup bg --- */
 
-#popupBg {
+.popupBg {
   display: none;
   position: absolute;
   z-index: 1;
@@ -141,4 +141,7 @@ nav {
   width: 100%;
   backdrop-filter: blur(3px);
   background: color-mix(in srgb, #0003, var(--accent) 1%);
+}
+.popupBg.show {
+  display: block;
 }
