@@ -21,6 +21,7 @@ await Deno.bundle({
 
 // Copy necessary files to build folder
 console.log(`Copying necessary files...`);
+await exec(`rm -rf ${BUILD_DIR}/*`);
 await exec(`mkdir -p ${OUT_DIR}/images`);
 await exec(`cp -r index.html ${OUT_DIR}/index.html`);
 await exec(`cp -r styles/ ${OUT_DIR}/styles/`);
