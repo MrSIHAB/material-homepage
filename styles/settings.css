@@ -61,6 +61,10 @@
 /* setting body  */
 .settingBody {
   padding: 1rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 
 /* Color Themes  */
