@@ -23,7 +23,7 @@
     <!-- setting icon  -->
     <button class="showSettings" id="showSettings"><span svg="sidebarLeft"></span></button>
     <!-- settings page  -->
-    <div id="settingPage" class="settingPage popup show">
+    <div id="settingPage" class="settingPage popup">
       <div class="settingsPageWrapper">
         <h4 class="settingsHeader">
           <button class="closeSettings" id="closeSettings"><span svg="sidebarRight"></span></button>
@@ -58,6 +58,38 @@
               <input type="radio" class="color" name="color" value="#ffffff" />
               <input type="radio" class="color" name="color" value="#aaaaaa" />
               <input type="radio" class="color" name="color" value="#000000" />
+            </div>
+          </div>
+
+          <!--  Settings for Quick application / sites that comes with extension By default -->
+          <div class="quickSiteSettings">
+            <h4 style="font-size: large;">Quick Sites:</h4>
+
+            <div class="listTile">
+              <!-- <div class="icon"><span svg="leetCode"></span></div> -->
+              <span class="title">Developer</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleDeveloperSites">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <div class="listTile">
+              <!-- <div class="icon"><span svg="drive"></span></div> -->
+              <span class="title">Google</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleGoogleSites" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <div class="listTile">
+              <!-- <div class="icon"><span svg="dart"></span></div> -->
+              <span class="title">Microsoft</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleMicrosoftSites">
+                <span class="slider round"></span>
+              </label>
             </div>
           </div>
         </div>
@@ -120,7 +152,7 @@
     <div id="allAppPopup" class="allAppPopup">
 
       <!-- ? Developer Sites -----------------------------------------------  -->
-      <div class="appTypeContainer">
+      <div id="developerQuickSites" class="appTypeContainer">
         <h3>Developer</h3>
         <ul class="ab ab-social">
           <li><a href="https://github.com" title="Github"><span svg="github"></span></a></li>
@@ -136,7 +168,7 @@
       </div>
 
       <!-- ? Social Media Sites -----------------------------------------------  -->
-      <div class="appTypeContainer">
+      <div id="socialQuickSites" class="appTypeContainer">
         <h3>Social</h3>
         <ul class="ab ab-social">
           <li><a href="https://x.com" title="Twitter"><span svg="twitter"></span></a></li>
@@ -154,7 +186,7 @@
       </div>
 
       <!-- ? Google Sites -----------------------------------------------  -->
-      <div class="appTypeContainer">
+      <div id="googleQuickSites" class="appTypeContainer">
         <h3>Google</h3>
         <ul class="ab ab-google">
           <li><a href="https://drive.google.com" title="Drive"><span svg="drive"></span></a></li>
@@ -169,7 +201,7 @@
       </div>
 
       <!-- ? Microsoft Sites -----------------------------------------------  -->
-      <div class="appTypeContainer">
+      <div id="microsoftQuickSites" class="appTypeContainer">
         <h3>Microsoft</h3>
         <ul class="ab ab-ms">
           <li><a href="https://microsoft365.com/" title="Microsoft-365"><span svg="office"></span></a></li>

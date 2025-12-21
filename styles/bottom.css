@@ -49,6 +49,9 @@
   padding-left: 35px;
   padding-right: 35px;
 }
+.appTypeContainer.hide {
+  display: none;
+}
 .allAppPopup h3 {
   font-weight: bold;
   padding: 1rem 0 0.5rem 0;
