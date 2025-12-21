@@ -9,11 +9,87 @@ svg {
   height: 100%;
   width: 100%;
 }
-.ic {
-  fill: var(--accent);
-}
 .ic-search {
   fill: var(--soft-accent);
+}
+
+/* Switch Buttons - Rounded  */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color-mix(in srgb, var(--text-color), transparent 70%);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border-radius: 34px;
+  box-shadow: 1px 1px 3px #0004;
+}
+.switch .slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--light-background);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border-radius: 50%;
+}
+.switch input:checked + .slider {
+  background-color: var(--soft-accent);
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px var(--accent);
+  box-shadow: 1px 1px 3px #0001;
+}
+.switch input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* List tile setup --------------
+.listTile
+  .icon?
+  .title
+  .switch
+*/
+.listTile {
+  display: flex;
+  gap: 1rem;
+  align-items: top;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 1px 1px 3px #0000000d, inset 1px 1px 3px #ffffff0d;
+  border-radius: 30px;
+  align-items: center;
+}
+.listTile .icon {
+  height: 34px;
+  padding: 5px 10px;
+  fill: var(--text-color);
+}
+.listTile .title {
+  display: inline-block;
+  flex-grow: 1;
+  font-size: large;
+  padding: 5px;
+  font-weight: 700;
 }
 
 /* nav ---------- */
