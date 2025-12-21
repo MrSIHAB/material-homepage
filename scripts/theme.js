@@ -8,7 +8,10 @@ export const getColor = () => localStorage.getItem(COLOR_KEY);
 export const setColor = (colorCode) => localStorage.setItem(COLOR_KEY, colorCode);
 
 export function setTheme(color) {
+  const colorInputs = document.getElementsByName("color");
+
   if (color) setColor(color);
   const colorCode = getColor() ?? "#00b3b3";
   applyTheme(colorCode);
+  colorInputs.forEach((e) => e.value == colorCode && e.setAttribute("checked", true));
 }

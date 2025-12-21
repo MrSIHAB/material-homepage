@@ -25,15 +25,14 @@
   height: 100vh;
   overflow: scroll;
   border-left: 2px solid color-mix(in srgb, var(--light-accent), transparent 70%);
-  background: #ffffff23;
+  background: #ffffff43;
   backdrop-filter: blur(30px);
   border-radius: 15px 0 0 15px;
-  filter: brightness(1.1);
 }
 .settingPage .settingsHeader {
   padding: 1rem;
   font-size: 25px;
-  background-color: #9993;
+  background-color: #fff3;
   justify-items: center;
 }
 #setting .showSettings,
@@ -57,53 +56,41 @@
 }
 
 /* setting body  */
-.settingPage .settingBody {
+.settingBody {
   padding: 1rem;
 }
 
 /* Color Themes  */
-.settingPage .settingBody .colors {
+.settingBody .colors {
   padding-top: 0.7rem;
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
-.settingPage .settingBody .colors .themes {
+.settingBody .colors .color {
   position: relative;
   list-style: none;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   flex-wrap: wrap;
   background-color: var(--themeColor);
   border-radius: 50%;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
+  border: 2px solid #9995;
+  overflow: hidden;
 }
-/* .settingPage .settingBody .colors .themes[value="skyblue"] {
-  background: #2acdf5;
-}
-.settingPage .settingBody .colors .themes[value="red"] {
-  background: #d40909;
-}
-.settingPage .settingBody .colors .themes[value="green"] {
-  background: #08cf61;
-}
-.settingPage .settingBody .colors .themes[value="yellow"] {
-  background: #ece807;
-}
-.settingPage .settingBody .colors .themes[value="purple"] {
-  background: #800080;
-}
-.settingPage .settingBody .colors .themes[value="dark"] {
-  background: #050005;
-} */
-input[name="theme"]:checked::after {
+input[name="color"]:checked::after {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
   content: "";
-  height: 100%;
-  width: 100%;
-  background: url(svg/tick.svg) center center no-repeat;
-  background-size: 70%;
+  height: 60%;
+  width: 60%;
+  background: white;
+  box-shadow: 1px 1px 7px #0009;
+  opacity: 80%;
 }
