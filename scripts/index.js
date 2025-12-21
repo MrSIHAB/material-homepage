@@ -3,7 +3,6 @@ import { renderTime } from "./timeLoader.js";
 import { initSearch } from "./search.js";
 import { loadShortCutSites } from "./shortcuts.js";
 import { initUiListeners } from "./ui.js";
-import { applyTheme } from "./themeGenerator.js";
 import { loadColorSelectionBackground } from "./settings.js";
 import { setTheme } from "./theme.js";
 
