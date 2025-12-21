@@ -33,7 +33,9 @@
   padding: 1rem;
   font-size: 25px;
   background-color: #fff3;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 #setting .showSettings,
 #setting .closeSettings {
@@ -53,6 +55,7 @@
 #setting .closeSettings {
   position: relative;
   left: 0;
+  top: 0;
 }
 
 /* setting body  */
