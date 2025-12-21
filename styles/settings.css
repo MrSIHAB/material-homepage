@@ -91,9 +91,8 @@ input[name="color"]:checked::after {
   transform: translate(-50%, -50%);
   border-radius: 30px;
   content: "";
-  height: 60%;
-  width: 60%;
-  background: white;
-  box-shadow: 1px 1px 7px #0009;
-  opacity: 80%;
+  height: 55%;
+  width: 55%;
+  background: var(--background);
+  opacity: 70%;
 }
