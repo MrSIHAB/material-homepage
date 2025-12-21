@@ -4,26 +4,6 @@ export function setVar(name, value) {
   document.documentElement.style.setProperty(name, value);
 }
 
-// export function applyScheme(accent) {
-//   const base = hexToHSL(accent);
-//   const accentComplement = hslToCss({ h: (base.h + 180) % 360, s: base.s, l: base.l });
-//   const accentLight = hslToCss({ h: base.h, s: base.s, l: Math.min(100, base.l + 25) });
-//   const accentDark = hslToCss({ h: base.h, s: base.s, l: Math.max(0, base.l - 25) });
-
-//   setVar("--accent", accent);
-//   setVar("--accentComplement", accentComplement);
-//   setVar("--accentLight", accentLight);
-//   setVar("--accentDark", accentDark);
-// }
-// function hexToRGB(hex) {
-//   const bigint = parseInt(hex.replace("#", ""), 16);
-//   return {
-//     r: (bigint >> 16) & 255,
-//     g: (bigint >> 8) & 255,
-//     b: bigint & 255,
-//   };
-// }
-
 function hexToRGB(hex) {
   const bigint = parseInt(hex.replace("#", ""), 16);
   return {

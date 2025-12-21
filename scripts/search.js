@@ -1,11 +1,6 @@
 // search.js - handles search engine selection, theme, and search submission
 export const SEARCH_ENGINE_KEY = "engine";
 
-export function setTheme(body = document.body) {
-  const theme = localStorage.getItem("theme");
-  if (theme == null) localStorage.setItem("theme", "skyblue");
-  body.classList = localStorage.getItem("theme");
-}
 /**
  * This function takes three element, the elements is simple sentence are:
  * Input field, select element of search engine and the search form around
@@ -89,8 +84,14 @@ export function searchHandler(engineFormEl, searchInputEl) {
   };
 }
 
-export function initSearch({ searchEngineEl, engineFormEl, searchInputEl, submitBtn }) {
-  setTheme(); // setting theme
+export function initSearch() {
+  /** Google, yahoo, bing, youtube, duck duck go */
+  const searchEngineEl = document.getElementById("searchEngine");
+  /** The wrapper form around the search input. */
+  const engineFormEl = document.getElementById("searchForm");
+  /** The search input where user writes query */
+  const searchInputEl = document.getElementById("search");
+
   // setting engine name, form action and input name (q, p)
   setSearchEngine(searchEngineEl, engineFormEl, searchInputEl);
 
