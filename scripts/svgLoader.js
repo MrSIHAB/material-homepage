@@ -26,7 +26,7 @@ function _findSvgInRegistry(name) {
   return lower ? __SVG_REGISTRY[lower] : undefined;
 }
 
-function insertSvgs(root = document) {
+export function insertSvgs(root = document) {
   try {
     const nodes = (root || document).querySelectorAll("span[svg]");
     nodes.forEach((node) => {
