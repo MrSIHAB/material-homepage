@@ -3,7 +3,7 @@
   aspect-ratio: 1/1;
   width: 30px;
   border-radius: 50px;
-  background-color: var(--themeBg);
+  background-color: var(--light-accent);
   outline: 1px solid var(--themeColor);
   border: 0;
   box-shadow: inset 2px 2px 5px var(--liteThemeColor2);
@@ -16,54 +16,78 @@
 }
 .creditBox {
   display: none;
-  height: 400px;
-  width: 600px;
+  color: var(--text-color);
+  width: 750px;
+  max-width: 80vw;
   position: absolute;
-  background: #dfd9;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(55px);
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 1rem;
   border-radius: 30px;
-  box-shadow: 20px 0 100px 50px #4565;
+  box-shadow: 2px 2px 1px #0001, inset 2px 2px 1px var(--light-accent);
+  border: 1px solid color-mix(in srgb, transparent, var(--text-color) 10%);
   z-index: 2;
 }
 .creditBox .closeButton {
-  width: 30px;
+  width: 35px;
   aspect-ratio: 1/1;
-  border-radius: 50px;
+  border-radius: 20px;
   outline: 0;
   border: 0;
-  background: var(--themeColor);
-  color: white;
+  background: var(--accent);
+  color: var(--light-background);
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
 }
 .creditBox h3 {
   text-align: center;
+  font-size: 20px;
 }
-.creditBox .description {
+.creditBox .description p {
   margin: 1.5rem 0.5rem;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-family: sans-serif;
 }
 .creditBox .credit {
   margin: auto;
   display: grid;
-  grid-template-columns: 35% 30px 1fr;
+  grid-template-columns: 45% 1fr 45%;
   font-size: 18px;
   margin: 0.5rem;
   margin-top: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  gap: 7px;
 }
 .creditBox .credit .key {
-  color: var(--themeColor);
-  font-weight: bolder;
+  text-align: left;
 }
-.creditBox .credit a {
-  color: var(--themeColor);
-  font-weight: 500;
+.creditBox .credit a,
+.creditBox .credit p {
+  color: var(--text-color);
+  text-align: right;
+}
+/* banners -- Shields */
+.creditBox .banners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.creditBox .banners a {
   text-decoration: none;
+  color: var(--light-background);
+  flex: 1;
+}
+.creditBox .banners .listTile {
+  text-align: center;
+  background-color: var(--accent);
+  font-style: italic;
+}
+.creditBox .banners .listTile .icon {
+  fill: var(--light-background);
 }
