@@ -1,27 +1,12 @@
 /* credit section ---------------------------------------------- */
-.authorInfoButton {
-  aspect-ratio: 1/1;
-  width: 30px;
-  border-radius: 50px;
-  background-color: var(--light-accent);
-  outline: 1px solid var(--themeColor);
-  border: 0;
-  box-shadow: inset 2px 2px 5px var(--liteThemeColor2);
-  font-weight: 900;
-  font-size: large;
-  color: #123a;
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-}
 .creditBox {
   display: none;
   color: var(--text-color);
   width: 750px;
   max-width: 80vw;
   position: absolute;
+  background-color: #fff5;
   backdrop-filter: blur(55px);
-  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -29,7 +14,10 @@
   border-radius: 30px;
   box-shadow: 2px 2px 1px #0001, inset 2px 2px 1px var(--light-accent);
   border: 1px solid color-mix(in srgb, transparent, var(--text-color) 10%);
-  z-index: 2;
+  z-index: 4;
+}
+.creditBox.show {
+  display: block;
 }
 .creditBox .closeButton {
   width: 35px;
@@ -47,10 +35,10 @@
   text-align: center;
   font-size: 20px;
 }
-.creditBox .description p {
+.creditBox .description {
   margin: 1.5rem 0.5rem;
   font-size: 15px;
-  font-family: sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 .creditBox .credit {
   margin: auto;

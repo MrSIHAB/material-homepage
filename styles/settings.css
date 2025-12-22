@@ -36,6 +36,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-weight: bold;
 }
 #setting .showSettings,
 #setting .closeSettings {
@@ -50,12 +51,18 @@
   z-index: 1;
   background: transparent;
   fill: transparent;
-  stroke: var(--accent);
+  stroke: var(--text-color);
 }
 #setting .closeSettings {
   position: relative;
   left: 0;
   top: 0;
+}
+/* credit */
+.settingsHeader .openCreditButton {
+  height: 50px;
+  display: inline-block;
+  fill: var(--accent);
 }
 
 /* setting body  */

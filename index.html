@@ -25,10 +25,13 @@
     <!-- settings page  -->
     <div id="settingPage" class="settingPage popup">
       <div class="settingsPageWrapper">
-        <h4 class="settingsHeader">
+        <!-- settings header  -->
+        <div class="settingsHeader">
           <button class="closeSettings" id="closeSettings"><span svg="sidebarRight"></span></button>
-          <span>Settings</span>
-        </h4>
+          <span style="flex-grow: 1;">Settings</span>
+          <span id="openCreditButton" class="openCreditButton" svg="portfolio"></span>
+        </div>
+        <!-- settings body -->
         <div class="settingBody">
           <!-- Accent color and theme selection  -->
           <div class="colorPalate">
@@ -66,7 +69,6 @@
             <h4 style="font-size: large;">Quick Sites:</h4>
 
             <div class="listTile">
-              <!-- <div class="icon"><span svg="leetCode"></span></div> -->
               <span class="title">Developer</span>
               <label class="switch">
                 <input type="checkbox" id="toggleDeveloperSites">
@@ -75,7 +77,6 @@
             </div>
 
             <div class="listTile">
-              <!-- <div class="icon"><span svg="drive"></span></div> -->
               <span class="title">Google</span>
               <label class="switch">
                 <input type="checkbox" id="toggleGoogleSites" />
@@ -84,7 +85,6 @@
             </div>
 
             <div class="listTile">
-              <!-- <div class="icon"><span svg="dart"></span></div> -->
               <span class="title">Microsoft</span>
               <label class="switch">
                 <input type="checkbox" id="toggleMicrosoftSites">
@@ -236,30 +236,27 @@
   </div>
 
   <!-- * author credit button  -->
-  <!-- <button class="authorInfoButton" id="authorInfoButton" title="About">&excl;</button> -->
-  <div class="creditBox" id="aboutBox" style="display: block;">
+  <div class="creditBox popup" id="creditBox">
     <h3>Credit</h3>
-    <button class="closeButton" id="aboutCloseBtn">&cross;</button>
-    <div class="description">
-      <p>
-        Material Homepage is an OpenSource Project of mine(<em>Shoaib Hossain</em>).
-        I have tried to design it minimal, focused and beautiful. I am trying
-        my best to put more useful feature as I can without violating the core concept.
-        This includes multiple search engines, quick mail access, adding
-        shortcuts and so on. Consider checking them manually. Though it takes a lot
-        effort to build and maintain this kinds of projects, your support, pleasure 
-        and feedbacks will be my pleasure.
-        <br />
-        Me?... I am Shoaib Hossain, a self taught developer, Who like technology and like
-        to deep dive into it. As of now, I know many language and frameworks.
-        Ex. JavaScript, TypeScript, Dart, PHP, GoLang.
-        I use them to solve real world problems. Material Homepage is one of them.
-        For more information about me, please checkout my portfolio.
-        <br>
-        <br>
-        You can support Material Homepage by clicking the left button below.
-      </p>
-    </div>
+    <button class="closeButton" id="creditCloseBtn">&cross;</button>
+    <p class="description">
+      Material Homepage is an OpenSource Project of mine(<em>Shoaib Hossain</em>).
+      I have tried to design it minimal, focused and beautiful. I am trying
+      my best to put more useful feature as I can without violating the core concept.
+      This includes multiple search engines, quick mail access, adding
+      shortcuts and so on. Consider checking them manually. Though it takes a lot
+      effort to build and maintain this kinds of projects, your support, pleasure
+      and feedbacks will be my pleasure.
+      <br />
+      Me?... I am Shoaib Hossain, a self taught developer, Who like technology and like
+      to deep dive into it. As of now, I know many language and frameworks.
+      Ex. JavaScript, TypeScript, Dart, PHP, GoLang.
+      I use them to solve real world problems. Material Homepage is one of them.
+      For more information about me, please checkout my portfolio.
+      <br>
+      <br>
+      You can support Material Homepage by clicking the left button below.
+    </p>
     <!-- <hr style="width: 90%; margin: auto; border: 1px solid var(--accent)" /> -->
     <div class="credit">
       <span class="key">Developed by</span>: <a href="https://sihab.deno.dev">Shoaib Hossain</a>

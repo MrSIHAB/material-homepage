@@ -1,9 +1,30 @@
 import { setTheme } from "./theme.js";
+import { closePopup, showPopup } from "./ui.js";
 
 export function initSettings() {
   document.addEventListener("DOMContentLoaded", () => {
     _loadColorSelectionBackground();
     _quickSitesSettings();
+    _developerCardListeners();
+  });
+}
+
+/**
+ * Developer information. A card should appear when user clicks this button
+ */
+function _developerCardListeners() {
+  const openDevCardButton = document.getElementById("openCreditButton");
+  const closeDevCardButton = document.getElementById("creditCloseBtn");
+  const DevCard = document.getElementById("creditBox");
+  const settingsContainer = document.getElementById("settingPage");
+
+  openDevCardButton.addEventListener("click", function () {
+    settingsContainer.classList.remove("show");
+    DevCard.classList.add("show");
+  });
+  closeDevCardButton.addEventListener("click", function () {
+    DevCard.classList.remove("show");
+    settingsContainer.classList.add("show");
   });
 }
 
