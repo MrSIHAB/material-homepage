@@ -53,6 +53,7 @@ function _loadColorSelectionBackground() {
  */
 function _quickSitesSettings() {
   applyThemeAndListeners("toggleDeveloperSites", "developerQuickSites", false);
+  applyThemeAndListeners("toggleAiSites", "aiQuickSites", false);
   applyThemeAndListeners("toggleGoogleSites", "googleQuickSites", true);
   applyThemeAndListeners("toggleMicrosoftSites", "microsoftQuickSites", true);
 
