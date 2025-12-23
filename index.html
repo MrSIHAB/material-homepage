@@ -75,7 +75,7 @@
 
           <!--  Settings for Quick application / sites that comes with extension By default -->
           <div class="quickSiteSettings">
-            <h4 style="font-size: large;">Quick Sites:</h4>
+            <h4 style="font-size: large;font-weight: bold;">Quick Sites:</h4>
 
             <div class="listTile">
               <span class="title">Developer</span>
@@ -89,6 +89,14 @@
               <span class="title">Ai/ML</span>
               <label class="switch">
                 <input type="checkbox" id="toggleAiSites">
+                <span class="slider round"></span>
+              </label>
+            </div>
+           
+            <div class="listTile">
+              <span class="title">Social Media</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleSocialSites">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -168,6 +176,18 @@
     <!-- Applications shortcuts : extension specific ----- -->
     <div id="allAppPopup" class="allAppPopup">
 
+      <!-- ? Sponsor placeholder --- Max-5 -----------------  -->
+      <div id="sponsorQuickSites" class="appTypeContainer">
+        <h3>Sponsor</h3>
+        <ul class="ab ab-sponsor">
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+        </ul>
+      </div>
+
       <!-- ? Developer Sites -----------------------------------------------  -->
       <div id="developerQuickSites" class="appTypeContainer">
         <h3>Developer</h3>
@@ -175,7 +195,6 @@
           <li><a href="https://github.com" title="Github"><span svg="github"></span></a></li>
           <li><a href="https://gitlab.com" title="Gitlab"><span svg="gitlab"></span></a></li>
           <li><a href="https://stackoverflow.com" title="stackoverflow"><span svg="stackoverflow"></span></a></li>
-          <li><a href="https://github.com/copilot" title="Copilot"><span svg="githubCopilot"></span></a></li>
           <li><a href="https://npmjs.com" title="NPM"><span svg="npm"></span></a></li>
           <li><a href="https://developer.mozilla.org" title="MDN"><span svg="mdn"></span></a></li>
           <li><a href="https://leetcode.com" title="LeetCode"><span svg="leetCode"></span></a></li>
@@ -184,11 +203,12 @@
           <li><a href="https://yarnpkg.com" title="Yarn"><span svg="yarn"></span></a></li>
         </ul>
       </div>
-
+      
       <!-- ? Ai Sites -----------------------------------------------  -->
       <div id="aiQuickSites" class="appTypeContainer">
         <h3>Artificial Intelligence</h3>
         <ul class="ab ab-ai">
+          <li><a href="https://github.com/copilot" title="Copilot"><span svg="githubCopilot"></span></a></li>
           <li><a href="https://chat.deepseek.com" title="DeepSeek"><span svg="deepSeek"></span></a></li>
           <li><a href="https://chatgpt.com" title="ChatGPT"><span svg="chatgpt"></span></a></li>
           <li><a href="https://gemini.google.com" title="Gemini"><span svg="gemini"></span></a></li>
@@ -197,7 +217,7 @@
           <li><a href="https://www.perplexity.ai" title="Perplexity"><span svg="perplexity"></span></a></li>
           <li><a href="https://ollama.com" title="Ollama"><span svg="ollama"></span></a></li>
           <li><a href="https://copilot.microsoft.com" title="Copilot"><span svg="copilot"></span></a></li>
-          <li><a href="https://suno.com" title="Suno"><span svg="suno"></span></a></li>
+          <!-- <li><a href="https://suno.com" title="Suno"><span svg="suno"></span></a></li> -->
         </ul>
       </div>
 

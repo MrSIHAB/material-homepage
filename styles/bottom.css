@@ -72,6 +72,8 @@
   border-radius: 20px;
   box-shadow: 3px 3px 3px #00000010, inset 3px 3px 3px #ffffff07;
   transition: all 300ms;
+  position: relative;
+  overflow: hidden;
 }
 .allAppPopup a {
   display: flex;
@@ -87,7 +89,7 @@
   width: 50px;
 }
 .allAppPopup li:hover {
-  background-color: var(--liteThemeColor);
+  background-color: #fff1;
 }
 .allAppPopup li:hover img {
   filter: brightness(100%);
@@ -103,9 +105,20 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 .quickApplication.show #toggleApp {
   rotate: 180deg;
+}
+/* sponsor  */
+.appTypeContainer .ab-sponsor li::after {
+  content: "";
+  background: var(--accent);
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  rotate: -45deg;
+  transform: translateY(15px);
 }
 
 /*  ===== mail section ===== */

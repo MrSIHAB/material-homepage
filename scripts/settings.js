@@ -52,9 +52,10 @@ function _loadColorSelectionBackground() {
  */
 function _quickSitesSettings() {
   applyThemeAndListeners("toggleDeveloperSites", "developerQuickSites", false);
-  applyThemeAndListeners("toggleAiSites", "aiQuickSites", false);
-  applyThemeAndListeners("toggleGoogleSites", "googleQuickSites", true);
-  applyThemeAndListeners("toggleMicrosoftSites", "microsoftQuickSites", true);
+  applyThemeAndListeners("toggleAiSites", "aiQuickSites", true);
+  applyThemeAndListeners("toggleSocialSites", "socialQuickSites", true);
+  applyThemeAndListeners("toggleGoogleSites", "googleQuickSites", false);
+  applyThemeAndListeners("toggleMicrosoftSites", "microsoftQuickSites", false);
 
   /**
    * Reuseable function to load Initial UI and add listeners
