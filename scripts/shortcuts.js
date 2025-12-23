@@ -136,6 +136,7 @@ export async function loadShortCutSites() {
  *
  */
 function _shortCutSiteEditAndDeleteListeners() {
+  const everyShortcuts = document.getElementsByClassName("everyShortcut");
   const addShortcut = document.getElementById("addShortcut");
   const threeDots = document.querySelectorAll(".threeDot");
   const editShortcuts = document.querySelectorAll(".editShortcut");
@@ -166,6 +167,14 @@ function _shortCutSiteEditAndDeleteListeners() {
   for (const btn of threeDots) {
     btn.addEventListener("focus", () => btn.parentElement.classList.add("showOptions"));
     btn.addEventListener("focusout", () => btn.parentElement.classList.remove("showOptions"));
+  }
+
+  // listen right click
+  for (const shortcut of everyShortcuts) {
+    shortcut.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      return (shortcut.getElementsByClassName("threeDot")[0].focus() = true);
+    });
   }
 }
 

@@ -1,25 +1,4 @@
-/* applications shortcut section ----------- */
-.everyShortcut.plusIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color);
-}
-.everyShortcut.plusIcon p {
-  font-size: 50px;
-  position: relative;
-}
-section.shortcutApp#shortcutApp {
-  align-items: center;
-  justify-content: center;
-  min-width: 65vw;
-  width: 720px;
-  max-width: 95vw;
-  margin: 100px auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
+/* add shortcut form */
 section#addAppContainer {
   color: var(--text-color);
   display: none;
@@ -104,29 +83,57 @@ section#addAppContainer #shortcutSaveBtn {
   margin: auto;
   display: block;
 }
-
 section#addAppContainer #shortcutSaveBtn:hover {
-  background: var(--themeColor);
-  color: #f6f9fe;
+  background: transparent;
+  color: var(--text-color);
 }
 
+/* Shortcuts  */
+.everyShortcut.plusIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+.everyShortcut.plusIcon p {
+  font-size: 50px;
+  position: relative;
+}
+section.shortcutApp#shortcutApp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70vw;
+  width: 800px;
+  max-width: 98vw;
+  margin: 100px auto;
+  flex-wrap: wrap;
+  gap: 3px;
+}
 #shortcutApp .everyShortcut {
-  margin-bottom: 3rem;
-  height: 40px;
-  width: 40px;
-  aspect-ratio: 1/1;
+  width: 90px;
+  aspect-ratio: 1;
   position: relative;
   cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
 }
 .everyShortcut .icon {
+  position: relative;
+  display: inline-block;
   filter: drop-shadow(1px 1px 1px color-mix(in srgb, var(--text-color), transparent 90%));
-  height: 100%;
-  width: 100%;
+  width: 40px;
+  aspect-ratio: 1;
 }
 .everyShortcut .title {
   text-align: center;
   text-overflow: ellipsis;
   color: var(--text-color);
+  max-width: 100%;
 }
 .everyShortcut .threeDot {
   outline: 0;
@@ -134,24 +141,23 @@ section#addAppContainer #shortcutSaveBtn:hover {
   cursor: pointer;
   background-color: transparent;
   position: absolute;
-  top: -30%;
-  right: -35%;
+  top: 0;
+  right: 3px;
   aspect-ratio: 1/1;
   border-radius: 30px;
   padding: 0px 3px;
-  opacity: 0;
   transition: all 200ms;
   color: var(--text-color);
   fill: var(--text-color);
   z-index: 2;
 }
-.everyShortcut .threeDot img {
-  transform: rotate(90deg);
+.everyShortcut .threeDot svg {
+  opacity: 0;
 }
 .everyShortcut .threeDot:hover {
   background-color: #fff9;
 }
-.everyShortcut:hover > .threeDot {
+.everyShortcut:hover .threeDot svg {
   opacity: 1;
 }
 .everyShortcut .threeDotOptions {
