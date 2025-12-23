@@ -11,7 +11,11 @@ export function setTheme(color) {
   const colorInputs = document.getElementsByName("color");
 
   if (color) setColor(color);
-  const colorCode = getColor() ?? "#00b3b3";
+  const colorCode = getColor() ?? "#008b8b";
+
   applyTheme(colorCode);
-  colorInputs.forEach((e) => e.value == colorCode && e.setAttribute("checked", true));
+  colorInputs.forEach((e) => {
+    if (e.id === "colorPicker") e.value = colorCode;
+    else e.checked = e.value == colorCode;
+  });
 }

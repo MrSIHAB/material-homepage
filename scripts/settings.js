@@ -1,5 +1,4 @@
 import { setTheme } from "./theme.js";
-import { closePopup, showPopup } from "./ui.js";
 
 export function initSettings() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -40,7 +39,7 @@ function _loadColorSelectionBackground() {
     element.style.background = element.value;
 
     // Listen click event
-    element.addEventListener("click", () => setTheme(element.value));
+    element.addEventListener("input", () => setTheme(element.value));
   });
 }
 

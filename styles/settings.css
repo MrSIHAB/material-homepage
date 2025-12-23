@@ -88,11 +88,12 @@
   width: 50px;
   flex-wrap: wrap;
   background-color: var(--themeColor);
-  border-radius: 50%;
+  border-radius: 30px;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
-  border: 2px solid #9995;
+  outline: 2px solid color-mix(in srgb-linear, var(--text-color), transparent 90%);
+  border: none;
   overflow: hidden;
 }
 input[name="color"]:checked::after {
@@ -106,4 +107,23 @@ input[name="color"]:checked::after {
   width: 55%;
   background: var(--background);
   opacity: 70%;
+}
+input#colorPicker {
+  width: calc(50px * 2 + 1rem);
+}
+#colorPicker::before {
+  content: "Pick color";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--light-background);
+  background: var(--accent);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
 }
