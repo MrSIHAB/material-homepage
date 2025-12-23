@@ -24,10 +24,10 @@
   width: 500px;
   height: 100vh;
   overflow: scroll;
-  border-left: 2px solid color-mix(in srgb, var(--light-accent), transparent 70%);
-  background: #ffffff43;
+  box-shadow: inset 2px 2px 1px color-mix(in srgb, var(--light-accent), transparent 80%);
+  background: #ffffff50;
   backdrop-filter: blur(30px);
-  border-radius: 15px 0 0 15px;
+  border-radius: 30px 0 0 30px;
 }
 .settingPage .settingsHeader {
   padding: 1rem;
