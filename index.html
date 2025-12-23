@@ -11,14 +11,14 @@
 </head>
 
 <body>
-  <!-- Brand logo  ---------------------------  -->
+  <!-- ---------------------------------- Brand logo  ---------------------------------  -->
   <nav>
     <div class="branding">
       <div class="brandLogo"><img src="images/logo/logo.png" alt="logo"></div>
     </div>
   </nav>
 
-  <!-- settings section  -------- -->
+  <!-- -------------------------------- settings section  ------------------------------ -->
   <div id="setting" class="setting">
     <!-- setting icon  -->
     <button class="showSettings" id="showSettings"><span svg="sidebarLeft"></span></button>
@@ -114,7 +114,7 @@
     </div>
   </div>
 
-  <!-- Time section ----------/------// -->
+  <!-- *----------------------------------- Time section -------------------------------- -->
   <section class="timeSection">
     <div class="dayBox">
       <h3 id="day">LOADING...</h3>
@@ -124,7 +124,7 @@
     </div>
   </section>
 
-  <!--  Search Bar with form as wrapper ----------//--------//----- -->
+  <!-- *------------------------------------ Search bar  -------------------------------- -->
   <form action="https://www.google.com/search" method="get" id="searchForm">
     <!-- search engine selection -->
     <select id="searchEngine" name="">
@@ -140,7 +140,7 @@
     <button type="submit" form="searchForm" id="submitBtn" class="searchIcon"><span svg="searchIcon"></span></button>
   </form>
 
-  <!-- * this container will contain new shortcut form  -->
+  <!-- this container will contain new shortcut form  -->
   <section class="addAppContainer popup" id="addAppContainer">
     <h3 align="center">Add New Shortcut</h3>
 
@@ -157,13 +157,13 @@
     </form>
   </section>
 
-  <!-- User specific Application shortcuts placeholder -->
+  <!-- *------------------------ User specific shortcuts placeholder -------------------- -->
   <section class="shortcutApp" id="shortcutApp"></section>
 
   <!-- blurry background for showing popups  -->
   <div class="popupBg" id="popupBg"></div>
 
-  <!-- quickApplication section ->  toggle application shortcut  -->
+  <!--  *---------------------------------- Quick sites --------------------------------- -->
   <section class="quickApplication popup" id="quickApplication">
     <!-- Applications shortcuts : extension specific ----- -->
     <div id="allAppPopup" class="allAppPopup">
@@ -256,9 +256,8 @@
     <span id="toggleApp" role="button" title="All Apps" svg="popupButton"></span>
   </section>
 
-  <!-- mail box-- -->
+  <!-- ---------- mail box --------- -->
   <div id="mailContainer" class="mailContainer popup">
-    <!-- <div class="mailService"> -->
     <!-- google mail, microsoft outlook and yahoo mail  -->
     <div class="emails gmail" title="Gmail"><a href="https://mail.google.com"><span svg="gmail"></span></a></div>
     <div class="emails outlook" title="Outlook"><a href="https://outlook.live.com/"><span svg="outlook"></span></a>
@@ -267,10 +266,9 @@
 
     <!-- email toggle button -- -->
     <div id="ToggleMailBtn" class="ToggleMailButton" title="Mail" role="button"><span svg="mail"></span></div>
-    <!-- </div> -->
   </div>
 
-  <!-- * author credit button  -->
+  <!-- author credit button  -->
   <div class="creditBox popup" id="creditBox">
     <h3>Developer Information</h3>
     <button class="closeButton" id="creditCloseBtn">&cross;</button>
