@@ -6,11 +6,17 @@ export function correctUrl(url) {
 
 export function getFaviconUrl(pageUrl, size = 32) {
   try {
-    const url = new URL(chrome.runtime.getURL("/_favicon/"));
-    url.searchParams.set("pageUrl", pageUrl);
-    url.searchParams.set("size", size.toString());
-    return url.toString();
+    // in chrome case
+    const isChrome = navigator.userAgent.toLowerCase().includes("chrome") && !!window.chrome;
+    if (isChrome) {
+      return chrome.runtime.getURL(`/_favicon/?size=32&pageUrl`);
+    }
+
+    // For other browsers
+    return `https://faviconfetcher.deno.dev/?url`;
   } catch (e) {
-    return `https://faviconfetcher.deno.dev/?url=${pageUrl}`;
+    console.log(e);
+    return `https://faviconfetcher.deno.dev/?url`;
   }
 }
+navigator.userAgent;

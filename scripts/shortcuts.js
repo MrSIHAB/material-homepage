@@ -100,6 +100,7 @@ export async function loadShortCutSites() {
   const shortcutSection = document.getElementById("shortcutApp");
   const allApps = await getAllApp();
 
+  const faviconUrl = getFaviconUrl();
   let embedApps = "";
   if (allApps != null) {
     embedApps = allApps
@@ -115,7 +116,7 @@ export async function loadShortCutSites() {
           </div>
         </button>
         <a href="${httpUrl}">
-          <img src="${getFaviconUrl(httpUrl)}" alt="" class="icon" />
+          <img src="${faviconUrl}=${httpUrl}" alt="${value.title}" class="icon" />
         </a>
         <h5 class="title">${value.title}</h5>
       </div>`;
