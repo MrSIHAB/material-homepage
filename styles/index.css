@@ -80,7 +80,7 @@ svg {
   align-items: center;
 }
 .listTile .icon {
-  height: 34px;
+  height: 38px;
   padding: 5px 10px;
   fill: var(--text-color);
 }

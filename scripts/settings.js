@@ -5,6 +5,7 @@ export function initSettings() {
     _loadColorSelectionBackground();
     _quickSitesSettings();
     _developerCardListeners();
+    _loadAdaptiveIcon();
   });
 }
 
@@ -37,9 +38,25 @@ function _loadColorSelectionBackground() {
   colorInputs.forEach(function (element) {
     // setting background
     element.style.background = element.value;
-
     // Listen click event
     element.addEventListener("input", () => setTheme(element.value));
+  });
+}
+
+/**
+ * Adaptive color for user defined shortcut section.
+ */
+function _loadAdaptiveIcon() {
+  const adaptiveIconButton = document.getElementById("adaptiveIcon");
+  const shortcutApp = document.getElementById("shortcutApp");
+
+  const isAdaptive = localStorage.getItem("isAdaptive") == "true";
+  adaptiveIconButton.checked = isAdaptive;
+  if (isAdaptive) shortcutApp.classList.add("adaptive");
+  adaptiveIconButton.addEventListener("change", () => {
+    localStorage.setItem("isAdaptive", adaptiveIconButton.checked);
+    console.log(adaptiveIconButton.checked);
+    shortcutApp.classList.toggle("adaptive");
   });
 }
 

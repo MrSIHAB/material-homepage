@@ -108,10 +108,10 @@ section.shortcutApp#shortcutApp {
   max-width: 98vw;
   margin: 100px auto;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 13px;
 }
 #shortcutApp .everyShortcut {
-  width: 90px;
+  width: 85px;
   aspect-ratio: 1;
   position: relative;
   cursor: pointer;
@@ -134,6 +134,20 @@ section.shortcutApp#shortcutApp {
   text-overflow: ellipsis;
   color: var(--text-color);
   max-width: 100%;
+}
+/* adaptive icons  */
+.shortcutApp.adaptive .everyShortcut {
+  background-color: var(--soft-accent);
+}
+.shortcutApp.adaptive .everyShortcut .icon {
+  filter: grayscale(1);
+  mix-blend-mode: screen;
+}
+.shortcutApp.adaptive .everyShortcut .title {
+  color: var(--light-background);
+}
+.shortcutApp.adaptive .everyShortcut.plusIcon {
+  color: var(--light-background);
 }
 .everyShortcut .threeDot {
   outline: 0;
