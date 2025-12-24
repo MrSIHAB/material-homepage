@@ -19,4 +19,3 @@ export function getFaviconUrl(pageUrl, size = 32) {
     return `https://faviconfetcher.deno.dev/?url`;
   }
 }
-navigator.userAgent;
