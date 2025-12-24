@@ -11,6 +11,6 @@ export function getFaviconUrl(pageUrl, size = 32) {
     url.searchParams.set("size", size.toString());
     return url.toString();
   } catch (e) {
-    return `images/favicon.ico`;
+    return `https://faviconfetcher.deno.dev/?url=${pageUrl}`;
   }
 }
