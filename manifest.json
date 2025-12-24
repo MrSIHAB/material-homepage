@@ -1,8 +1,8 @@
 {
   "name": "Material Homepage",
   "manifest_version": 3,
-  "version": "1.2.2",
-  "description": "A professional NewTab/Homepage",
+  "version": "2.0.0",
+  "description": "Minimal, focused and professional Homepage",
   "action": {
     "default_icon": "/images/logo/logo.png"
   },
