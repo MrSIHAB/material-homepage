@@ -173,7 +173,7 @@ function _shortCutSiteEditAndDeleteListeners() {
   for (const shortcut of everyShortcuts) {
     shortcut.addEventListener("contextmenu", (e) => {
       e.preventDefault();
-      return (shortcut.getElementsByClassName("threeDot")[0].focus() = true);
+      return shortcut.getElementsByClassName("threeDot")[0].focus();
     });
   }
 }
