@@ -11,7 +11,7 @@ export function setTheme(color) {
   const colorInputs = document.getElementsByName("color");
 
   if (color) setColor(color);
-  const colorCode = getColor() ?? "#008b8b";
+  const colorCode = getColor() ?? "#800080";
 
   applyTheme(colorCode);
   colorInputs.forEach((e) => {
