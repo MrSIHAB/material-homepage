@@ -127,3 +127,38 @@ input#colorPicker {
   font-size: 15px;
   font-weight: 500;
 }
+
+/* backup restore and reset  */
+.restoreContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.restoreContainer button {
+  width: 100%;
+  padding: 15px 0;
+  border: 2px solid var(--soft-accent);
+  background-color: var(--accent);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--light-background);
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.restoreContainer svg {
+  height: 25px;
+  width: 25px;
+  fill: var(--light-background);
+}
+.restoreContainer .backupAndRestore {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}

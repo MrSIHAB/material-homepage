@@ -6,6 +6,7 @@ export function initSettings() {
     _quickSitesSettings();
     _developerCardListeners();
     _loadAdaptiveIcon();
+    _backupAndRestoreSetup();
   });
 }
 
@@ -55,7 +56,6 @@ function _loadAdaptiveIcon() {
   if (isAdaptive) shortcutApp.classList.add("adaptive");
   adaptiveIconButton.addEventListener("change", () => {
     localStorage.setItem("isAdaptive", adaptiveIconButton.checked);
-    console.log(adaptiveIconButton.checked);
     shortcutApp.classList.toggle("adaptive");
   });
 }
@@ -100,4 +100,82 @@ function _quickSitesSettings() {
       else siteElement.classList.add("hide");
     });
   }
+}
+
+/**
+ * Backup , restore and reset to default settings.
+ * Backup button will create a json file and download that.
+ * Restore button will take a json file and store them to localStorage.
+ * Reset button will delete everything from localStorage
+ */
+function _backupAndRestoreSetup() {
+  const backupButton = document.getElementById("backupSettings");
+  const restoreButton = document.getElementById("restoreSettings");
+  const resetButton = document.getElementById("resetSettings");
+
+  // Backup all the localStorage settings
+  backupButton.addEventListener("click", async () => {
+    // store all localStorage keys and values to backup object
+    const backup = {};
+    for await (const key of Object.keys(localStorage)) {
+      backup[key] = localStorage.getItem(key);
+    }
+    // Creating new blob, link and anchor tag.
+    const blob = new Blob([JSON.stringify(backup)]);
+    const link = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    // Assigning link and name
+    a.href = link;
+    a.download = "material_homepage_backup.json";
+    // automatically clicking the anchor tag to download
+    return a.click();
+  });
+
+  // restore all the settings to localStorage
+  const jsonInput = document.createElement("input");
+  jsonInput.type = "file";
+  jsonInput.accept = "application/json,.json";
+  restoreButton.addEventListener("click", () => jsonInput.click());
+  jsonInput.addEventListener("change", async (event) => {
+    const confirmed = confirm(
+      "Restoring settings will remove all the existing settings.\n" + "Do you want to proceed?"
+    );
+    if (!confirmed) return;
+
+    const file = event.target.files?.[0];
+    if (!file) return; // no file chosen
+
+    // Basic validation (accept attribute is advisory only)
+    if (!file.name.endsWith(".json") && file.type !== "application/json") {
+      alert("Please select a JSON file.");
+      return;
+    }
+
+    try {
+      const text = await file.text(); // modern and simple
+      const json = JSON.parse(text);
+
+      localStorage.clear();
+      for await (const key of Object.keys(json)) {
+        localStorage.setItem(key, json[key]);
+      }
+      location.reload();
+    } catch (err) {
+      console.error("Failed to read/parse JSON file:", err);
+      alert("Invalid JSON file.");
+    }
+  });
+
+  // restore to default settings
+  resetButton.addEventListener("click", () => {
+    const confirmed = confirm(
+      "Restore to default settings will remove every modification you made on this extension\n." +
+        "Do you want to proceed?"
+    );
+
+    if (confirmed) {
+      localStorage.clear();
+      location.reload();
+    }
+  });
 }
