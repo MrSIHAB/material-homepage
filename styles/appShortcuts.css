@@ -149,6 +149,9 @@ section.shortcutApp#shortcutApp {
 .shortcutApp.adaptive .everyShortcut.plusIcon {
   color: var(--light-background);
 }
+.shortcutApp.adaptive .threeDot {
+  fill: var(--light-background);
+}
 .everyShortcut .threeDot {
   outline: 0;
   border: 0;
