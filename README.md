@@ -1,159 +1,178 @@
 <div align="Center">
-    <h1>Material Homepage</h1>
+    <span style="font-size:25px;font-weight:bold;" >Material Homepage</span>
+    <br/>
+    <span style="font-size:16px;font-weight:bold">By MrSIHAB</span>
+
 <center>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/material-hompage/">
-<img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" />
-</a>
-<a href="https://microsoftedge.microsoft.com/addons/detail/material-hompage/gppedgcpmlnfphgohlcdmeejokcgipjb">
-<img src="https://learn.microsoft.com/en-us/windows/apps/images/new-badge-dark.png" />
-</a>
+    <a href="https://www.buymeacoffee.com/mrsihab"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
+    </a>
 </center>
 
-____
-
 <center>
-    <a href="https://www.buymeacoffee.com/mrsihab"><img src="https://img.buymeacoffee.com/button-api/?text=Buy Sihab a coffee&emoji=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
-    </a>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/material-hompage/">
+<img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" alt="Firefox addon" height="50" />
+</a>
+<a href="https://microsoftedge.microsoft.com/addons/detail/material-hompage/gppedgcpmlnfphgohlcdmeejokcgipjb">
+<img src="https://learn.microsoft.com/en-us/windows/apps/images/new-badge-dark.png" alt="edge addon" height="50" />
+</a>
 </center>
 </div>
 
-Ababil Professional is a browser **Home page** / **NewTab** extention for Professionals.
-
-This extention will provide you minimalist and distraction less home page. And you'll get Professional vibes which will make you more confident and productive.
+Material Homepage: A Clean and Focused Homepage or NewTab inspired by Material Design.
 
 <!-- Preview Button -->
 <a href="https://mrsihab.github.io/material-homepage">
-<button style="width:75%;margin:auto;display:block;padding:10px;margin-bottom:10px;background:aqua;color:#121252;font-weight:bold;border-radius:15px;outline:0;border:1px solid #00ffff;position:relative;cursor:pointer;text-decoration:none;">
-  Preview Extention
-  <div style="font-size:25px;display:inline;;width:30px;float:right;font-weight:bold;padding:0;position:absolute;right:5px;top:3px">
+<button style="width:100%;padding:15px;margin-bottom:10px;background:#00b8d8;font-weight:bold;border-radius:25px;outline:0;border:0;text-decoration:none;position:relative;">
+  Preview Extension
+  <div style="font-size:25px;display:inline;;width:70px;position:absolute;right:5px;top:6px">
     &triangleright;
   </div>
 </button>
 </a>
 
-![Screenshots](./screenshots/main.png)  
-![Screenshots](./screenshots/1st.png)  
-![Screenshots](./screenshots/2nd.png)  
-![Screenshots](./screenshots/3rd.png)  
-![Screenshots](./screenshots/4th.png)  
-![Screenshots](./screenshots/5th.png)  
-![Screenshots](./screenshots/6th.png)
+## Introduction
 
-_You may see minor bugs while in preview page on Chromium Browser sich as Chrome, Edge, Safari, Brave._  
-**But This bugs won't be seen after installing the actual Extension.**
+Material Homepage is a sleek browser extension that transforms your New Tab or homepage into a productivity dashboard inspired by Google's Material Design. It provides a minimalist and distraction-free environment, perfect for users seeking an organized and efficient start to their browsing sessions.
 
-## Menus
+Upon installation, Material Homepage replaces your default New Tab with a customizable dashboard that offers quick access to frequently used websites, applications, and search functionalities. The design emphasizes simplicity and usability, creating a professional yet inviting space.
 
-[**Features**](#some-main-features-of-this-extention)  
-[**Mobile or Non-Extension Browser**](#mobile-users)  
-[**Microsoft Edge User**](#browser-add-on)  
-[**Manual Install (.ZIP)**](#manual-installationzip)  
-[**Manual Install (Git/Github)**](#manual-installation-git)
+Customization is straightforward, allowing you to add, edit, or remove shortcut sites. You can organize these shortcuts into responsive grids that adapt to your needs, making your New Tab both personal and efficient.
 
----
+The extension also features dynamic theme personalization with a color picker, which automatically switches between light and dark modes based on the selected color's brightness. You can easily toggle and save your preferences locally. The integrated search bar supports instant queries and direct URL navigation, while a built-in Translator widget provides quick translations of text and webpages using Google Translate.
 
-### Some main Features of this extention
+## Key Features:
 
-- This extension comes with different themes such as SkyBlue, Red, Green, Yellow, Purple. You can also switch between Dark and Light mode.
+- Modern, clean, and visually appealing design
+- Distraction-free user interface for enhanced focus
+- Customizable search bar to select preferred search engines
+- Dynamic theme personalization with interactive color palettes
+- User-defined shortcut sites for easy access
+- Automatic light and dark mode based on the selected color
+- Backup settings and shortcuts for seamless use on new browsers or devices
+- Local storage of preferences to ensure privacy
+- Default shortcuts for popular websites, including AI tools, social media, development resources, Google, and Microsoft services.
 
-- There is a shortcut feature to visit popular and most visiting websites. We catagorized them based on quality and athor. Such as _*Social-media, Developer, Gamer, Google Web apps, Microsoft web apps etc.*_
+## How It Works:
 
-- Also there a quick mail section where you can check you mails quickly. Currently there are three email option. These are _Gmail, Outlook(Microsoft), Yahoo mail._
+- Install the Material Homepage extension from your browser’s extension store.
+  > If the extension isn't available on you browser addon store, follow [ZIP installation](#chrome-brave-opera-and-other-chromium-browsers).
+- Enable Material Homepage if it isn't enabled by default.
+- Open a new tab to access your customized dashboard.
+- Use the search bar for web searches and URL navigation.
+- Personalize your homepage by selecting themes from the palette.
+- Organize shortcuts with drag-and-drop ease.
+- Use the Translator widget for instant translations.
+- A future To-Do widget will further enhance productivity.
+- All settings are saved locally for privacy.
 
-- Currently these are some features that you can check out. But in future we will add _**more functionality based on user's demand and choice**_.
-  We are also planning to add Ai features in future. But for that, we may need a strong community and support.
+## ScreenShots
 
-## How to add extension in browser?
+<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:1rem;">
+<img src="./screenshots/classic.png" />
+<img src="./screenshots/black-accent.png" />
+<img src="./screenshots/quick-sites.png" />
+<img src="./screenshots/dark.png" />
+</div>
 
-> _There are two way to install this extension in your browser. One is browser's addon website. And the seccond option is manual installation. We will recommend you to install manually_.
+# Installation
 
-## Mobile users:
+Material Homepage supports maximum popular browsers including Chrome, Edge,
+Firefox, Brave and probably the one you are using right now. Follow instruction bellow to enjoy Material Homepage in your browser.
 
-If your browser dosen't support extension or you're a mobile user, then use this steps to use this home page in your browser.
+### Mozilla Firefox:
 
-- Copy this link (https://mrsihab.github.io/material-homepage)
+Material Homepage is available in Firefox addon store. You can simply download and install from there.
 
-```copy
-https://mrsihab.github.io/material-homepage
+- Go to [Firefox-addon/material-homepage](https://addons.mozilla.org/en-US/firefox/addon/material-hompage/)
+- Click on install
+- If you see any footer banner or banner at top, please right click on that and disable that.
+- You can now enjoy it in your New Tab
+
+### Microsoft EDGE:
+
+Material Homepage is also available in Microsoft Edge web-store.
+
+- Visit [Edge-addons/material-homepage](https://microsoftedge.microsoft.com/addons/detail/material-hompage/gppedgcpmlnfphgohlcdmeejokcgipjb)
+- Click on GET button and install the extension.
+- Go to `settings->appearance->extension`
+- Turn Material-Homepage on.
+- If you see any footer banner or banner at top, please right click on that and disable that.
+- Now enjoy your browser
+
+### Chrome, Brave, Opera and other chromium browsers
+
+Material Homepage isn't available for On Chrome web-store yet. So, you can't
+access Material Homepage directly on chromium based browsers such as Chrome,
+Brave, Chromium, Yandex and others.  
+You can manually install the extension. To install manually, just follow the instructions:
+
+- Download the [latest release](https://github.com/mrsihab/material-homepage/releases) of Material Homepage.
+- Once you downloaded the zip file, extract the zip file
+- Store the file in a secure location. If you delete or move the file, it will be removed from browser too.
+- Open your browser and go to extension manager page. `settings->extension->manage extension`
+  or enter the link
+  ```
+  chrome://extensions/
+  ```
+- You will be redirected to extension manager page.
+- Now allocate developer option and turn developer mode on.
+- There should be a **load unpacked** option unlocked.
+- Click **Load unpacked** button and locate to the file where you stored material homepage.
+- Turn on the extension if it is off.
+- Now you can enjoy your extension. You can even turn off the developer option.
+- But remember, even the extension is available in your browser, don't delete any files of material homepage from you file explorer. Otherwise it will be removed from browser automatically.
+
+![chrome](/screenshots/chrome.png)
+
+Congratulations. Your extension has been installed successfully. Enjoy your extension.
+
+### Git installation:
+
+Git installation is recommended for developers who want manual installation. Updating the extension with git is the easiest method. Follow the steps if you don't know:
+
+- Install the git if you haven't git installed yet. You can verify by running `git --version` command in your terminal.
+
+  ```bash
+  git --version
+  ```
+
+- Navigate to a secured folder where you can clone the repository. Ex. `User/home`
+  ```bash
+  cd ~/
+  ```
+- Now clone Material Homepage repository:
+  ```bash
+  git clone https://github.com/mrsihab/material-homepage.git
+  ```
+- Open your browser and go to extension manager page. `settings->extension->manage extension`
+  or enter the link
+  ```
+  chrome://extensions/
+  ```
+- You will be redirected to extension manager page.
+- Now allocate developer option and turn developer mode on.
+- There should be a **load unpacked** option unlocked.
+- Click **Load unpacked** button and locate to the file where you stored material homepage.
+- Turn on the extension if it is off.
+- Now you can enjoy your extension. You can even turn off the developer option.
+- But remember, even the extension is available in your browser, don't delete any files of material homepage from you file explorer. Otherwise it will be removed from browser automatically.
+
+![chrome](/screenshots/chrome.png)
+
+Congratulations. Your extension has been installed successfully. Enjoy your extension.
+
+**To update the extension, just open you terminal at material-homepage directory and run the command:**
+
+```bash
+# cd ~/material-homepage
+
+git pull
 ```
 
-- Open you Browser > Settings > HomePage
-  ![Screenshots](./screenshots/m1.jpg)  
-  ![Screenshots](./screenshots/m2.jpg)
+## Privacy:
 
-- Turn **Homepage On** if it's off.
-- Paste the copied link to it.
-  ![Screenshots](./screenshots/m3.jpg)
-- Back to home page and Click on the top HOME button
-
-Now you can use this extension from you Mobile Devices.
-
-## Browser Add-on
-
-This extension is available on Microsoft Edge webstore and Firefox webstore. Go and install theme from official webstore.
-For chrome, try [Manual Installation](#manual-installationzip)
-
-## Manual Installation(ZIP):
-
-- Download the [zip file](https://github.com/MrSIHAB/ababil-professional/archive/refs/heads/main.zip).
-
-  > _you can also download the zip file     from the top Code section_.
-
-- Now extract the file in a secure permanent folder.
-
-- Open your browser and go to `manage extension` section or visit this [link](chrome://extension) (1).
-
-  ```
-  YourBrowserName://extension
-  ```
-- Trun on developer mode (2)
-- Click Load uppack and locat the folder (3).
-- Turn on the extention. (4)
-
-
-
-_Here is a chrome example for you..._
-![chrome](/screenshots/chrome.png)
-
-Congratulations. Your extension has been installed succesfully.
-
-## Manual Installation (Git):
-
-- Open your Terminal and locate a directory to keep the repo safely. For example Desktop:
-
-  ```bash
-  # If windows:
-  cd ~\Documents\
-
-  #if Linux/Mac:
-  cd ~/Documents/
-  ```
-
-- Clone the repository:
-
-  ```bash
-  #if you have git installed
-  git clone https://github.com/MrSIHAB/material-homepage.git
-  ```
-
-  
-
-- Open your browser and go to `manage extension` section or visit this [link](chrome://extension) (1).
-
-  ```
-  YourBrowserName://extension
-  ```
-- Trun on developer mode (2)
-- Click Load uppack and locat the folder (3).
-- Turn on the extention. (4)
-
-_Here is a chrome example for you..._
-![chrome](/screenshots/chrome.png)
-
-Congratulations. Your extension has been installed succesfully.
+_No personal data is collected, and all preferences are locally stored._
 
 <a href="https://www.bu">
     <img src="https://media.giphy.com/media/7kZE0z52Sd9zSESzDA/giphy.gif">
 </a>
-
-**_Your Support motivets us to make things like that..._**
