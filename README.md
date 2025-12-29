@@ -3,31 +3,36 @@
     <br/>
     <span style="font-size:16px;font-weight:bold">By MrSIHAB</span>
 
-<center>
-    <a href="https://www.buymeacoffee.com/mrsihab"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
-    </a>
-</center>
+---
 
-<center>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/material-hompage/">
-<img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" alt="Firefox addon" height="50" />
-</a>
-<a href="https://microsoftedge.microsoft.com/addons/detail/material-hompage/gppedgcpmlnfphgohlcdmeejokcgipjb">
-<img src="https://learn.microsoft.com/en-us/windows/apps/images/new-badge-dark.png" alt="edge addon" height="50" />
-</a>
-</center>
+  <a href="https://www.buymeacoffee.com/mrsihab">
+    <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
+  </a>
+
+  <!-- Firefox addon link -->
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/material-hompage/">
+    <img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" alt="Firefox addon" height="50" />
+  </a>
+  <!-- Edge addon link English -->
+  <a href="https://microsoftedge.microsoft.com/addons/detail/material-hompage/gppedgcpmlnfphgohlcdmeejokcgipjb">
+    <img src="screenshots/getitEdgeEnglish.png" alt="edge addon" height="50" />
+  </a>
+  <!-- Edge addon link Bangla -->
+  <a href="https://microsoftedge.microsoft.com/addons/detail/material-hompage/gppedgcpmlnfphgohlcdmeejokcgipjb">
+    <img src="screenshots/getItEdgeBangla.png" alt="edge addon" height="50" />
+  </a>
 </div>
 
-Material Homepage: A Clean and Focused Homepage or NewTab inspired by Material Design.
+**Material Homepage: A Clean and Focused Homepage or NewTab inspired by Material Design.**
 
 <!-- Preview Button -->
 <a href="https://mrsihab.github.io/material-homepage">
-<button style="width:100%;padding:15px;margin-bottom:10px;background:#00b8d8;font-weight:bold;border-radius:25px;outline:0;border:0;text-decoration:none;position:relative;">
-  Preview Extension
-  <div style="font-size:25px;display:inline;;width:70px;position:absolute;right:5px;top:6px">
-    &triangleright;
-  </div>
-</button>
+  <button style="width:100%;padding:15px;margin-bottom:10px;background:#00b8d8;font-weight:bold;border-radius:25px;outline:0;border:0;text-decoration:none;position:relative;">
+    Preview Extension
+    <div style="font-size:25px;display:inline;;width:70px;position:absolute;right:5px;top:6px">
+      &triangleright;
+    </div>
+  </button>
 </a>
 
 ## Introduction
