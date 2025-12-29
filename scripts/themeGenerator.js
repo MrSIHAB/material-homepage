@@ -67,12 +67,15 @@ export function applyTheme(accent) {
 
   const hslBase = hexToHSL(accent);
 
+  // is dark or light
+  const isLight = bright < 140;
+
   // determine text color safety
-  const textColor = bright < 140 ? hsl(0, 0, 10) : hsl(0, 0, 90);
+  const textColor = isLight ? hsl(0, 0, 10) : hsl(0, 0, 90);
 
   // determine light/dark mode backgrounds
-  const background = bright < 140 ? hsl(0, 0, 90) : hsl(0, 0, 5);
-  const lightBackground = bright < 140 ? hsl(0, 0, 95) : hsl(0, 0, 10);
+  const background = isLight ? hsl(0, 0, 90) : hsl(0, 0, 5);
+  const lightBackground = isLight ? hsl(0, 0, 95) : hsl(0, 0, 10);
 
   // light accent (tint)
   const lightAccent = hsl(hslBase.h, hslBase.s, Math.min(100, hslBase.l + 25));
