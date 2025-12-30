@@ -42,7 +42,7 @@ export function setSearchEngine(searchEngineEl, engineFormEl, searchInputEl) {
       break;
     case "duckduckgo":
       engineFormEl.action = "https://duckduckgo.com/";
-      searchEngineEl.name = "q";
+      searchInputEl.name = "q";
       break;
     default:
       // case google by default
@@ -99,7 +99,59 @@ export function initSearch() {
   searchEngineEl.addEventListener("change", () => {
     localStorage.setItem(SEARCH_ENGINE_KEY, searchEngineEl.value);
     setSearchEngine(searchEngineEl, engineFormEl, searchInputEl);
+    updateCustomSelectUI();
   });
+
+  // Custom Select Logic
+  const customSelect = document.getElementById("customSearchSelect");
+  const selectedOptionDiv = document.getElementById("selectedOption");
+  const optionsContainer = document.getElementById("optionsContainer");
+  const options = optionsContainer.querySelectorAll(".option");
+
+  function updateCustomSelectUI() {
+    const currentVal = searchEngineEl.value;
+    // Update selected icon/text
+    // We only show icon in the trigger based on design commonly, or both.
+    // Let's find the option that matches
+    const matchingOption = Array.from(options).find((opt) => opt.dataset.value === currentVal);
+    if (matchingOption) {
+      const iconHTML = matchingOption.querySelector(".icon").innerHTML;
+      selectedOptionDiv.querySelector(".icon").innerHTML = iconHTML;
+      // Optionally update text if we uncommented it in HTML
+      selectedOptionDiv.querySelector(".text").innerText = matchingOption.querySelector(".text").innerText;
+    }
+  }
+
+  // Initial update
+  // Wait for SVGs to load? They load via another script.
+  // We can just set value, the SVGs are inside spans so copying innerHTML works if populated.
+  // Actually svgLoader inserts into span[svg].
+  // We need to re-run svg insertion for our new elements if they were dynamic, but they are in DOM.
+  // just call updateCustomSelectUI after a small delay or trust svgLoader.
+
+  selectedOptionDiv.addEventListener("click", (e) => {
+    e.stopPropagation();
+    customSelect.classList.toggle("active-options");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const value = option.dataset.value;
+      searchEngineEl.value = value;
+      searchEngineEl.dispatchEvent(new Event("change"));
+      customSelect.classList.remove("active-options");
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!customSelect.contains(e.target)) {
+      customSelect.classList.remove("active-options");
+    }
+  });
+
+  // Handle initial load sync
+  setTimeout(updateCustomSelectUI, 55); // Slight delay for SVGs
 
   const search = searchHandler(engineFormEl, searchInputEl);
   // if (submitBtn) submitBtn.addEventListener("click", search);
