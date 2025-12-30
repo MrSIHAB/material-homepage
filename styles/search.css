@@ -1,0 +1,144 @@
+/* search section --- */
+#searchForm {
+  display: flex;
+  min-height: 50px;
+  position: relative;
+  align-items: center;
+  min-width: 50vw;
+  width: 850px;
+  max-width: 95vw;
+  border-radius: 50px;
+  margin: auto;
+  border: 2px solid color-mix(in srgb, var(--soft-accent), transparent 50%);
+  background-color: color-mix(in srgb, var(--accent), #fff1 97%);
+}
+#searchForm input:focus,
+#searchForm select:focus {
+  outline: 0;
+  border: 0;
+}
+#search {
+  color: color-mix(in srgb, var(--text-color), var(--light-accent) 28%);
+  background: transparent;
+  margin: 0;
+  padding: 6px 15px;
+  font-size: 1.1rem;
+  border: 0;
+  width: 100%;
+  width: -moz-fill-available;
+  width: -webkit-fill-available;
+}
+
+#searchForm .searchIcon {
+  border: 0;
+  outline: 0;
+  padding-right: 12px;
+  height: 100%;
+  background: transparent;
+}
+
+#searchEngine {
+  border: 0;
+  outline: 0;
+  background-color: var(--accent);
+  border-radius: 30px;
+  padding: 6px 10px;
+  margin-left: 7px;
+  font-size: 1.1rem;
+  text-align: justify;
+  color: var(--background);
+  fill: var(--background);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#searchEngine option {
+  color: var(--background);
+  background: var(--accent);
+}
+
+/* Custom Select M3 Style */
+.custom-select {
+  position: relative;
+  margin-left: 7px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.selected-option {
+  background-color: var(--accent);
+  color: var(--background);
+  border-radius: 30px;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 40px;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+  height: 36px;
+}
+
+.selected-option:hover {
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); */
+  filter: brightness(1.1);
+}
+
+.selected-option .icon,
+.option .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options-container {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--light-background); /* Surface */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  z-index: 10;
+  min-width: 150px;
+  max-height: 350px;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.active-options .options-container {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.option {
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-color);
+  transition: background-color 0.1s;
+}
+
+.option:hover {
+  background-color: color-mix(in srgb, var(--accent), transparent 90%);
+}
+
+.selected-option .text,
+.option .text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.option .icon {
+  fill: var(--text-color);
+}
