@@ -85,6 +85,16 @@
               </label>
             </div>
 
+            <h4 style="font-size: large;font-weight: bold;">Search:</h4>
+            <div class="listTile">
+              <span class="icon" svg="searchIcon" style="fill: var(--accent);"></span>
+              <span class="title">Search Suggestions</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleSuggestions">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
           </div>
 
           <!--  Settings for Quick application / sites that comes with extension By default -->
@@ -179,7 +189,8 @@
       </div>
     </div>
     <!-- input field  -->
-    <input type="search" id="search" name="q" placeholder="Search something or type an URL" autofocus="true" required />
+    <input type="search" id="search" name="q" placeholder="Search something or type an URL" autofocus="true" required autocomplete="off" />
+    <div id="suggestions" class="suggestions-container"></div>
     <!-- submit button -->
     <button type="submit" form="searchForm" id="submitBtn" class="searchIcon"><span svg="searchIcon"></span></button>
   </form>

@@ -3,6 +3,7 @@
   display: flex;
   min-height: 50px;
   position: relative;
+  flex: 1;
   align-items: center;
   min-width: 50vw;
   width: 850px;
@@ -145,4 +146,60 @@
 
 .option .icon {
   fill: var(--text-color);
+}
+/* search suggestion builder  */
+.suggestions-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--light-background);
+  border-radius: 20px;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+}
+
+.suggestions-container.active {
+  display: block;
+}
+
+.suggestion-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+  background-color: color-mix(in srgb, var(--accent), transparent 85%);
+}
+
+.suggestion-item .suggestion-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+  fill: currentColor;
+}
+
+/* Custom scrollbar for suggestions */
+.suggestions-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.suggestions-container::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent), transparent 70%);
+  border-radius: 10px;
 }

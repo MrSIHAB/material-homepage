@@ -11,14 +11,16 @@
     "64": "/images/logo/favicon.png"
   },
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "index.html",
+    "home": "index.html"
   },
   "browser_specific_settings": {
     "gecko": {
       "id": "materialhome@mrsihab.github.io"
     }
   },
-  "permissions": ["favicon"],
+  "permissions": ["favicon", "storage"],
+  "optional_host_permissions": ["https://suggestqueries.google.com/*"],
   "web_accessible_resources": [
     {
       "resources": ["_favicon/*"],

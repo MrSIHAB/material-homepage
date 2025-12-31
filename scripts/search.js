@@ -1,3 +1,5 @@
+import { searchIcon } from "./svg.js";
+
 // search.js - handles search engine selection, theme, and search submission
 export const SEARCH_ENGINE_KEY = "engine";
 
@@ -66,7 +68,7 @@ export function isLink(str) {
   const urlPattern = /^(?:(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/[\w-]*)*\/? )$/;
   // simple fallback: treat strings with dots and no spaces as links
   const simple = /^[^\s]+\.[^\s]+$/;
-  return simple.test(str);
+  return urlPattern.test(str);
 }
 
 export function searchHandler(engineFormEl, searchInputEl) {
@@ -153,7 +155,160 @@ export function initSearch() {
   // Handle initial load sync
   setTimeout(updateCustomSelectUI, 55); // Slight delay for SVGs
 
+  _searchSuggestionsLoader(); // Search suggestion builder
+
   const search = searchHandler(engineFormEl, searchInputEl);
   // if (submitBtn) submitBtn.addEventListener("click", search);
   if (engineFormEl) engineFormEl.addEventListener("submit", search);
+}
+
+/**
+ *  Search suggestion building, listeners and initial loader
+ */
+function _searchSuggestionsLoader() {
+  const engineFormEl = document.getElementById("searchForm");
+  const searchInputEl = document.getElementById("search");
+  // Suggestion elements
+  const suggestionsContainer = document.getElementById("suggestions");
+  const toggleSuggestionsEl = document.getElementById("toggleSuggestions");
+  const SUGGESTIONS_ENABLED_KEY = "suggestions-enabled";
+
+  let selectedIndex = -1;
+  let suggestions = [];
+
+  // Initialize toggle state
+  const isEnabled = localStorage.getItem(SUGGESTIONS_ENABLED_KEY) === "true";
+  if (toggleSuggestionsEl) {
+    toggleSuggestionsEl.checked = isEnabled;
+    toggleSuggestionsEl.addEventListener("change", async (e) => {
+      const checked = e.target.checked;
+      if (checked) {
+        // Request permissions if in Chrome Extension context
+        if (typeof chrome !== "undefined" && chrome.permissions) {
+          try {
+            const granted = await new Promise((resolve) => {
+              chrome.permissions.request(
+                {
+                  origins: ["https://suggestqueries.google.com/*"],
+                },
+                (result) => resolve(result)
+              );
+            });
+            if (!granted) {
+              e.target.checked = false;
+              localStorage.setItem(SUGGESTIONS_ENABLED_KEY, "false");
+              return;
+            }
+          } catch (err) {
+            console.error("Permission request failed:", err);
+            // Fallback: continue anyway as it might work outside extension or if already granted
+          }
+        }
+      }
+      localStorage.setItem(SUGGESTIONS_ENABLED_KEY, checked);
+      if (!checked) {
+        suggestionsContainer.classList.remove("active");
+      }
+    });
+  }
+
+  async function fetchSuggestions(query) {
+    selectedIndex = -1;
+    if (!query || localStorage.getItem(SUGGESTIONS_ENABLED_KEY) !== "true") {
+      suggestionsContainer.classList.remove("active");
+      return;
+    }
+    try {
+      // Using google suggest API with JSONP approach usually,
+      // but client=chrome returns a simple JSON array.
+      // Note: This might face CORS issues in some environments if not a browser extension.
+      // For extension environments it usually works fine.
+      const response = await fetch(
+        `https://suggestqueries.google.com/complete/search?client=chrome&q=${encodeURIComponent(query)}`
+      );
+      const data = await response.json();
+      suggestions = data[1] || [];
+      renderSuggestions();
+    } catch (error) {
+      console.error("Error fetching suggestions:", error);
+    }
+  }
+
+  function renderSuggestions() {
+    if (suggestions.length === 0) {
+      suggestionsContainer.classList.remove("active");
+      return;
+    }
+
+    suggestionsContainer.innerHTML = suggestions
+      .map(
+        (suggestion, index) => `
+      <div class="suggestion-item ${index === selectedIndex ? "selected" : ""}" data-index="${index}">
+        <span class="suggestion-icon" svg="searchIcon">${searchIcon}</span>
+        <span>${suggestion}</span>
+      </div>
+    `
+      )
+      .join("");
+
+    suggestionsContainer.classList.add("active");
+
+    const items = suggestionsContainer.querySelectorAll(".suggestion-item");
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        const index = parseInt(item.dataset.index);
+        searchInputEl.value = suggestions[index];
+        suggestionsContainer.classList.remove("active");
+        engineFormEl.submit();
+      });
+    });
+  }
+
+  let debounceTimer;
+  searchInputEl.addEventListener("input", (e) => {
+    clearTimeout(debounceTimer);
+    const query = e.target.value.trim();
+    debounceTimer = setTimeout(() => {
+      fetchSuggestions(query);
+    }, 200);
+  });
+
+  searchInputEl.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowUp" || (e.key === "Tab" && e.shiftKey)) {
+      e.preventDefault();
+      selectedIndex = (selectedIndex - 1 + suggestions.length) % suggestions.length;
+      searchInputEl.value = suggestions[selectedIndex];
+      renderSuggestions();
+      scrollIntoView(suggestionsContainer.querySelectorAll(".suggestion-item")[selectedIndex]);
+    } else if (e.key === "ArrowDown" || e.key === "Tab") {
+      e.preventDefault();
+      selectedIndex = (selectedIndex + 1) % suggestions.length;
+      searchInputEl.value = suggestions[selectedIndex];
+      renderSuggestions();
+      scrollIntoView(suggestionsContainer.querySelectorAll(".suggestion-item")[selectedIndex]);
+    } else if (e.key === "Enter" && selectedIndex > -1) {
+      e.preventDefault();
+      searchInputEl.value = suggestions[selectedIndex];
+      suggestionsContainer.classList.remove("active");
+      engineFormEl.submit();
+    } else if (e.key === "Escape") {
+      suggestionsContainer.classList.remove("active");
+    }
+  });
+
+  function scrollIntoView(element) {
+    if (!element) return;
+    element.scrollIntoView({ block: "nearest" });
+  }
+
+  document.addEventListener("click", (e) => {
+    if (!engineFormEl.contains(e.target)) {
+      suggestionsContainer.classList.remove("active");
+    }
+  });
+  searchInputEl.addEventListener("focus", () => {
+    if (suggestions.length != 0 && searchInputEl.value.trim() !== "") {
+      suggestionsContainer.classList.add("active");
+    }
+  });
 }
