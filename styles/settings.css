@@ -128,6 +128,11 @@ input#colorPicker {
   font-weight: 500;
 }
 
+/* search builder toggle button  */
+.searchSetting .ic-search {
+  fill: var(--text-color);
+}
+
 /* backup restore and reset  */
 .restoreContainer {
   display: flex;

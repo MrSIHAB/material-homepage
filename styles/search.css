@@ -10,8 +10,10 @@
   max-width: 95vw;
   border-radius: 50px;
   margin: auto;
-  border: 2px solid color-mix(in srgb, var(--soft-accent), transparent 50%);
-  background-color: color-mix(in srgb, var(--accent), #fff1 97%);
+  border: 2px solid color-mix(in srgb, var(--accent), transparent 70%);
+  background-color: color-mix(in srgb, var(--accent), var(--light-background) 95%);
+  background: var(--light-background);
+  box-shadow: 0 4px 12px -6px #00000019;
 }
 #searchForm input:focus,
 #searchForm select:focus {
@@ -93,8 +95,8 @@
 
 .selected-option .icon,
 .option .icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
   display: flex;
   align-items: center;
@@ -140,8 +142,8 @@
 
 .selected-option .text,
 .option .text {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .option .icon {
@@ -168,7 +170,7 @@
 }
 
 .suggestion-item {
-  padding: 10px 20px;
+  padding: 12px 20px;
   cursor: pointer;
   color: var(--text-color);
   font-size: 1rem;

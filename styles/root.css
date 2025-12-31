@@ -20,9 +20,7 @@
 body {
   --soft-accent: color-mix(in srgb-linear, var(--accent) 80%, var(--light-accent) 20%);
 
-  --_bg-accent-mix: color-mix(in srgb, var(--accent) 4%, var(--background));
-  --_bg-accent-mix2: color-mix(in srgb, var(--light-accent) 2%, var(--light-background));
-  background: linear-gradient(100deg, var(--_bg-accent-mix), var(--_bg-accent-mix2)) fixed;
+  background: var(--background);
   width: 100%;
   aspect-ratio: 20/9;
   overflow: hidden;

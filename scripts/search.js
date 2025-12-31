@@ -65,10 +65,9 @@ export function setSearchEngine(searchEngineEl, engineFormEl, searchInputEl) {
  * @returns {boolean}
  */
 export function isLink(str) {
-  const urlPattern = /^(?:(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/[\w-]*)*\/? )$/;
   // simple fallback: treat strings with dots and no spaces as links
   const simple = /^[^\s]+\.[^\s]+$/;
-  return urlPattern.test(str);
+  return simple.test(str);
 }
 
 export function searchHandler(engineFormEl, searchInputEl) {
