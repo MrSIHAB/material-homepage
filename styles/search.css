@@ -13,7 +13,7 @@
   border: 2px solid color-mix(in srgb, var(--accent), transparent 70%);
   background-color: color-mix(in srgb, var(--accent), var(--light-background) 95%);
   background: var(--light-background);
-  box-shadow: 0 4px 12px -6px #00000019;
+  box-shadow: 0 4px 12px #00000019;
 }
 #searchForm input:focus,
 #searchForm select:focus {
