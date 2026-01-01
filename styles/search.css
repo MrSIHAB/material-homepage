@@ -10,10 +10,9 @@
   max-width: 95vw;
   border-radius: 50px;
   margin: auto;
-  border: 2px solid color-mix(in srgb, var(--accent), transparent 70%);
+  border: 2px solid color-mix(in srgb, var(--accent), transparent 75%);
   background-color: color-mix(in srgb, var(--accent), var(--light-background) 95%);
-  background: var(--light-background);
-  box-shadow: 0 4px 12px #00000019;
+  box-shadow: 0 4px 8px #00000010;
 }
 #searchForm input:focus,
 #searchForm select:focus {
