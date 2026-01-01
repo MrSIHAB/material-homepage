@@ -1,7 +1,7 @@
 {
   "name": "Material Homepage",
   "manifest_version": 3,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "id": "fenomffbdppaigofpjjbkminjoamhmbd",
   "description": "Minimal, focused and professional Homepage",
   "action": {
