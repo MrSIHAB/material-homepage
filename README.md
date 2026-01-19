@@ -27,11 +27,15 @@
 **Material Homepage: A Clean and Focused Homepage or NewTab inspired by Material Design.**
 
 <!-- Preview Button -->
+<div>
 <a href="https://mrsihab.github.io/material-homepage">
   <button style="padding:10px 55px;background:cyan;font-weight:bold;border-radius:25px;outline:0;border:0;margin:auto;display:block;cursor:pointer;">Preview Extension</button>
 </a>
+</div>
 
+<div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A3OfQDd1J5g?si=EA-KVQhE3ybj6awq" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Introduction
 
