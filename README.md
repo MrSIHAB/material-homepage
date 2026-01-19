@@ -28,12 +28,10 @@
 
 <!-- Preview Button -->
 <div>
-<a href="https://mrsihab.github.io/material-homepage">
-  <button style="padding:10px 55px;background:cyan;font-weight:bold;border-radius:25px;outline:0;border:0;margin:auto;display:block;cursor:pointer;">Preview Extension</button>
+<a href="https://mrsihab.github.io/material-homepage"  style="padding:10px 55px;background:cyan;font-weight:bold;border-radius:25px;outline:0;border:0;margin:auto;display:block;cursor:pointer;color:black;text-align:center;">
+  Preview Extension
 </a>
 </div>
-
-![Vid](https://www.youtube.com/embed/A3OfQDd1J5g?si=EA-KVQhE3ybj6awq)
 
 ## Introduction
 
