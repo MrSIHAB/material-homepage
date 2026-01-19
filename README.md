@@ -1,5 +1,5 @@
 <div align="Center">
-    <span style="font-size:25px;font-weight:bold;" >Material Homepage</span>
+    <span style="font-size:25px;font-weight:bold;" >Material Homepage</h1>
     <br/>
     <span style="font-size:16px;font-weight:bold">By MrSIHAB</span>
 
@@ -26,12 +26,7 @@
 
 **Material Homepage: A Clean and Focused Homepage or NewTab inspired by Material Design.**
 
-<!-- Preview Button -->
-<div>
-<a href="https://mrsihab.github.io/material-homepage"  style="padding:10px 55px;background:cyan;font-weight:bold;border-radius:25px;outline:0;border:0;margin:auto;display:block;cursor:pointer;color:black;text-align:center;">
-  Preview Extension
-</a>
-</div>
+[🔗 Preview Extension](https://mrsihab.github.io/material-homepage)
 
 ## Introduction
 
@@ -80,7 +75,7 @@ The extension also features dynamic theme personalization with a color picker, w
 # Installation
 
 Material Homepage supports maximum popular browsers including Chrome, Edge,
-Firefox, Brave and probably the one you are using right now. Follow instruction bellow to enjoy Material Homepage in your browser.
+Firefox, Brave and probably the one you are using right now. Follow instruction below to enjoy Material Homepage in your browser.
 
 ### Mozilla Firefox:
 
@@ -118,12 +113,12 @@ You can manually install the extension. To install manually, just follow the ins
   chrome://extensions/
   ```
 - You will be redirected to extension manager page.
-- Now allocate developer option and turn developer mode on.
+- Now enable developer option and turn developer mode on.
 - There should be a **load unpacked** option unlocked.
 - Click **Load unpacked** button and locate to the file where you stored material homepage.
 - Turn on the extension if it is off.
 - Now you can enjoy your extension. You can even turn off the developer option.
-- But remember, even the extension is available in your browser, don't delete any files of material homepage from you file explorer. Otherwise it will be removed from browser automatically.
+- But remember, even the extension is available in your browser, don't delete any files of material homepage from your file explorer. Otherwise it will be removed from browser automatically.
 
 ![chrome](/screenshots/chrome.png)
 
@@ -153,18 +148,18 @@ Git installation is recommended for developers who want manual installation. Upd
   chrome://extensions/
   ```
 - You will be redirected to extension manager page.
-- Now allocate developer option and turn developer mode on.
+- Now enable developer option and turn developer mode on.
 - There should be a **load unpacked** option unlocked.
 - Click **Load unpacked** button and locate to the file where you stored material homepage.
 - Turn on the extension if it is off.
 - Now you can enjoy your extension. You can even turn off the developer option.
-- But remember, even the extension is available in your browser, don't delete any files of material homepage from you file explorer. Otherwise it will be removed from browser automatically.
+- But remember, even the extension is available in your browser, don't delete any files of material homepage from your file explorer. Otherwise it will be removed from browser automatically.
 
 ![chrome](/screenshots/chrome.png)
 
 Congratulations. Your extension has been installed successfully. Enjoy your extension.
 
-**To update the extension, just open you terminal at material-homepage directory and run the command:**
+**To update the extension, just open your terminal at material-homepage directory and run the command:**
 
 ```bash
 # cd ~/material-homepage
@@ -176,6 +171,6 @@ git pull
 
 _No personal data is collected, and all preferences are locally stored._
 
-<a href="https://www.bu">
+<a href="https://www.buymeacoffee.com/mrsihab">
     <img src="https://media.giphy.com/media/7kZE0z52Sd9zSESzDA/giphy.gif">
 </a>
