@@ -33,9 +33,7 @@
 </a>
 </div>
 
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A3OfQDd1J5g?si=EA-KVQhE3ybj6awq" frameborder="0" allowfullscreen></iframe>
-</div>
+![Vid](https://www.youtube.com/embed/A3OfQDd1J5g?si=EA-KVQhE3ybj6awq)
 
 ## Introduction
 
