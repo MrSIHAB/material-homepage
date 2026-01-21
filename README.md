@@ -3,12 +3,11 @@
     <br/>
     <span style="font-size:16px;font-weight:bold">By MrSIHAB</span>
 
+[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3DShoaibHossain%26type%3Dpatrons%26suffix%3Dmembers&style=social)](https://www.patreon.com/ShoaibHossain)
+
 ---
 
-  <a href="https://www.buymeacoffee.com/mrsihab">
-    <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
-  </a>
-  <br />
+[![BMC](https://img.buymeacoffee.com/button-api/?text=&slug=mrsihab&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFFFFF)](https://bit.ly/m/MrSIHAB)
 
   <!-- Firefox addon link -->
   <a href="https://addons.mozilla.org/en-US/firefox/addon/material-hompage/">
@@ -170,7 +169,3 @@ git pull
 ## Privacy:
 
 _No personal data is collected, and all preferences are locally stored._
-
-<a href="https://www.buymeacoffee.com/mrsihab">
-    <img src="https://media.giphy.com/media/7kZE0z52Sd9zSESzDA/giphy.gif">
-</a>
