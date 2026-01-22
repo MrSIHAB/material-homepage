@@ -19,3 +19,10 @@ export function getFaviconUrl(pageUrl, size = 32) {
     return `https://faviconfetcher.deno.dev/?url`;
   }
 }
+
+export function getOrUpdateLocalStorage(key, value) {
+  if (value === undefined) {
+    return localStorage.getItem(key);
+  }
+  localStorage.setItem(key, value);
+}
