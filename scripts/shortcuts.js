@@ -279,3 +279,25 @@ export function shortcutSiteFormListener() {
     loadShortCutSites();
   });
 }
+
+/**
+ * Hide the user saved shortcut section and let's the place empty.
+ *
+ * returns {boolean} whether it's enabled or not in localStorage
+ * to update tha localStorage value, pass a boolean value to the function
+ */
+export const hideShortcuts = (value) => getOrUpdateLocalStorage(HIDE_SHORTCUTS_KEY, value) === "true";
+/**
+ * Blur the user saved shortcut section for privacy.
+ *
+ * returns {boolean} whether it's enabled or not in localStorage
+ * to update tha localStorage value, pass a boolean value to the function
+ */
+export const blurShortcuts = (value) => getOrUpdateLocalStorage(BLUR_SHORTCUTS_KEY, value) === "true";
+/**
+ * Lock the user saved shortcut section to prevent adding, editing or deleting.
+ *
+ * returns {boolean} whether it's enabled or not in localStorage
+ * to update tha localStorage value, pass a boolean value to the function
+ */
+export const lockShortcuts = (value) => getOrUpdateLocalStorage(LOCK_SHORTCUTS_KEY, value) === "true";
