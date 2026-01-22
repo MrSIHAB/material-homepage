@@ -170,8 +170,15 @@ const shortcutSiteTemplate = (title, link, icon, index) => {
  */
 export async function loadShortCutSites() {
   const shortcutSection = document.getElementById("shortcutApp");
-  const allApps = await getAllApp();
 
+  // get saved settings
+  const isHidden = hideShortcuts();
+  const isBlurred = blurShortcuts();
+  const isLocked = lockShortcuts();
+  // Implement hide logic
+  if (isHidden) return (shortcutSection.innerHTML = "");
+
+  const allApps = await getAllApp();
   const faviconUrl = getFaviconUrl();
   let embedApps = "";
   if (allApps != null) {
