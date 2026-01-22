@@ -14,6 +14,14 @@ svg {
   fill: var(--soft-accent);
 }
 
+/* basic show hide classes  */
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
 /* Switch Buttons - Rounded  */
 .switch {
   position: relative;
@@ -76,9 +84,15 @@ svg {
   align-items: top;
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 1px 1px 3px #0000000d, inset 1px 1px 3px #ffffff0d;
+  box-shadow:
+    1px 1px 3px #0000000d,
+    inset 1px 1px 3px #ffffff0d;
   border-radius: 30px;
   align-items: center;
+}
+.listTile.disabled {
+  opacity: 50%;
+  pointer-events: none;
 }
 .listTile .icon {
   height: 38px;
