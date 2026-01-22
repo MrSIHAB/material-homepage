@@ -1,3 +1,4 @@
+import { blurShortcuts, hideShortcuts, loadShortCutSites, lockShortcuts } from "./shortcuts.js";
 import { setTheme } from "./theme.js";
 
 export function initSettings() {
@@ -7,6 +8,7 @@ export function initSettings() {
     _developerCardListeners();
     _loadAdaptiveIcon();
     _backupAndRestoreSetup();
+    _loadShortCutSettings();
   });
 }
 
@@ -57,6 +59,49 @@ function _loadAdaptiveIcon() {
   adaptiveIconButton.addEventListener("change", () => {
     localStorage.setItem("isAdaptive", adaptiveIconButton.checked);
     shortcutApp.classList.toggle("adaptive");
+  });
+}
+
+/**
+ * Loads and initializes shortcut settings from storage.
+ *
+ * Retrieves the current state of hide, blur, and lock settings for shortcuts,
+ * applies them to their corresponding UI elements, and attaches click event
+ * listeners to update settings and refresh the shortcuts display when changed.
+ *
+ * @function _loadShortCutSettings
+ * @returns {void}
+ */
+function _loadShortCutSettings() {
+  const hideShortcutsButton = document.getElementById("hideShortcuts");
+  const blurShortcutsButton = document.getElementById("blurShortcuts");
+  const lockShortcutsButton = document.getElementById("lockShortcuts");
+
+  // load saved settings
+  const isHidden = hideShortcuts();
+  const isBlurred = blurShortcuts();
+  const isLocked = lockShortcuts();
+
+  // Set state on first load
+  hideShortcutsButton.checked = isHidden;
+  blurShortcutsButton.checked = isBlurred;
+  lockShortcutsButton.checked = isLocked;
+
+  // add event listener
+  hideShortcutsButton.addEventListener("click", () => {
+    const isEnabled = hideShortcutsButton.checked;
+    hideShortcuts(isEnabled);
+    loadShortCutSites();
+  });
+  blurShortcutsButton.addEventListener("click", () => {
+    const isEnabled = blurShortcutsButton.checked;
+    blurShortcuts(isEnabled);
+    loadShortCutSites();
+  });
+  lockShortcutsButton.addEventListener("click", () => {
+    const isEnabled = lockShortcutsButton.checked;
+    lockShortcuts(isEnabled);
+    loadShortCutSites();
   });
 }
 
@@ -138,7 +183,7 @@ function _backupAndRestoreSetup() {
   restoreButton.addEventListener("click", () => jsonInput.click());
   jsonInput.addEventListener("change", async (event) => {
     const confirmed = confirm(
-      "Restoring settings will remove all the existing settings.\n" + "Do you want to proceed?"
+      "Restoring settings will remove all the existing settings.\n" + "Do you want to proceed?",
     );
     if (!confirmed) return;
 
@@ -170,7 +215,7 @@ function _backupAndRestoreSetup() {
   resetButton.addEventListener("click", () => {
     const confirmed = confirm(
       "Restore to default settings will remove every modification you made on this extension\n." +
-        "Do you want to proceed?"
+        "Do you want to proceed?",
     );
 
     if (confirmed) {
