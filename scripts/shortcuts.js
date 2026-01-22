@@ -93,6 +93,73 @@ export async function showShortcutEditOrAddForm(index) {
 }
 
 /**
+ *
+ * @param {string} title
+ * @param {string} link Corrected httpUrl
+ * @param {string} icon Icon link with favicon path
+ * @param {number} index
+ * @returns {string} the basic template
+ */
+const shortcutSiteTemplate = (title, link, icon, index) => {
+  const everyShortcut = document.createElement("div");
+  everyShortcut.classList.add("everyShortcut");
+  const threeDotBtn = document.createElement("button");
+  threeDotBtn.classList.add("threeDot");
+  threeDotBtn.innerHTML = threeDots; // three dots svg codes
+
+  const threeDotOptions = document.createElement("div");
+  threeDotOptions.classList.add("threeDotOptions");
+
+  const editOption = document.createElement("p");
+  editOption.classList.add("editShortcut");
+  editOption.setAttribute("index", index);
+  editOption.textContent = "Edit";
+
+  const deleteOption = document.createElement("p");
+  deleteOption.classList.add("deleteShortcut");
+  deleteOption.setAttribute("index", index);
+  deleteOption.textContent = "Delete";
+
+  threeDotOptions.appendChild(editOption);
+  threeDotOptions.appendChild(deleteOption);
+  threeDotBtn.appendChild(threeDotOptions);
+  everyShortcut.appendChild(threeDotBtn);
+
+  const linkElement = document.createElement("a");
+  linkElement.href = link;
+
+  const iconElement = document.createElement("img");
+  iconElement.src = icon;
+  iconElement.alt = title;
+  iconElement.classList.add("icon");
+
+  linkElement.appendChild(iconElement);
+  everyShortcut.appendChild(linkElement);
+
+  const titleElement = document.createElement("h5");
+  titleElement.classList.add("title");
+  titleElement.textContent = title;
+  everyShortcut.appendChild(titleElement);
+
+  return everyShortcut.outerHTML;
+
+  // return `
+  // <div class="everyShortcut">
+  //   <button class="threeDot">
+  //     ${threeDots} <!-- three dots svg codes -->
+  //     <div class="threeDotOptions">
+  //       <p class="editShortcut" index="${index}">Edit</p>
+  //       <p class="deleteShortcut" index="${index}" >Delete</p>
+  //     </div>
+  //   </button>
+  //   <a href="${link}">
+  //     <img src="${icon}" alt="${title}" class="icon" />
+  //   </a>
+  //   <h5 class="title">${title}</h5>
+  // </div>`;
+};
+
+/**
  * Display all the saved sites to the specified section
  * @param {string} shortcutSectionId Element Id
  */
@@ -106,20 +173,25 @@ export async function loadShortCutSites() {
     embedApps = allApps
       .map((value, index) => {
         const httpUrl = correctUrl(value.link);
-        return `
-      <div class="everyShortcut">
-        <button class="threeDot">
-          ${threeDots} <!-- three dots svg codes -->
-          <div class="threeDotOptions">
-            <p class="editShortcut" index="${index}">Edit</p>
-            <p class="deleteShortcut" index="${index}" >Delete</p>
-          </div>
-        </button>
-        <a href="${httpUrl}">
-          <img src="${faviconUrl}=${httpUrl}" alt="${value.title}" class="icon" />
-        </a>
-        <h5 class="title">${value.title}</h5>
-      </div>`;
+        const iconUrl = isBlurred ? "/images/favicon.ico" : `${faviconUrl}=${httpUrl}`;
+        const title = isBlurred ? `Site ${index + 1}` : value.title;
+
+        return shortcutSiteTemplate(title, httpUrl, iconUrl, index);
+
+        // return `
+        //   <div class="everyShortcut">
+        //     <button class="threeDot">
+        //       ${threeDots} <!-- three dots svg codes -->
+        //       <div class="threeDotOptions">
+        //         <p class="editShortcut" index="${index}">Edit</p>
+        //         <p class="deleteShortcut" index="${index}" >Delete</p>
+        //       </div>
+        //     </button>
+        //     <a href="${httpUrl}">
+        //       <img src="${faviconUrl}=${httpUrl}" alt="${value.title}" class="icon" />
+        //     </a>
+        //     <h5 class="title">${value.title}</h5>
+        //   </div>`;
       })
       .join("");
   }
