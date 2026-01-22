@@ -1,7 +1,12 @@
 // shortcuts.js - handles storage and rendering of custom shortcuts
 import { threeDots } from "./svg.js";
 import { closePopup, showPopup } from "./ui.js";
-import { correctUrl, getFaviconUrl } from "./utils.js";
+import { correctUrl, getFaviconUrl, getOrUpdateLocalStorage } from "./utils.js";
+
+// Constant Keys
+const HIDE_SHORTCUTS_KEY = "HIDE_SHORTCUTS_KEY";
+const BLUR_SHORTCUTS_KEY = "BLUR_SHORTCUTS_KEY";
+const LOCK_SHORTCUTS_KEY = "LOCK_SHORTCUTS_KEY";
 
 /**
  * This Function fetches shortcut sites that are saved by user.
