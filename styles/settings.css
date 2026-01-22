@@ -170,6 +170,12 @@ input#colorPicker {
   color: #555;
 }
 
+/* Title or heading or caption of each settings group */
+.settingsCaption {
+  font-size: 22px;
+  font-weight: 800;
+}
+
 /* search builder toggle button  */
 .searchSetting .ic-search {
   fill: var(--text-color);
