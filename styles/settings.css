@@ -68,7 +68,7 @@
 /* setting body  */
 .settingBody {
   padding: 1rem;
-  gap: 1.5rem;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -126,6 +126,48 @@ input#colorPicker {
   justify-content: center;
   font-size: 15px;
   font-weight: 500;
+}
+
+/* donation / support project  */
+.supportBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.supportBox a {
+  text-decoration: none;
+}
+.supportBox .listTile {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 150ms;
+}
+.supportBox .listTile .icon {
+  fill: currentColor;
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+  padding: 0;
+}
+.supportBox a:nth-child(1) .listTile {
+  background-color: #fff7;
+  color: #555;
+}
+.supportBox a:nth-child(1) .listTile:hover {
+  background-color: #0007;
+  color: #ccc;
+}
+.supportBox a:nth-child(2) .listTile {
+  background-color: #0007;
+  color: #ccc;
+}
+.supportBox a:nth-child(2) .listTile:hover {
+  background-color: #fff7;
+  color: #555;
 }
 
 /* search builder toggle button  */
