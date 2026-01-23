@@ -288,23 +288,35 @@ export function shortcutSiteFormListener() {
 }
 
 /**
+ * Broiler plate code for boolean values of lock, hide and blur functionality
+ * @param {boolean} value optional
+ * @returns {boolean}
+ */
+function _changeSettings(key, value) {
+  if (value != undefined) {
+    localStorage.setItem(key, value);
+    return loadShortCutSites();
+  }
+  return localStorage.getItem(key) === "true";
+}
+/**
  * Hide the user saved shortcut section and let's the place empty.
  *
  * returns {boolean} whether it's enabled or not in localStorage
  * to update tha localStorage value, pass a boolean value to the function
  */
-export const hideShortcuts = (value) => getOrUpdateLocalStorage(HIDE_SHORTCUTS_KEY, value) === "true";
+export const hideShortcuts = (value) => _changeSettings(HIDE_SHORTCUTS_KEY, value);
 /**
  * Blur the user saved shortcut section for privacy.
  *
  * returns {boolean} whether it's enabled or not in localStorage
  * to update tha localStorage value, pass a boolean value to the function
  */
-export const blurShortcuts = (value) => getOrUpdateLocalStorage(BLUR_SHORTCUTS_KEY, value) === "true";
+export const blurShortcuts = (value) => _changeSettings(BLUR_SHORTCUTS_KEY, value);
 /**
  * Lock the user saved shortcut section to prevent adding, editing or deleting.
  *
  * returns {boolean} whether it's enabled or not in localStorage
  * to update tha localStorage value, pass a boolean value to the function
  */
-export const lockShortcuts = (value) => getOrUpdateLocalStorage(LOCK_SHORTCUTS_KEY, value) === "true";
+export const lockShortcuts = (value) => _changeSettings(LOCK_SHORTCUTS_KEY, value);

@@ -68,9 +68,6 @@ function _loadAdaptiveIcon() {
  * Retrieves the current state of hide, blur, and lock settings for shortcuts,
  * applies them to their corresponding UI elements, and attaches click event
  * listeners to update settings and refresh the shortcuts display when changed.
- *
- * @function _loadShortCutSettings
- * @returns {void}
  */
 function _loadShortCutSettings() {
   const hideShortcutsButton = document.getElementById("hideShortcuts");
@@ -91,17 +88,14 @@ function _loadShortCutSettings() {
   hideShortcutsButton.addEventListener("click", () => {
     const isEnabled = hideShortcutsButton.checked;
     hideShortcuts(isEnabled);
-    loadShortCutSites();
   });
   blurShortcutsButton.addEventListener("click", () => {
     const isEnabled = blurShortcutsButton.checked;
     blurShortcuts(isEnabled);
-    loadShortCutSites();
   });
   lockShortcutsButton.addEventListener("click", () => {
     const isEnabled = lockShortcutsButton.checked;
     lockShortcuts(isEnabled);
-    loadShortCutSites();
   });
 }
 
