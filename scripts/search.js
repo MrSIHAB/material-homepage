@@ -1,4 +1,5 @@
 import { searchIcon } from "./svg.js";
+import { isLink } from "./utils.js";
 
 // search.js - handles search engine selection, theme, and search submission
 export const SEARCH_ENGINE_KEY = "engine";
@@ -53,22 +54,6 @@ export function setSearchEngine(searchEngineEl, engineFormEl, searchInputEl) {
       searchInputEl.name = "q";
       break;
   }
-}
-
-/**
- * Checks if a string is link or not.
- *
- * `https://sihab.deno.dev =>` `true` \
- * `sihab.deno.dev` => `true` \
- *
- * Any whitespace will return false
- * @param {string} str
- * @returns {boolean}
- */
-export function isLink(str) {
-  // simple fallback: treat strings with dots and no spaces as links
-  const simple = /^[^\s]+\.[^\s]+$/;
-  return simple.test(str);
 }
 
 export function searchHandler(engineFormEl, searchInputEl) {

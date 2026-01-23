@@ -26,3 +26,13 @@ export function getOrUpdateLocalStorage(key, value) {
   }
   localStorage.setItem(key, value);
 }
+
+/**
+ * `https://sihab.deno.dev =>` `true`
+ * `sihab.deno.dev` => `true`
+ */
+export function isLink(str) {
+  // simple fallback: treat strings with dots and no spaces as links
+  const simple = /^[^\s]+\.[^\s]+$/;
+  return simple.test(str);
+}
