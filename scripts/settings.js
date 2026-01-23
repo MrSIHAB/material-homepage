@@ -152,7 +152,7 @@ function _backupAndRestoreSetup() {
   const restoreButton = document.getElementById("restoreSettings");
   const resetButton = document.getElementById("resetSettings");
 
-  // Backup all the localStorage settings
+  // Download or local Backup settings
   backupButton.addEventListener("click", async () => {
     // store all localStorage keys and values to backup object
     const backup = {};
@@ -170,7 +170,7 @@ function _backupAndRestoreSetup() {
     return a.click();
   });
 
-  // restore all the settings to localStorage
+  // restore Settings from json file
   const jsonInput = document.createElement("input");
   jsonInput.type = "file";
   jsonInput.accept = "application/json,.json";
@@ -205,7 +205,7 @@ function _backupAndRestoreSetup() {
     }
   });
 
-  // restore to default settings
+  // Reset to default settings
   resetButton.addEventListener("click", () => {
     const confirmed = confirm(
       "Restore to default settings will remove every modification you made on this extension\n." +
