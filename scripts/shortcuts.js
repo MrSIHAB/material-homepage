@@ -106,7 +106,7 @@ export async function showShortcutEditOrAddForm(index) {
  * @returns {string} the basic template
  */
 const shortcutSiteTemplate = (title, link, icon, index) => {
-  const everyShortcut = document.createElement("div");
+  /*const everyShortcut = document.createElement("div");
   everyShortcut.classList.add("everyShortcut");
   const threeDotBtn = document.createElement("button");
   threeDotBtn.classList.add("threeDot");
@@ -146,22 +146,21 @@ const shortcutSiteTemplate = (title, link, icon, index) => {
   titleElement.textContent = title;
   everyShortcut.appendChild(titleElement);
 
-  return everyShortcut.outerHTML;
-
-  // return `
-  // <div class="everyShortcut">
-  //   <button class="threeDot">
-  //     ${threeDots} <!-- three dots svg codes -->
-  //     <div class="threeDotOptions">
-  //       <p class="editShortcut" index="${index}">Edit</p>
-  //       <p class="deleteShortcut" index="${index}" >Delete</p>
-  //     </div>
-  //   </button>
-  //   <a href="${link}">
-  //     <img src="${icon}" alt="${title}" class="icon" />
-  //   </a>
-  //   <h5 class="title">${title}</h5>
-  // </div>`;
+  return everyShortcut.outerHTML;*/
+  return `
+  <div class="everyShortcut">
+    <button class="threeDot">
+      ${threeDots} <!-- three dots svg codes -->
+      <div class="threeDotOptions">
+        <p class="editShortcut" index="${index}">Edit</p>
+        <p class="deleteShortcut" index="${index}" >Delete</p>
+      </div>
+    </button>
+    <a href="${link}">
+      <img src="${icon}" alt="${title}" class="icon" />
+    </a>
+    <h5 class="title">${title}</h5>
+  </div>`;
 };
 
 /**
@@ -189,21 +188,6 @@ export async function loadShortCutSites() {
         const title = isBlurred ? `Site ${index + 1}` : value.title;
 
         return shortcutSiteTemplate(title, httpUrl, iconUrl, index);
-
-        // return `
-        //   <div class="everyShortcut">
-        //     <button class="threeDot">
-        //       ${threeDots} <!-- three dots svg codes -->
-        //       <div class="threeDotOptions">
-        //         <p class="editShortcut" index="${index}">Edit</p>
-        //         <p class="deleteShortcut" index="${index}" >Delete</p>
-        //       </div>
-        //     </button>
-        //     <a href="${httpUrl}">
-        //       <img src="${faviconUrl}=${httpUrl}" alt="${value.title}" class="icon" />
-        //     </a>
-        //     <h5 class="title">${value.title}</h5>
-        //   </div>`;
       })
       .join("");
   }
