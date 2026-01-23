@@ -2,6 +2,7 @@ import { searchIcon } from "./svg.js";
 
 // search.js - handles search engine selection, theme, and search submission
 export const SEARCH_ENGINE_KEY = "engine";
+export const SUGGESTIONS_ENABLED_KEY = "suggestions-enabled";
 
 /**
  * This function takes three element, the elements is simple sentence are:
@@ -173,7 +174,6 @@ function _searchSuggestionsLoader() {
 
   // Constants
   const DEBOUNCE_DELAY = 150; // ms - reduced for better responsiveness
-  const SUGGESTIONS_ENABLED_KEY = "suggestions-enabled";
 
   // State management
   let selectedIndex = -1;
@@ -188,31 +188,10 @@ function _searchSuggestionsLoader() {
   toggleSuggestionsEl.addEventListener("change", async (e) => {
     const checked = e.target.checked;
     localStorage.setItem(SUGGESTIONS_ENABLED_KEY, checked);
-    if (checked) _getPermission();
+    if (checked) getSuggestionApiPermission();
     else suggestionsContainer.classList.remove("active");
     resetState();
   });
-
-  async function _getPermission() {
-    if (typeof chrome !== "undefined" && chrome.permissions) {
-      try {
-        const granted = await new Promise((resolve) =>
-          chrome.permissions.request({ origins: ["https://suggestqueries.google.com/*"] }, (result) =>
-            resolve(result),
-          ),
-        );
-
-        toggleSuggestionsEl.checked = granted;
-        localStorage.setItem(SUGGESTIONS_ENABLED_KEY, granted);
-
-        if (granted) suggestionsContainer.classList.add("active");
-        else suggestionsContainer.classList.remove("active");
-      } catch (error) {
-        console.error("Search suggestions permission failed: ", error);
-        suggestionsContainer.classList.remove("active");
-      }
-    }
-  }
 
   /**
    * Resets the suggestion state
@@ -433,4 +412,32 @@ function _searchSuggestionsLoader() {
       suggestionsContainer.classList.add("active");
     }
   });
+}
+
+/**
+ * Try to get `https://suggestqueries.google.com/*` api permission.
+ * Automatically handles Granted and denied task
+ */
+export async function getSuggestionApiPermission() {
+  const suggestionsContainer = document.getElementById("suggestions");
+  const toggleSuggestionsEl = document.getElementById("toggleSuggestions");
+
+  if (typeof chrome !== "undefined" && chrome.permissions) {
+    try {
+      const granted = await new Promise((resolve) =>
+        chrome.permissions.request({ origins: ["https://suggestqueries.google.com/*"] }, (result) =>
+          resolve(result),
+        ),
+      );
+
+      toggleSuggestionsEl.checked = granted;
+      localStorage.setItem(SUGGESTIONS_ENABLED_KEY, granted);
+
+      if (granted) suggestionsContainer.classList.add("active");
+      else suggestionsContainer.classList.remove("active");
+    } catch (error) {
+      console.error("Search suggestions permission failed: ", error);
+      suggestionsContainer.classList.remove("active");
+    }
+  }
 }

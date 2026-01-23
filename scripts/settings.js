@@ -1,3 +1,4 @@
+import { getSuggestionApiPermission, SUGGESTIONS_ENABLED_KEY } from "./search.js";
 import { blurShortcuts, hideShortcuts, loadShortCutSites, lockShortcuts } from "./shortcuts.js";
 import { setTheme } from "./theme.js";
 
@@ -198,7 +199,13 @@ function _backupAndRestoreSetup() {
       for await (const key of Object.keys(json)) {
         localStorage.setItem(key, json[key]);
       }
-      location.reload();
+
+      // look if the search suggestions is enabled or not.
+      if (json[SUGGESTIONS_ENABLED_KEY] === "true") {
+        return getSuggestionApiPermission().then((_) => location.reload());
+      }
+
+      return location.reload();
     } catch (err) {
       console.error("Failed to read/parse JSON file:", err);
       alert("Invalid JSON file.");
