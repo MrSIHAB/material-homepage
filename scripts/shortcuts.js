@@ -106,6 +106,8 @@ export async function showShortcutEditOrAddForm(index) {
  * @returns {string} the basic template
  */
 const shortcutSiteTemplate = (title, link, icon, index) => {
+  const isLocked = lockShortcuts();
+
   /*const everyShortcut = document.createElement("div");
   everyShortcut.classList.add("everyShortcut");
   const threeDotBtn = document.createElement("button");
@@ -147,15 +149,21 @@ const shortcutSiteTemplate = (title, link, icon, index) => {
   everyShortcut.appendChild(titleElement);
 
   return everyShortcut.outerHTML;*/
+
+  const threeDotsMenu = isLocked
+    ? ""
+    : `
+  <button class="threeDot">
+    ${threeDots} <!-- three dots svg codes -->
+    <div class="threeDotOptions">
+      <p class="editShortcut" index="${index}">Edit</p>
+      <p class="deleteShortcut" index="${index}" >Delete</p>
+    </div>
+  </button>`;
+
   return `
   <div class="everyShortcut">
-    <button class="threeDot">
-      ${threeDots} <!-- three dots svg codes -->
-      <div class="threeDotOptions">
-        <p class="editShortcut" index="${index}">Edit</p>
-        <p class="deleteShortcut" index="${index}" >Delete</p>
-      </div>
-    </button>
+    ${threeDotsMenu}  
     <a href="${link}">
       <img src="${icon}" alt="${title}" class="icon" />
     </a>
@@ -192,7 +200,10 @@ export async function loadShortCutSites() {
       .join("");
   }
 
-  if (!allApps || allApps.length < 20) {
+  // Implement Lock settings
+  if (isLocked) return (shortcutSection.innerHTML = embedApps);
+
+  if (!allApps || allApps.length < 55) {
     embedApps += `<div class="everyShortcut plusIcon" id="addShortcut"><p>&plus;</p></div>`;
   }
   shortcutSection.innerHTML = embedApps;
