@@ -184,39 +184,34 @@ function _searchSuggestionsLoader() {
 
   // Initialize toggle state
   const isEnabled = localStorage.getItem(SUGGESTIONS_ENABLED_KEY) === "true";
-  if (toggleSuggestionsEl) {
-    toggleSuggestionsEl.checked = isEnabled;
-    toggleSuggestionsEl.addEventListener("change", async (e) => {
-      const checked = e.target.checked;
-      if (checked) {
-        // Request permissions if in Chrome Extension context
-        if (typeof chrome !== "undefined" && chrome.permissions) {
-          try {
-            const granted = await new Promise((resolve) => {
-              chrome.permissions.request(
-                {
-                  origins: ["https://suggestqueries.google.com/*"],
-                },
-                (result) => resolve(result)
-              );
-            });
-            if (!granted) {
-              e.target.checked = false;
-              localStorage.setItem(SUGGESTIONS_ENABLED_KEY, "false");
-              return;
-            }
-          } catch (err) {
-            console.error("Permission request failed:", err);
-            // Fallback: continue anyway as it might work outside extension or if already granted
-          }
-        }
-      }
-      localStorage.setItem(SUGGESTIONS_ENABLED_KEY, checked);
-      if (!checked) {
+  toggleSuggestionsEl.checked = isEnabled; // resolve permission if it is enabled already
+  toggleSuggestionsEl.addEventListener("change", async (e) => {
+    const checked = e.target.checked;
+    localStorage.setItem(SUGGESTIONS_ENABLED_KEY, checked);
+    if (checked) _getPermission();
+    else suggestionsContainer.classList.remove("active");
+    resetState();
+  });
+
+  async function _getPermission() {
+    if (typeof chrome !== "undefined" && chrome.permissions) {
+      try {
+        const granted = await new Promise((resolve) =>
+          chrome.permissions.request({ origins: ["https://suggestqueries.google.com/*"] }, (result) =>
+            resolve(result),
+          ),
+        );
+
+        toggleSuggestionsEl.checked = granted;
+        localStorage.setItem(SUGGESTIONS_ENABLED_KEY, granted);
+
+        if (granted) suggestionsContainer.classList.add("active");
+        else suggestionsContainer.classList.remove("active");
+      } catch (error) {
+        console.error("Search suggestions permission failed: ", error);
         suggestionsContainer.classList.remove("active");
-        resetState();
       }
-    });
+    }
   }
 
   /**
@@ -244,7 +239,7 @@ function _searchSuggestionsLoader() {
       // Note: This might face CORS issues in some environments if not a browser extension.
       // For extension environments it usually works fine.
       const response = await fetch(
-        `https://suggestqueries.google.com/complete/search?client=chrome&q=${encodeURIComponent(query)}`
+        `https://suggestqueries.google.com/complete/search?client=chrome&q=${encodeURIComponent(query)}`,
       );
       const data = await response.json();
       suggestions = data[1] || [];
@@ -271,7 +266,7 @@ function _searchSuggestionsLoader() {
         <span class="suggestion-icon" svg="searchIcon">${searchIcon}</span>
         <span>${suggestion}</span>
       </div>
-    `
+    `,
       )
       .join("");
 
