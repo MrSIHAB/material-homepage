@@ -5,10 +5,12 @@
   "id": "fenomffbdppaigofpjjbkminjoamhmbd",
   "description": "Minimal, focused and professional Homepage",
   "action": {
-    "default_icon": "/images/logo/logo.png"
+    "default_icon": "/images/logo/mh-64.png"
   },
   "icons": {
-    "64": "/images/logo/favicon.png"
+    "32": "/images/logo/mh-32.png",
+    "64": "/images/logo/mh-64.png",
+    "128": "/images/logo/mh-128.png"
   },
   "chrome_url_overrides": {
     "newtab": "index.html"
