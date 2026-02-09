@@ -45,7 +45,7 @@
   overflow: hidden;
   background: #ffffff23;
   backdrop-filter: blur(30px);
-  filter: brightness(1.1);
+  filter: brightness(1.2);
   padding-left: 35px;
   padding-right: 35px;
 }
@@ -70,7 +70,9 @@
   list-style: none;
   aspect-ratio: 1/1;
   border-radius: 20px;
-  box-shadow: 3px 3px 3px #00000010, inset 3px 3px 3px #ffffff07;
+  box-shadow:
+    3px 3px 3px #00000010,
+    inset 3px 3px 3px #ffffff07;
   transition: all 300ms;
   position: relative;
   overflow: hidden;
