@@ -11,7 +11,8 @@
   border-radius: 50px;
   margin: auto;
   border: 2px solid color-mix(in srgb, var(--accent), transparent 75%);
-  background-color: color-mix(in srgb, var(--accent), var(--light-background) 95%);
+  background-color: color-mix(in srgb, var(--accent), transparent 84%);
+  backdrop-filter: blur(5px);
   box-shadow: 0 4px 8px #00000010;
 }
 #searchForm input:focus,
@@ -116,7 +117,9 @@
   display: none;
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
 }
 
 .active-options .options-container {
