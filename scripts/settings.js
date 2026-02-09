@@ -70,19 +70,37 @@ function _loadAdaptiveIcon() {
 function _loadWallpaperSettings() {
   const uploadWallpaper = document.getElementById("uploadWallpaper");
   const deleteWallpaperBtn = document.getElementById("deleteWallpaper");
+  const adaptiveWallpaperTile = document.getElementById("adaptiveWallpaperTile");
+  const adaptiveWallpaper = document.getElementById("adaptiveWallpaper");
+  const AWP_KEY = "AWP_KEY";
+
+  render(); // initial render
 
   // Render wallpaper and settings
   async function render() {
     const wallpaper = await getWallPaper();
-    if (!wallpaper) return (document.body.style.backgroundImage = ``);
+    if (!wallpaper) {
+      document.body.style.backgroundImage = ``;
+      adaptiveWallpaperTile.classList.add("disabled");
+      return;
+    }
 
+    const isAdaptive = localStorage.getItem(AWP_KEY) === "true";
     const url = URL.createObjectURL(wallpaper);
     document.body.style.backgroundImage = `url(${url})`;
+    document.body.style.backgroundBlendMode = isAdaptive ? "multiply" : "normal";
+    adaptiveWallpaperTile.classList.remove("disabled");
   }
-  render();
+
+  // adaptive wallpaper
+  adaptiveWallpaper.addEventListener("change", (e) => {
+    const checked = e.target.checked;
+    localStorage.setItem(AWP_KEY, checked);
+    render();
+  });
 
   // upload wallpaper
-  (function () {
+  {
     let imgInput = document.createElement("input");
     imgInput.type = "file";
     imgInput.accept = "image/*";
@@ -98,7 +116,7 @@ function _loadWallpaperSettings() {
       await setWallPaper(file);
       render();
     });
-  })();
+  }
 
   // Delete wallpaper logic
   deleteWallpaperBtn.addEventListener("click", async (e) => {
