@@ -71,7 +71,7 @@ function _loadWallpaperSettings() {
   const uploadWallpaper = document.getElementById("uploadWallpaper");
   const deleteWallpaper = document.getElementById("deleteWallpaper");
 
-  // Render wallpaper to body element and resolve settings buttons
+  // Render wallpaper and settings
   async function render() {
     const wallpaper = await getWallPaper();
     if (!wallpaper) return;
@@ -99,6 +99,14 @@ function _loadWallpaperSettings() {
       render();
     });
   })();
+
+  // Delete wallpaper logic
+  deleteWallpaper.addEventListener("click", async (e) => {
+    const ok = confirm("Do you want to remove the wallpaper?");
+    if (!ok) return;
+    await deleteWallpaper();
+    render();
+  });
 }
 
 /**
