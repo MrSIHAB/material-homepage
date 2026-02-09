@@ -1,10 +1,12 @@
 import { getSuggestionApiPermission, SUGGESTIONS_ENABLED_KEY } from "./search.js";
 import { blurShortcuts, hideShortcuts, loadShortCutSites, lockShortcuts } from "./shortcuts.js";
 import { setTheme } from "./theme.js";
+import { getWallPaper, setWallPaper } from "./wallpaper.js";
 
 export function initSettings() {
   document.addEventListener("DOMContentLoaded", () => {
     _loadColorSelectionBackground();
+    _loadWallpaperSettings();
     _quickSitesSettings();
     _developerCardListeners();
     _loadAdaptiveIcon();
@@ -61,6 +63,42 @@ function _loadAdaptiveIcon() {
     localStorage.setItem("isAdaptive", adaptiveIconButton.checked);
     shortcutApp.classList.toggle("adaptive");
   });
+}
+
+/** Load wallpaper and wallpaper settings. Upload and delete wallpaper settings
+ * Load adaptive wallpaper switch settings.*/
+function _loadWallpaperSettings() {
+  const uploadWallpaper = document.getElementById("uploadWallpaper");
+  const deleteWallpaper = document.getElementById("deleteWallpaper");
+
+  // Render wallpaper to body element and resolve settings buttons
+  async function render() {
+    const wallpaper = await getWallPaper();
+    if (!wallpaper) return;
+
+    const url = URL.createObjectURL(wallpaper);
+    document.body.style.backgroundImage = `url(${url})`;
+  }
+  render();
+
+  // upload wallpaper
+  (function () {
+    let imgInput = document.createElement("input");
+    imgInput.type = "file";
+    imgInput.accept = "image/*";
+    uploadWallpaper.addEventListener("click", (e) => imgInput.click());
+    imgInput.addEventListener("change", async (e) => {
+      const file = imgInput.files?.item(0);
+      if (!file) return; // no file chosen
+      if (!file.type.includes("image/")) {
+        alert("Please select a valid image file.");
+        return;
+      }
+      // the file should contain image
+      await setWallPaper(file);
+      render();
+    });
+  })();
 }
 
 /**
