@@ -1,7 +1,7 @@
 import { getSuggestionApiPermission, SUGGESTIONS_ENABLED_KEY } from "./search.js";
 import { blurShortcuts, hideShortcuts, loadShortCutSites, lockShortcuts } from "./shortcuts.js";
 import { setTheme } from "./theme.js";
-import { getWallPaper, setWallPaper } from "./wallpaper.js";
+import { deleteWallPaper, getWallPaper, setWallPaper } from "./wallpaper.js";
 
 export function initSettings() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -69,7 +69,7 @@ function _loadAdaptiveIcon() {
  * Load adaptive wallpaper switch settings.*/
 function _loadWallpaperSettings() {
   const uploadWallpaper = document.getElementById("uploadWallpaper");
-  const deleteWallpaper = document.getElementById("deleteWallpaper");
+  const deleteWallpaperBtn = document.getElementById("deleteWallpaper");
 
   // Render wallpaper and settings
   async function render() {
@@ -101,10 +101,10 @@ function _loadWallpaperSettings() {
   })();
 
   // Delete wallpaper logic
-  deleteWallpaper.addEventListener("click", async (e) => {
+  deleteWallpaperBtn.addEventListener("click", async (e) => {
     const ok = confirm("Do you want to remove the wallpaper?");
     if (!ok) return;
-    await deleteWallpaper();
+    await deleteWallPaper();
     render();
   });
 }
