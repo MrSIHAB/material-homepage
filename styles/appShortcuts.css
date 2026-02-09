@@ -15,7 +15,9 @@ section#addAppContainer {
   border-radius: 15px;
   padding: 1rem;
   backdrop-filter: blur(28px);
-  box-shadow: 5px 5px 15px #0002, inset 2px 2px 1px 1px #fff2;
+  box-shadow:
+    5px 5px 15px #0002,
+    inset 2px 2px 1px 1px #fff2;
 }
 section#addAppContainer.show {
   display: block;
@@ -73,7 +75,9 @@ section#addAppContainer #shortcutSaveBtn {
   overflow: visible;
   padding: 2px 24px;
   text-align: center;
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms,
+  transition:
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms,
     transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   user-select: none;
   -webkit-user-select: none;
@@ -132,7 +136,11 @@ section.shortcutApp#shortcutApp {
 .everyShortcut .title {
   text-align: center;
   text-overflow: ellipsis;
+  /* color: var(--text-color); */
   color: var(--text-color);
+  text-shadow:
+    1px 1px 3px var(--light-background),
+    0px 0px 15px var(--light-background);
   max-width: 100%;
 }
 /* adaptive icons  */
