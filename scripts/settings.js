@@ -74,7 +74,7 @@ function _loadWallpaperSettings() {
   // Render wallpaper and settings
   async function render() {
     const wallpaper = await getWallPaper();
-    if (!wallpaper) return;
+    if (!wallpaper) return (document.body.style.backgroundImage = ``);
 
     const url = URL.createObjectURL(wallpaper);
     document.body.style.backgroundImage = `url(${url})`;
