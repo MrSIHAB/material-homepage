@@ -82,14 +82,14 @@ function _loadWallpaperSettings() {
     if (!wallpaper) {
       document.body.style.backgroundImage = ``;
       adaptiveWallpaperTile.classList.add("disabled");
-      return;
+    } else {
+      const url = URL.createObjectURL(wallpaper);
+      const isAdaptive = localStorage.getItem(AWP_KEY) === "true";
+      document.body.style.backgroundImage = `url(${url})`;
+      document.body.style.backgroundBlendMode = isAdaptive ? "multiply" : "normal";
+      adaptiveWallpaperTile.classList.remove("disabled");
+      adaptiveWallpaper.checked = isAdaptive;
     }
-
-    const isAdaptive = localStorage.getItem(AWP_KEY) === "true";
-    const url = URL.createObjectURL(wallpaper);
-    document.body.style.backgroundImage = `url(${url})`;
-    document.body.style.backgroundBlendMode = isAdaptive ? "multiply" : "normal";
-    adaptiveWallpaperTile.classList.remove("disabled");
   }
 
   // adaptive wallpaper
