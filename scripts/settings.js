@@ -86,7 +86,7 @@ function _loadWallpaperSettings() {
       const url = URL.createObjectURL(wallpaper);
       const isAdaptive = localStorage.getItem(AWP_KEY) === "true";
       document.body.style.backgroundImage = `url(${url})`;
-      document.body.style.backgroundBlendMode = isAdaptive ? "multiply" : "normal";
+      document.body.style.backgroundBlendMode = isAdaptive ? "overlay" : "normal";
       adaptiveWallpaperTile.classList.remove("disabled");
       adaptiveWallpaper.checked = isAdaptive;
     }
