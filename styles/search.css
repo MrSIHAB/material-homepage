@@ -22,7 +22,7 @@
   border: 0;
 }
 #search {
-  color: color-mix(in srgb, var(--text-color), var(--light-accent) 28%);
+  color: color-mix(in srgb, var(--text-color), var(--accent) 28%);
   background: transparent;
   margin: 0;
   padding: 6px 15px;
