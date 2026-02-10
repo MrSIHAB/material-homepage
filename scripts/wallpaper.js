@@ -18,7 +18,7 @@ async function getDB() {
 }
 
 /*** Get saved wallpaper's arrayBuffer
- * @returns {Promise<ArrayBuffer>} */
+ * @returns {Promise<File>} */
 export async function getWallPaper() {
   const db = await getDB();
   return new Promise((resolve, reject) => {
