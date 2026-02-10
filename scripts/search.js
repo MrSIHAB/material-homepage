@@ -1,5 +1,5 @@
 import { searchIcon } from "./svg.js";
-import { isLink } from "./utils.js";
+import { correctUrl, isLink } from "./utils.js";
 
 // search.js - handles search engine selection, theme, and search submission
 export const SEARCH_ENGINE_KEY = "engine";
@@ -63,8 +63,9 @@ export function searchHandler(engineFormEl, searchInputEl) {
     if (!query) return;
     // treat as link if contains a dot and no spaces
     if (isLink(query)) {
-      let link = query.replace(/^https?:\/\//, "");
-      window.location.href = `https://${link}`;
+      // let link = query.replace(/^https?:\/\//, "");
+      let link = correctUrl(query);
+      window.location.href = link;
     } else {
       engineFormEl.submit();
     }

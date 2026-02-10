@@ -1,6 +1,10 @@
 // utils.js - tiny helpers used across modules
+const HTTP = /^https?:\/\//;
+const COLON_URI = /^[^\s]+\:[^\s]+$/; // http://<localhost>:<port>
+
 export function correctUrl(url) {
-  if (url.includes("https://") || url.includes("http://")) return url;
+  if (HTTP.test(url)) return url;
+  if (COLON_URI.test(url)) return `http://${url}`;
   return `https://${url}`;
 }
 
@@ -33,6 +37,8 @@ export function getOrUpdateLocalStorage(key, value) {
  */
 export function isLink(str) {
   // simple fallback: treat strings with dots and no spaces as links
-  const simple = /^[^\s]+\.[^\s]+$/;
-  return simple.test(str);
+  const port = /^[^\s]+\:[^\s]+$/;
+  const dot = /^[^\s]+\.[^\s]+$/;
+
+  return dot.test(str) || port.test(str);
 }
