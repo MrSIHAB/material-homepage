@@ -72,7 +72,7 @@ function _loadWallpaperSettings() {
   const deleteWallpaperBtn = document.getElementById("deleteWallpaper");
   const adaptiveWallpaperTile = document.getElementById("adaptiveWallpaperTile");
   const adaptiveWallpaper = document.getElementById("adaptiveWallpaper");
-  const AWP_KEY = "AWP_KEY";
+  const AWP_KEY = "isAdaptiveWP";
 
   render(); // initial render
 
@@ -84,11 +84,11 @@ function _loadWallpaperSettings() {
       adaptiveWallpaperTile.classList.add("disabled");
     } else {
       const url = URL.createObjectURL(wallpaper);
-      const isAdaptive = localStorage.getItem(AWP_KEY) === "true";
-      document.body.style.backgroundImage = `url(${url})`;
+      const isAdaptive = (await localStorage.getItem(AWP_KEY)) == "true";
       document.body.style.backgroundBlendMode = isAdaptive ? "overlay" : "normal";
       adaptiveWallpaperTile.classList.remove("disabled");
       adaptiveWallpaper.checked = isAdaptive;
+      document.body.style.backgroundImage = `url(${url})`;
     }
   }
 
