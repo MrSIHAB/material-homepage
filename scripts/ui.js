@@ -36,6 +36,7 @@ export async function initUiListeners() {
   _mailButtonListener();
   _applicationQuickAccessListener();
   _settingsToggleEventListener();
+  _initKeyBindings();
   shortcutSiteFormListener();
 }
 
@@ -72,4 +73,27 @@ function _settingsToggleEventListener() {
   const closeSettings = document.getElementById("closeSettings");
   showSettings.addEventListener("click", () => showPopup(settingPage));
   closeSettings.addEventListener("click", () => closePopup());
+}
+/**  ===================  Key Bindings ====================
+ */
+function _initKeyBindings() {
+  document.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") return closePopup(); // Close popups [Escape]
+    if (e.ctrlKey && e.key == "q") document.querySelector("#toggleApp").click(); // Toggle quick sites
+    if (e.ctrlKey && e.key == "m") document.querySelector("#ToggleMailBtn").click(); // Toggle quick sites
+    if (e.ctrlKey && e.key == "g") location.href = "https://mail.google.com"; // Redirect Mail sites
+    if (e.ctrlKey && e.key == "o") location.href = "https://outlook.live.com"; // Redirect Mail sites
+    if (e.ctrlKey && e.key == "y") location.href = "https://mail.yahoo.com"; // Redirect Mail sites
+
+    if (e.ctrlKey && e.key == "s") {
+      // Open settings [Ctrl-s]
+      e.preventDefault();
+      document.querySelector("#showSettings").click();
+    }
+    // Navigate first 10 saved short cuts with keyboard shortcuts
+    if (e.ctrlKey && Number(e.key).toString() !== "NaN") {
+      const index = e.key != 0 ? e.key - 1 : 9;
+      document.querySelectorAll(".everyShortcut").item(index).querySelector("a").click();
+    }
+  });
 }
