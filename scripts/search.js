@@ -1,4 +1,5 @@
 import { searchIcon } from "./svg.js";
+import { closePopup } from "./ui.js";
 import { correctUrl, isLink } from "./utils.js";
 
 // search.js - handles search engine selection, theme, and search submission
@@ -110,13 +111,6 @@ export function initSearch() {
     }
   }
 
-  // Initial update
-  // Wait for SVGs to load? They load via another script.
-  // We can just set value, the SVGs are inside spans so copying innerHTML works if populated.
-  // Actually svgLoader inserts into span[svg].
-  // We need to re-run svg insertion for our new elements if they were dynamic, but they are in DOM.
-  // just call updateCustomSelectUI after a small delay or trust svgLoader.
-
   selectedOptionDiv.addEventListener("click", (e) => {
     e.stopPropagation();
     customSelect.classList.toggle("active-options");
@@ -146,6 +140,14 @@ export function initSearch() {
   const search = searchHandler(engineFormEl, searchInputEl);
   // if (submitBtn) submitBtn.addEventListener("click", search);
   if (engineFormEl) engineFormEl.addEventListener("submit", search);
+
+  // Key bindings for search bar
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key == "K") {
+      closePopup();
+      searchInputEl.focus();
+    }
+  });
 }
 
 /**
