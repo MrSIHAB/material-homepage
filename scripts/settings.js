@@ -162,6 +162,13 @@ function _loadShortCutSettings() {
     const isEnabled = lockShortcutsButton.checked;
     lockShortcuts(isEnabled);
   });
+
+  // KeyBoard Listeners
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key == "H") hideShortcutsButton.click(); // Hide shortcuts [ctrl-shift-h]
+    if (e.ctrlKey && e.key == "b") blurShortcutsButton.click(); // Blur shortcuts [ctrl-b]
+    if (e.ctrlKey && e.key == "L") lockShortcutsButton.click(); // Lock shortcuts [ctrl-shift-L]
+  });
 }
 
 /**
