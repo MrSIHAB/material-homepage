@@ -378,6 +378,8 @@ function _searchSuggestionsLoader() {
         }
 
         resetState();
+      } else {
+        searchInputEl.blur(); // blur if search input is focused
       }
     }
   });
