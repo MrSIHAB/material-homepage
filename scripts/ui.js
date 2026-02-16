@@ -20,7 +20,7 @@ export function showPopup(element) {
 export function closePopup() {
   const canPopupElements = document.querySelectorAll(".popup");
   canPopupElements.forEach((e) => e.classList.remove("show"));
-  popupBackground.classList.toggle("show");
+  popupBackground.classList.remove("show");
 }
 /**
  * Add click listener to close the popup and the background itself. Internally calling the
