@@ -143,11 +143,16 @@ export function initSearch() {
 
   // Key bindings for search bar
   window.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.key == "K") {
+    if (e.ctrlKey && e.key == "k") {
+      e.preventDefault();
       closePopup();
       searchInputEl.focus();
     }
   });
+  document.onload = (e) => {
+    e.preventDefault();
+    searchInputEl.focus();
+  };
 }
 
 /**
