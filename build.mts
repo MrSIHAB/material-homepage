@@ -109,7 +109,7 @@ async function bundleJavaScript() {
 
   try {
     const result = await esbuild.build({
-      entryPoints: ["./main.js"],
+      entryPoints: ["./src/main.js"],
       bundle: true,
       minify: true,
       format: "esm",
@@ -138,7 +138,7 @@ async function bundleCSS() {
 
   // Read all CSS files from styles directory
   const cssFiles: string[] = [];
-  for await (const entry of walk("./styles", {
+  for await (const entry of walk("./src/styles", {
     exts: [".css"],
     includeDirs: false,
   })) {
@@ -180,25 +180,25 @@ async function copyAssets() {
   logStep("COPY", "Copying necessary files...");
 
   // Copy index.html
-  await copy("./index.html", `${OUT_DIR}/index.html`, { overwrite: true });
+  await copy("./src/index.html", `${OUT_DIR}/index.html`, { overwrite: true });
   logInfo("Copied index.html");
 
   // Copy fonts directory
-  await copy("./fonts", `${OUT_DIR}/fonts`, { overwrite: true });
+  await copy("./src/fonts", `${OUT_DIR}/fonts`, { overwrite: true });
   logInfo("Copied fonts/");
 
   // Copy favicon.ico
-  await copy("./images/favicon.ico", `${OUT_DIR}/images/favicon.ico`, {
+  await copy("./src/images/favicon.ico", `${OUT_DIR}/images/favicon.ico`, {
     overwrite: true,
   });
   logInfo("Copied images/favicon.ico");
 
   // Copy logo directory
-  await copy("./images/logo", `${OUT_DIR}/images/logo`, { overwrite: true });
+  await copy("./src/images/logo", `${OUT_DIR}/images/logo`, { overwrite: true });
   logInfo("Copied images/logo/");
 
   // Copy manifest.json for Chromium
-  await copy("./manifest.json", `${OUT_DIR}/manifest.json`, {
+  await copy("./src/manifest.json", `${OUT_DIR}/manifest.json`, {
     overwrite: true,
   });
   logInfo("Copied manifest.json");
@@ -265,7 +265,7 @@ async function buildFirefoxZip() {
 
   // Replace manifest.json with Firefox version
   await Deno.remove(`${OUT_DIR}/manifest.json`);
-  await copy("./manifest.firefox.json", `${OUT_DIR}/manifest.json`, {
+  await copy("./src/manifest.firefox.json", `${OUT_DIR}/manifest.json`, {
     overwrite: true,
   });
   logInfo("Replaced with Firefox manifest");

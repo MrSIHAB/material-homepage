@@ -4,8 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const __dirname = import.meta.dirname;
-const IMAGES_DIR = path.join(__dirname, ".", "images");
-const OUT_FILE = path.join(__dirname, "scripts", "svg.js");
+const IMAGES_DIR = path.join(__dirname, "src", "images");
+const OUT_FILE = path.join(__dirname, "src", "scripts", "svg.js");
 
 function sanitizeName(name) {
   // remove extension, replace non-alnum with underscore, ensure doesn't start with digit
