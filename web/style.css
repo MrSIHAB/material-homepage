@@ -15,6 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -128,14 +129,12 @@ nav {
     transform: translateY(-2px);
 }
 
-.btn-firefox {
-    /* background-color: #ff9400; */
+.btn-install {
     background-color: var(--primary-dark);
     color: var(--white);
 }
 
-.btn-edge {
-    /* background-color: #0078d7; */
+.btn-preview {
     background-color: var(--primary-color);
     color: var(--white);
 }
