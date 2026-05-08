@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #3f51b5;
-    --primary-light: #757de8;
-    --primary-dark: #002984;
-    --secondary-color: #ff4081;
+    --primary-color: hsl(223, 55%, 38%);
+    --primary-light: hsl(223, 55%, 60%);
+    --primary-dark: hsl(223, 55%, 22%);
+    --secondary-color: var(--primary-color);
     --text-color: #333;
     --bg-color: #f5f5f5;
     --white: #ffffff;
@@ -129,12 +129,14 @@ nav {
 }
 
 .btn-firefox {
-    background-color: #ff9400;
+    /* background-color: #ff9400; */
+    background-color: var(--primary-dark);
     color: var(--white);
 }
 
 .btn-edge {
-    background-color: #0078d7;
+    /* background-color: #0078d7; */
+    background-color: var(--primary-color);
     color: var(--white);
 }
 
