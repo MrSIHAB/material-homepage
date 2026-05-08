@@ -238,59 +238,104 @@ nav {
 }
 
 /* Footer */
-footer {
+.main-footer {
     background: var(--primary-dark);
     color: var(--white);
-    padding: 3rem 0;
+    padding: 5rem 0 2rem;
     margin-top: 5rem;
-    max-width: 100%;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
 }
 
-.footer-links {
-    display: flex;
-    gap: 1.5rem;
+.footer-about .logo {
+    color: var(--white);
+    margin-bottom: 1.5rem;
 }
 
-.footer-links a {
+.footer-about p {
+    opacity: 0.8;
+    max-width: 300px;
+}
+
+.footer-nav h4,
+.footer-support h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-nav h4::after,
+.footer-support h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+.footer-nav ul,
+.footer-support ul {
+    list-style: none;
+}
+
+.footer-nav li,
+.footer-support li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav a,
+.footer-support a {
     color: var(--white);
     text-decoration: none;
-    transition: opacity 0.3s;
+    opacity: 0.7;
+    transition: opacity 0.3s, padding-left 0.3s;
 }
 
-.footer-links a:hover {
-    opacity: 0.8;
+.footer-nav a:hover,
+.footer-support a:hover {
+    opacity: 1;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.footer-bottom a {
+    color: var(--white);
+    text-decoration: underline;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 3rem 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .screenshots-gallery {
+    .footer-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .footer-about .logo {
+        justify-content: center;
+    }
+
+    .footer-about p {
+        margin: 0 auto;
+    }
+
+    .footer-nav h4::after,
+    .footer-support h4::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
