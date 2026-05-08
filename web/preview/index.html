@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="index.css" />
+  <title>New Tab</title>
+</head>
+
+<body>
+  <!-- ---------------------------------- Brand logo  ---------------------------------  -->
+  <nav>
+    <div class="branding">
+      <div class="brandLogo"><img src="images/logo/mh-128.png" alt="logo"></div>
+    </div>
+  </nav>
+
+  <!-- -------------------------------- settings section  ------------------------------ -->
+  <div id="setting" class="setting">
+    <!-- setting icon  -->
+    <button class="showSettings" id="showSettings"><span svg="sidebarLeft"></span></button>
+    <!-- settings page  -->
+    <div id="settingPage" class="settingPage popup">
+      <div class="settingsPageWrapper">
+        <!-- settings header  -->
+        <div class="settingsHeader">
+          <button class="closeSettings" id="closeSettings"><span svg="sidebarRight"></span></button>
+          <span style="flex-grow: 1;">Settings</span>
+          <span id="openCreditButton" class="openCreditButton" svg="portfolio"></span>
+        </div>
+        <!-- settings body -->
+        <div class="settingBody">
+          <!-- Accent color and theme selection  -->
+          <div class="colorPalate">
+            <h4 style="font-size: large;">Appearance:</h4>
+            <span>Auto adapt Dark and Light Mode based on chosen color</span>
+            <div class="colors">
+              <!-- Red shade  -->
+              <input id="colorPicker" type="color" class="color" name="color" value="#000000" />
+              <input type="radio" class="color" name="color" value="#f06c6e" />
+              <input type="radio" class="color" name="color" value="#990000" />
+              <input type="radio" class="color" name="color" value="#5A0616" /> <!-- Luxury -->
+              <!-- Orange shade  -->
+              <input type="radio" class="color" name="color" value="#ffa500" />
+              <input type="radio" class="color" name="color" value="#d2691e" />
+              <input type="radio" class="color" name="color" value="#6D4D38" /> <!-- Luxury -->
+              <!-- Yellow shade  -->
+              <input type="radio" class="color" name="color" value="#ffff66" />
+              <input type="radio" class="color" name="color" value="#ffd700" />
+              <input type="radio" class="color" name="color" value="#daa520" />
+              <!-- Green shade -->
+              <input type="radio" class="color" name="color" value="#40ff40" />
+              <input type="radio" class="color" name="color" value="#008000" />
+
+              <input type="radio" class="color" name="color" value="#66cdaa" />
+              <input type="radio" class="color" name="color" value="#2e8b57" />
+              <input type="radio" class="color" name="color" value="#023222" /> <!-- Luxury -->
+              <!-- Blue shade  -->
+              <input type="radio" class="color" name="color" value="#00ffaa" />
+              <input type="radio" class="color" name="color" value="#00DDDD" />
+              <input type="radio" class="color" name="color" value="#00b3b3" />
+              <!-- <input type="radio" class="color" name="color" value="#008b8b" /> -->
+              <input type="radio" class="color" name="color" value="#6495ed" />
+              <input type="radio" class="color" name="color" value="#6f90b1" /> <!-- Luxury -->
+              <input type="radio" class="color" name="color" value="#192a56" /> <!-- Luxury -->
+              <!-- Indigo or Purple shade  -->
+              <input type="radio" class="color" name="color" value="#df00df" />
+              <input type="radio" class="color" name="color" value="#800080" />
+              <input type="radio" class="color" name="color" value="#4b0082" />
+              <!-- Black and white shade  -->
+              <input type="radio" class="color" name="color" value="#ffffff" />
+              <input type="radio" class="color" name="color" value="#aaaaaa" />
+              <input type="radio" class="color" name="color" value="#000000" />
+              <!-- color picker -->
+            </div>
+
+            <!-- adaptive shortcut icons. Match accent color -->
+            <div class="listTile">
+              <span class="icon" svg="placeholder" style="fill: var(--accent);"></span>
+              <span class="title">Adaptive Icon</span>
+              <label class="switch">
+                <input type="checkbox" id="adaptiveIcon">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <!-- custom wallpaper -->
+            <div class="listTile">
+              <span class="title">Change Wallpaper</span>
+              <span id="uploadWallpaper" class="icon" svg="image" style="fill: var(--accent);"></span>
+              <span id="deleteWallpaper" class="icon" svg="trash" style="fill: var(--accent);"></span>
+            </div>
+            <div class="listTile disabled" id="adaptiveWallpaperTile">
+              <span class="title">Adaptive Wallpaper</span>
+              <label class="switch">
+                <input type="checkbox" id="adaptiveWallpaper">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Donation to support the project -->
+          <div class="supportBox">
+            <a href="https://bit.ly/m/MrSIHAB">
+              <div class="listTile">
+                <span class="title">Support my work</span>
+              </div>
+            </a>
+            <a href="https://www.patreon.com/shoaibhossain">
+              <div class="listTile">
+                <span class="icon" svg="money"></span>
+                <span class="title">Patreon</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Settings for shortcuts (user saved) -->
+           <div class="shortCutSettings">
+            <h4 class="settingsCaption">Shortcuts:</h4>
+
+            <!-- show / hide shortcuts -->
+            <div class="listTile">
+              <span class="title">Hide Shortcuts</span>
+              <label class="switch">
+                <input type="checkbox" id="hideShortcuts">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <!-- blur shortcuts  -->
+            <div class="listTile">
+              <span class="title">Blur Shortcuts</span>
+              <label class="switch">
+                <input type="checkbox" id="blurShortcuts">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <!-- lock shortcuts  -->
+            <div class="listTile">
+              <span class="title">Lock Shortcuts</span>
+              <label class="switch">
+                <input type="checkbox" id="lockShortcuts">
+                <span class="slider"></span>
+              </label>
+            </div>
+           </div>
+
+          <!--  Settings for Quick application / sites that comes with extension By default -->
+          <div class="quickSiteSettings">
+            <h4 class="settingsCaption">Quick Sites:</h4>
+
+            <div class="listTile">
+              <span class="title">Developer</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleDeveloperSites">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="listTile">
+              <span class="title">Ai/ML</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleAiSites">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="listTile">
+              <span class="title">Social Media</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleSocialSites">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="listTile">
+              <span class="title">Google</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleGoogleSites" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="listTile">
+              <span class="title">Microsoft</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleMicrosoftSites">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- search suggestions setting  -->
+          <div class="searchSetting">
+            <h4 class="settingsCaption">Search:</h4>
+            <div class="listTile">
+              <span class="icon" svg="searchIcon" style="fill: var(--accent);"></span>
+              <span class="title">Search Suggestions</span>
+              <label class="switch">
+                <input type="checkbox" id="toggleSuggestions">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- support palestine text  -->
+          <div class="supportPalestine">
+            <span>I&nbsp;stand&nbsp;with&nbsp;Palestine</span>
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0,0 9,6"
+              style="height: 17px;">
+              <rect width="9" height="6" fill="#007a3d" />
+              <rect width="9" height="4" fill="#fff" />
+              <rect width="9" height="2" fill="#000" />
+              <path d="M 0,6 V 0 L 3,3 z" fill="#ce1126" />
+            </svg>
+            <style>
+              .supportPalestine {
+                display: flex;
+                width: max-content;
+                align-self: center;
+                gap: 10px;
+                font-size: 19px;
+                font-weight: bolder;
+                color: var(--text-color);
+              }
+            </style>
+          </div>
+
+          <!-- backup, restore and  restore default settings  -->
+          <div class="restoreContainer">
+            <div class="backupAndRestore">
+              <button id="backupSettings"><span svg="upload"></span><span>Backup Settings</span></button>
+              <button id="restoreSettings"><span svg="download"></span><span>Restore Settings</span></button>
+            </div>
+            <button id="resetSettings"><span svg="power"></span><span>Reset to Default Settings</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- *----------------------------------- Time section -------------------------------- -->
+  <section class="timeSection">
+    <div class="dayBox">
+      <h3 id="day">LOADING...</h3>
+    </div>
+    <div class="timeBox">
+      <h3 id="time">Loading...</h3>
+    </div>
+  </section>
+
+  <!-- *------------------------------------ Search bar  -------------------------------- -->
+  <form action="https://www.google.com/search" method="get" id="searchForm">
+    <!-- search engine selection -->
+    <select id="searchEngine" name="" style="display: none;">
+      <option value="google" selected>Google</option>
+      <option value="youtube">YouTube</option>
+      <option value="yahoo">Yahoo</option>
+      <option value="bing">Bing</option>
+      <option value="duckduckgo">DDGo</option>
+    </select>
+    <div class="custom-select" id="customSearchSelect">
+      <div class="selected-option" id="selectedOption">
+        <span class="icon" svg="google"></span>
+        <span class="text">Google</span>
+      </div>
+      <div class="options-container" id="optionsContainer">
+        <div class="option" data-value="google" title="Google"><span class="icon" svg="google"></span><span class="text">Google</span></div>
+        <div class="option" data-value="youtube" title="YouTube"><span class="icon" svg="youtube"></span><span class="text">YouTube</span></div>
+        <div class="option" data-value="yahoo" title="Yahoo"><span class="icon" svg="yahoo"></span><span class="text">Yahoo</span></div>
+        <div class="option" data-value="bing" title="Bing"><span class="icon" svg="bing"></span><span class="text">Bing</span></div>
+        <div class="option" data-value="duckduckgo" title="DuckDuckGo"><span class="icon" svg="duckduckgo"></span><span class="text">DuckDuckGo</span></div>
+      </div>
+    </div>
+    <!-- input field  -->
+    <input type="search" id="search" name="q" placeholder="Ctrl-k Search..." autofocus="true" autocomplete="off" required />
+    <div id="suggestions" class="suggestions-container"></div>
+    <!-- submit button -->
+    <button type="submit" form="searchForm" id="submitBtn" class="searchIcon"><span svg="searchIcon"></span></button>
+  </form>
+
+  <!-- this container will contain new shortcut form  -->
+  <section class="addAppContainer popup" id="addAppContainer">
+    <h3 align="center">Add New Shortcut</h3>
+
+    <form class="newShortcutForm" id="newShortcutForm" method="get">
+      <div class="shortcutInput TitleBox">
+        <label for="shortcutTitle"> Title: </label>
+        <input type="text" id="shortcutTitle" name="title" required />
+      </div>
+      <div class="shortcutInput LinkBox">
+        <label for="shortcutLink"> URL: </label>
+        <input type="text" id="shortcutLink" name="link" accept="url" required />
+      </div>
+      <button id="shortcutSaveBtn">Save</button>
+    </form>
+  </section>
+
+  <!-- *------------------------ User specific shortcuts placeholder -------------------- -->
+  <section class="shortcutApp" id="shortcutApp"></section>
+
+  <!-- blurry background for showing popups  -->
+  <div class="popupBg" id="popupBg"></div>
+
+  <!--  *---------------------------------- Quick sites --------------------------------- -->
+  <section class="quickApplication popup" id="quickApplication">
+    <!-- Applications shortcuts : extension specific ----- -->
+    <div id="allAppPopup" class="allAppPopup">
+
+      <!-- ? Sponsor placeholder --- Max-5 -----------------  -->
+      <div id="sponsorQuickSites" class="appTypeContainer">
+        <h3>Sponsor</h3>
+        <ul class="ab ab-sponsor">
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+          <li><a href="https://sihab.deno.dev" title="Placeholder"><span svg="placeholder"></span></a></li>
+        </ul>
+      </div>
+
+      <!-- ? Developer Sites -----------------------------------------------  -->
+      <div id="developerQuickSites" class="appTypeContainer">
+        <h3>Developer</h3>
+        <ul class="ab ab-social">
+          <li><a href="https://github.com" title="Github"><span svg="github"></span></a></li>
+          <li><a href="https://gitlab.com" title="Gitlab"><span svg="gitlab"></span></a></li>
+          <li><a href="https://stackoverflow.com" title="stackoverflow"><span svg="stackoverflow"></span></a></li>
+          <li><a href="https://npmjs.com" title="NPM"><span svg="npm"></span></a></li>
+          <li><a href="https://developer.mozilla.org" title="MDN"><span svg="mdn"></span></a></li>
+          <li><a href="https://leetcode.com" title="LeetCode"><span svg="leetCode"></span></a></li>
+          <li><a href="https://pub.dev" title="pub.dev"><span svg="pub"></span></a></li>
+          <li><a href="https://jsr.io" title="JSR"><span svg="jsr"></span></a></li>
+          <li><a href="https://yarnpkg.com" title="Yarn"><span svg="yarn"></span></a></li>
+        </ul>
+      </div>
+
+      <!-- ? Ai Sites -----------------------------------------------  -->
+      <div id="aiQuickSites" class="appTypeContainer">
+        <h3>Artificial Intelligence</h3>
+        <ul class="ab ab-ai">
+          <li><a href="https://github.com/copilot" title="Copilot"><span svg="githubCopilot"></span></a></li>
+          <li><a href="https://chat.deepseek.com" title="DeepSeek"><span svg="deepSeek"></span></a></li>
+          <li><a href="https://chatgpt.com" title="ChatGPT"><span svg="chatgpt"></span></a></li>
+          <li><a href="https://gemini.google.com" title="Gemini"><span svg="gemini"></span></a></li>
+          <li><a href="https://claude.ai" title="Claude"><span svg="claude"></span></a></li>
+          <li><a href="https://grok.com" title="Grok"><span svg="grok"></span></a></li>
+          <li><a href="https://www.perplexity.ai" title="Perplexity"><span svg="perplexity"></span></a></li>
+          <li><a href="https://ollama.com" title="Ollama"><span svg="ollama"></span></a></li>
+          <li><a href="https://copilot.microsoft.com" title="Copilot"><span svg="copilot"></span></a></li>
+          <!-- <li><a href="https://suno.com" title="Suno"><span svg="suno"></span></a></li> -->
+        </ul>
+      </div>
+
+      <!-- ? Social Media Sites -----------------------------------------------  -->
+      <div id="socialQuickSites" class="appTypeContainer">
+        <h3>Social</h3>
+        <ul class="ab ab-social">
+          <li><a href="https://x.com" title="Twitter"><span svg="twitter"></span></a></li>
+          <li><a href="https://youtube.com" title="YouTube"><span svg="youtube"></span></a></li>
+          <li><a href="https://discord.com" title="Discord"><span svg="discord"></span></a></li>
+          <li><a href="https://facebook.com" title="Facebook"><span svg="facebook"></span></a></li>
+          <li><a href="https://linkedin.com" title="LinkedIn"><span svg="linkedin"></span></a></li>
+          <li><a href="https://instagram.com" title="Instagram"><span svg="instagram"></span></a> </li>
+          <li><a href="https://messenger.com" title="Messenger"><span svg="messenger"></span></a></li>
+          <li><a href="https://www.reddit.com" title="Reddit"><span svg="reddit"></span></a></li>
+          <li><a href="https://web.skype.com" title="Skype"><span svg="skype"></span></a></li>
+          <li><a href="https://web.whatsapp.com" title="Whatsapp"><span svg="whatsapp"></span></a></li>
+        </ul>
+      </div>
+
+      <!-- ? Google Sites -----------------------------------------------  -->
+      <div id="googleQuickSites" class="appTypeContainer">
+        <h3>Google</h3>
+        <ul class="ab ab-google">
+          <li><a href="https://drive.google.com" title="Drive"><span svg="drive"></span></a></li>
+          <li><a href="https://maps.google.com" title="Maps"><span svg="maps"></span></a></li>
+          <li><a href="https://meet.google.com" title="Meet"><span svg="meet"></span></a></li>
+          <li><a href="https://photos.google.com" title="Photos"><span svg="photos"></span></a></li>
+          <li><a href="https://pay.google.com" title="GPay"><span svg="pay"></span></a></li>
+          <li><a href="https://docs.google.com/document" title="Docs"><span svg="docs"></span></a></li>
+          <li><a href="https://docs.google.com/spreadsheets" title="Sheets"><span svg="sheets"></span></a></li>
+          <li><a href="https://docs.google.com/presentation" title="Slides"><span svg="slides"></span></a></li>
+          <li><a href="https://translate.google.com" title="Translate"><span svg="translate"></span></a></li>
+        </ul>
+      </div>
+
+      <!-- ? Microsoft Sites -----------------------------------------------  -->
+      <div id="microsoftQuickSites" class="appTypeContainer">
+        <h3>Microsoft</h3>
+        <ul class="ab ab-ms">
+          <li><a href="https://microsoft365.com/" title="Microsoft-365"><span svg="office"></span></a></li>
+          <li><a href="https://apps.microsoft.com/" title="MS Store"><span svg="store"></span></a></li>
+          <li><a href="https://office.live.com/start/Word.aspx" title="Word"><span svg="word"></span></a></li>
+          <li><a href="https://office.live.com/start/Excel.aspx" title="Excel"><span svg="excel"></span></a></li>
+          <li><a href="https://office.live.com/start/PowerPoint.aspx" title="PowerPoint"><span
+                svg="powerpoint"></span></a></li>
+          <li><a href="https://onedrive.live.com/" title="One Drive"><span svg="oneDrive"></span></a></li>
+          <li><a href="https://forms.office.com/" title="MS Forms"><span svg="forms"></span></a></li>
+          <li><a href="https://teams.live.com/" title="Teams"><span svg="teams"></span></a></li>
+          <li><a href="https://clipchamp.com/" title="Clipchamp"><span svg="clipchamp"></span></a></li>
+          <li><a href="https://www.xbox.com" title="Xbox"><span svg="xbox"></span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id="toggleApp" role="button" title="All Apps" svg="popupButton"></span>
+  </section>
+
+  <!-- ---------- mail box --------- -->
+  <div id="mailContainer" class="mailContainer popup">
+    <!-- google mail, microsoft outlook and yahoo mail  -->
+    <div class="emails gmail" title="Gmail"><a href="https://mail.google.com"><span svg="gmail"></span></a></div>
+    <div class="emails outlook" title="Outlook"><a href="https://outlook.live.com/"><span svg="outlook"></span></a>
+    </div>
+    <div class="emails yahoo" title="Yahoo"><a href="https://mail.yahoo.com"><span svg="yahoo"></span></a></div>
+
+    <!-- email toggle button -- -->
+    <div id="ToggleMailBtn" class="ToggleMailButton" title="Mail" role="button"><span svg="mail"></span></div>
+  </div>
+
+  <!-- author credit button  -->
+  <div class="creditBox popup" id="creditBox">
+    <h3>Developer Information</h3>
+    <button class="closeButton" id="creditCloseBtn">&cross;</button>
+    <p class="description">
+      Material Homepage is an OpenSource Project of mine(<em>Shoaib Hossain</em>).
+      I have tried to design it minimal, focused and beautiful. I am trying
+      my best to put more useful feature as I can without violating the core concept.
+      This includes multiple search engines, quick mail access, adding
+      shortcuts and so on. Consider checking them manually. Though it takes a lot
+      effort to build and maintain this kinds of projects, your support, pleasure
+      and feedbacks will be my pleasure.
+      <br />
+      Me?... I am Shoaib Hossain, a self taught developer, Who like technology and like
+      to deep dive into it. As of now, I know many language and frameworks.
+      Ex. JavaScript, TypeScript, Dart, PHP, GoLang.
+      I use them to solve real world problems. Material Homepage is one of them.
+      For more information about me, please checkout my portfolio.
+      <br>
+      <br>
+      You can support Material Homepage by clicking the left button below.
+    </p>
+    <!-- <hr style="width: 90%; margin: auto; border: 1px solid var(--accent)" /> -->
+    <div class="credit">
+      <span class="key">Developed by</span>: <a href="https://sihab.deno.dev">Shoaib Hossain</a>
+      <span class="key">Source Code</span>:<a href="https://bit.ly/mhrepo">MrSIHAB/material-homepage</a>
+    </div>
+    <!-- banners  -->
+    <div class="banners">
+      <a href="https://bit.ly/m/MrSIHAB">
+        <div class="listTile">
+          <span class="icon" svg="coffee"></span>
+          <span class="title">Support my work</span>
+          <div class="switch"></div>
+        </div>
+      </a>
+      <a href="https://www.patreon.com/shoaibhossain">
+        <div class="listTile">
+          <span class="icon" svg="money"></span>
+          <span class="title">Patreon</span>
+          <div class="switch"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- support palestine text  -->
+  <!-- <div class="supportPalestine">
+    <span>Free&nbsp;Palestine</span>
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0,0 9,6"
+      style="height: 17px;">
+      <rect width="9" height="6" fill="#007a3d" />
+      <rect width="9" height="4" fill="#fff" />
+      <rect width="9" height="2" fill="#000" />
+      <path d="M 0,6 V 0 L 3,3 z" fill="#ce1126" />
+    </svg>
+    <style>
+      .supportPalestine {
+        position: absolute;
+        left: 1.5rem;
+        bottom: 1.5rem;
+        display: flex;
+        width: max-content;
+        gap: 7px;
+        font-size: 17px;
+        font-weight: bolder;
+        color: var(--text-color);
+      }
+    </style>
+  </div> -->
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
