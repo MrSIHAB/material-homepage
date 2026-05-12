@@ -164,8 +164,9 @@ const shortcutSiteTemplate = (title, link, icon, index) => {
   return `
   <div class="everyShortcut">
     ${threeDotsMenu}  
-    <a href="${link}">
+    <a href="${link}" class="shortcutLink">
       <img src="${icon}" alt="${title}" class="icon" />
+      <div class="bg"></div>
     </a>
     <h5 class="title">${title}</h5>
   </div>`;

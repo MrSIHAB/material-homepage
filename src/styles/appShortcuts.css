@@ -144,14 +144,24 @@ section.shortcutApp#shortcutApp {
   max-width: 100%;
 }
 /* adaptive icons  */
-.shortcutApp.adaptive .everyShortcut {
-  background-color: var(--soft-accent);
+/* .shortcutApp.adaptive .everyShortcut {
+  background-color: color-mix(in srgb, var(--soft-accent) , transparent 55%);
 }
 .shortcutApp.adaptive .everyShortcut .icon {
-  filter: grayscale(1);
-  mix-blend-mode: screen;
+  filter: grayscale(0.5);
+} */
+.shortcutApp.adaptive .everyShortcut .shortcutLink{
+  position: relative;
 }
-.shortcutApp.adaptive .everyShortcut .title {
+.shortcutApp.adaptive .everyShortcut .bg {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  aspect-ratio: 1;
+  mix-blend-mode: hue;
+  background-color: var(--accent);
+}
+/* .shortcutApp.adaptive .everyShortcut .title {
   color: var(--light-background);
 }
 .shortcutApp.adaptive .everyShortcut.plusIcon {
@@ -159,7 +169,7 @@ section.shortcutApp#shortcutApp {
 }
 .shortcutApp.adaptive .threeDot {
   fill: var(--light-background);
-}
+} */
 .everyShortcut .threeDot {
   outline: 0;
   border: 0;
